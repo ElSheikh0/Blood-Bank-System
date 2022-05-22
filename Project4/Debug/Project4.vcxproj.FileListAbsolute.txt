@@ -1,0 +1,4 @@
+C:\Users\Mohamed\source\repos\Project4\Debug\Project4.vcxprojAssemblyReference.cache
+C:\Users\Mohamed\source\repos\Project4\Debug\Project4.Home.resources
+C:\Users\Mohamed\source\repos\Project4\Debug\Project4.vcxproj.GenerateResource.cache
+C:\Users\Mohamed\source\repos\Project4\Debug\Project4.exe
