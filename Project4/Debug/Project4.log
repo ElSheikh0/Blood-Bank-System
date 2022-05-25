@@ -1,15 +1,25 @@
-﻿  Home.cpp
-C:\Users\Mohamed\source\repos\Project4\Home.h(5807,22): warning C4101: 'id': unreferenced local variable
-C:\Users\Mohamed\source\repos\Project4\Home.h(6449,26): warning C4101: 'e': unreferenced local variable
-C:\Users\Mohamed\source\repos\Project4\Home.h(7312,92): warning C4244: 'argument': conversion from '__int64' to 'int', possible loss of data
-C:\Users\Mohamed\source\repos\Project4\Home.h(7428,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Mohamed\source\repos\Project4\Home.h(7423,11): warning C4101: 'Stat': unreferenced local variable
-C:\Users\Mohamed\source\repos\Project4\Home.h(7507,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Mohamed\source\repos\Project4\Home.h(7502,29): warning C4101: 'Age': unreferenced local variable
-C:\Users\Mohamed\source\repos\Project4\Home.h(7576,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Mohamed\source\repos\Project4\Home.h(7570,29): warning C4101: 'Age': unreferenced local variable
-C:\Users\Mohamed\source\repos\Project4\Home.h(7662,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Mohamed\source\repos\Project4\Home.h(7657,11): warning C4101: 'Stat': unreferenced local variable
+﻿  Admin.cpp
+C:\Users\Mohamed\source\repos\Project4\Admin.cpp(122,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mohamed\source\repos\Project4\Admin.cpp(128,23): warning C4018: '<': signed/unsigned mismatch
+  Donor.cpp
+C:\Users\Mohamed\source\repos\Project4\Donor.cpp(124,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mohamed\source\repos\Project4\Donor.cpp(163,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mohamed\source\repos\Project4\Donor.cpp(170,23): warning C4018: '<': signed/unsigned mismatch
+  Home.cpp
+C:\Users\Mohamed\source\repos\Project4\Home.h(5808,22): warning C4101: 'id': unreferenced local variable
+C:\Users\Mohamed\source\repos\Project4\Home.h(6450,26): warning C4101: 'e': unreferenced local variable
+C:\Users\Mohamed\source\repos\Project4\Home.h(7332,92): warning C4244: 'argument': conversion from '__int64' to 'int', possible loss of data
+C:\Users\Mohamed\source\repos\Project4\Home.h(7448,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mohamed\source\repos\Project4\Home.h(7443,11): warning C4101: 'Stat': unreferenced local variable
+C:\Users\Mohamed\source\repos\Project4\Home.h(7527,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mohamed\source\repos\Project4\Home.h(7522,29): warning C4101: 'Age': unreferenced local variable
+C:\Users\Mohamed\source\repos\Project4\Home.h(7596,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mohamed\source\repos\Project4\Home.h(7590,29): warning C4101: 'Age': unreferenced local variable
+C:\Users\Mohamed\source\repos\Project4\Home.h(7682,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mohamed\source\repos\Project4\Home.h(7677,11): warning C4101: 'Stat': unreferenced local variable
 C:\Users\Mohamed\source\repos\Project4\Home.cpp(8,1): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
+  Generating Code...
+C:\Users\Mohamed\source\repos\Project4\Admin.cpp(173): warning C4715: 'Request::no_of_days_in_month': not all control paths return a value
+C:\Users\Mohamed\source\repos\Project4\Admin.cpp(468): warning C4700: uninitialized local variable 'i' used
   Admin.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   Project4.vcxproj -> C:\Users\Mohamed\source\repos\Project4\Debug\Project4.exe

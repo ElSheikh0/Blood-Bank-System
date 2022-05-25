@@ -2,39 +2,39 @@
 using namespace std;
 Admin::Admin()
 {
-    
+
 }
 
 bool Admin::LoginAdmin(std::string U_sername, std::string P_assword)
 {
-    ifstream f;
-    f.open("Admin.csv");
-    string line, unit;
-    vector<string> row;
-    while (f.good()) 
-    {
-        row.clear();
-        getline(f, line);
-        stringstream s(line);
-        while (getline(s, unit, ','))
-        {
-            row.push_back(unit);
-        }
-        if (!row.empty()) {
-           
-            dataAdmin.insert(make_pair(row[0], row[1]));   
-        }
-    } 
-    f.close();
-    bool login = false;
-    string p = dataAdmin[U_sername];
-    if (p == P_assword && P_assword != "") {
-        login = true;
-    }
-    else {
-        login = false;
-    }
-    return login;
+	ifstream f;
+	f.open("Admin.csv");
+	string line, unit;
+	vector<string> row;
+	while (f.good())
+	{
+		row.clear();
+		getline(f, line);
+		stringstream s(line);
+		while (getline(s, unit, ','))
+		{
+			row.push_back(unit);
+		}
+		if (!row.empty()) {
+
+			dataAdmin.insert(make_pair(row[0], row[1]));
+		}
+	}
+	f.close();
+	bool login = false;
+	string p = dataAdmin[U_sername];
+	if (p == P_assword && P_assword != "") {
+		login = true;
+	}
+	else {
+		login = false;
+	}
+	return login;
 }
 
 Admin::~Admin()
@@ -50,133 +50,126 @@ Request::Request()
 
 void Request::Read_Data()
 {
-    ifstream Data_File;
-    Data_File.open("DonationRequestData.csv");
-    while (Data_File.good())
-    {
-        Request_Data.clear();
-        getline(Data_File, line);
-        stringstream s(line);
-        while (getline(s, unit, ','))
-        {
-            Request_Data.push_back(unit);
-        }
-        if (!Request_Data.empty())
-        {
-            Request requst(stoi(Request_Data[0]), Request_Data[1], Request_Data[2], Request_Data[3]);
-            totalNumberOfRequests++;
-            request.push_back(requst);
-        }
-    }
-    totalNumberOfRequestss = to_string(totalNumberOfRequests);
-    totalNumberOfRequests = 0;
-    Data_File.close();
+	ifstream Data_File;
+	Data_File.open("DonationRequestData.csv");
+	while (Data_File.good())
+	{
+		Request_Data.clear();
+		getline(Data_File, line);
+		stringstream s(line);
+		while (getline(s, unit, ','))
+		{
+			Request_Data.push_back(unit);
+		}
+		if (!Request_Data.empty())
+		{
+			Request requst(stoi(Request_Data[0]), Request_Data[1], Request_Data[2], Request_Data[3]);
+			totalNumberOfRequests++;
+			request.push_back(requst);
+		}
+	}
+	totalNumberOfRequestss = to_string(totalNumberOfRequests);
+	totalNumberOfRequests = 0;
+	Data_File.close();
 }
 
 
 
-Request::Request(int Donor_ID, std::string blood, std::string date,  std::string state)
+Request::Request(int Donor_ID, std::string blood, std::string date, std::string state)
 {
-    this->Donor_ID = Donor_ID;
-    this->Blood = blood;
-    this->state = state;
-    this->Date = date;
+	this->Donor_ID = Donor_ID;
+	this->Blood = blood;
+	this->state = state;
+	this->Date = date;
 }
-/// <summary>
 
-/// </summary>
-/// <param name="index"></param>
-/// <param name="Age"></param>
-/// <param name="diseases"></param>
-/// <param name="checkdate"></param>
-/// <returns></returns>
-bool Request::validate_donors_request(int index,int Age,std::string diseases, bool checkdate)
+bool Request::validate_donors_request(int index, int Age, std::string diseases, bool checkdate)
 {
-    Read_Data();
-    
-        if (Age >= 17 && checkdate == true && Age <= 60 && (diseases == "NULL" || diseases == "null"))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-   
+	Read_Data();
+
+	if (Age >= 17 && checkdate == true && Age <= 60 && (diseases == "NULL" || diseases == "null"))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
 }
 
 
 
 void Request::change_state(int index, string update, int currentUserIndex)
 {
-    fstream file_1, file_2;
-    file_1.open("DonationRequestData.csv", ios::in | ios::app);
-    file_2.open("temp_file.csv", ios::out | ios::app);
-     while (file_1.good())
-    {
-        Request_Data.clear();
-        getline(file_1, line);
-        stringstream s_line(line);
-        while (getline(s_line, unit, ','))
-        {
-            Request_Data.push_back(unit);
-        }
-        if (Request_Data.size() != 0)
-        {
-            if (stoi(Request_Data[0]) == currentUserIndex)
-            {
-                Request_Data[index] = update;
-                for (int i = 0; i < Request_Data.size(); i++) {
-                    file_2 << Request_Data[i] << ",";
-                }
-                file_2 << endl;
-            }
-            else if (stoi(Request_Data[0]) != currentUserIndex) {
-                for (int i = 0; i < Request_Data.size(); ++i) {
-                    file_2 << Request_Data[i] << ",";
-                }file_2 << endl;
-            }
-        }
-    }
-    file_1.close();
-    file_2.close();
-    remove("DonationRequestData.csv");
-    rename("temp_file.csv", "DonationRequestData.csv");
+	fstream file_1, file_2;
+	file_1.open("DonationRequestData.csv", ios::in | ios::app);
+	file_2.open("temp_file.csv", ios::out | ios::app);
+	while (file_1.good())
+	{
+		Request_Data.clear();
+		getline(file_1, line);
+		stringstream s_line(line);
+		while (getline(s_line, unit, ','))
+		{
+			Request_Data.push_back(unit);
+		}
+		if (Request_Data.size() != 0)
+		{
+			if (stoi(Request_Data[0]) == currentUserIndex)
+			{
+				Request_Data[index] = update;
+				for (int i = 0; i < Request_Data.size(); i++) {
+					file_2 << Request_Data[i] << ",";
+				}
+				file_2 << endl;
+			}
+			else if (stoi(Request_Data[0]) != currentUserIndex) {
+				for (int i = 0; i < Request_Data.size(); ++i) {
+					file_2 << Request_Data[i] << ",";
+				}file_2 << endl;
+			}
+		}
+	}
+	file_1.close();
+	file_2.close();
+	remove("DonationRequestData.csv");
+	rename("temp_file.csv", "DonationRequestData.csv");
 }
 
 
 
 int Request::check_leap_year(int year)
 {
-    if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)   //if year is a leap year
-        return 1;
+	if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)   //if year is a leap year
+		return 1;
 
-    else
+	else
 
-        return 0;
+		return 0;
 }
 
 
 
 int Request::no_of_days_in_month(int month, int year)
 {
-    // jan, march, may, july, aug, oct, dec contains 31 days
-    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
-        return 31;
+	// jan, march, may, july, aug, oct, dec contains 31 days
+	if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+		return 31;
 
-    // april, jun, sept, nov contains 30 days
-    if (month == 4 || month == 6 || month == 9 || month == 11)
-        return 30;
+	// april, jun, sept, nov contains 30 days
+	if (month == 4 || month == 6 || month == 9 || month == 11)
+		return 30;
 
-    if (month == 2)
-    {
-        int n = check_leap_year(year);
-        if (n == 1)    // if year is a leap year then Feb will contain 29 days, otherwise it contains 28 days
-            return 29;
+	if (month == 2)
+	{
+		int n = check_leap_year(year);
+		if (n == 1)    // if year is a leap year then Feb will contain 29 days, otherwise it contains 28 days
+			return 29;
 
-        else
-            return 28;
-    }
+		else
+			return 28;
+	}
 }
 
 
@@ -184,180 +177,180 @@ int Request::no_of_days_in_month(int month, int year)
 
 int Request::calc_date_diff(int day1, int month1, int year1, int day2, int month2, int year2)
 {
-    if (year1 == year2)
-    {
-        if (month1 == month2)
-        {
-            if (day1 == day2)      //for same dates
-                return 0;
-            else
-                return abs(day1 - day2);  //for same year, same month but diff days
-        }
-        else if (month1 < month2)
-        {
-            int result = 0;
-            for (int i = month1; i < month2; i++)
-                result = result + no_of_days_in_month(i, year1);
+	if (year1 == year2)
+	{
+		if (month1 == month2)
+		{
+			if (day1 == day2)      //for same dates
+				return 0;
+			else
+				return abs(day1 - day2);  //for same year, same month but diff days
+		}
+		else if (month1 < month2)
+		{
+			int result = 0;
+			for (int i = month1; i < month2; i++)
+				result = result + no_of_days_in_month(i, year1);
 
-            if (day1 == day2)      //for same year, same day but diff month 
-                return result;
-            else if (day1 < day2)
-            {
-                result = result + (day2 - day1);
-                return result;
-            }
-            else
-            {
-                result = result - (day1 - day2);
-                return result;
-            }
-        }
-        else
-        {
-            int result = 0;
-            for (int i = month2; i < month1; i++)
-                result = result + no_of_days_in_month(i, year1);
+			if (day1 == day2)      //for same year, same day but diff month 
+				return result;
+			else if (day1 < day2)
+			{
+				result = result + (day2 - day1);
+				return result;
+			}
+			else
+			{
+				result = result - (day1 - day2);
+				return result;
+			}
+		}
+		else
+		{
+			int result = 0;
+			for (int i = month2; i < month1; i++)
+				result = result + no_of_days_in_month(i, year1);
 
-            if (day1 == day2)
-                return result;
-            else if (day2 < day1)
-            {
-                result = result + (day1 - day2);
-                return result;
-            }
-            else
-            {
-                result = result - (day2 - day1);
-                return result;
-            }
-        }
-    }
-    else if (year1 < year2)
-    {
-        int temp = 0;
-        for (int i = year1; i < year2; i++)
-        {
-            if (check_leap_year(i))
-                temp = temp + 366;
-            else
-                temp = temp + 365;
-        }
+			if (day1 == day2)
+				return result;
+			else if (day2 < day1)
+			{
+				result = result + (day1 - day2);
+				return result;
+			}
+			else
+			{
+				result = result - (day2 - day1);
+				return result;
+			}
+		}
+	}
+	else if (year1 < year2)
+	{
+		int temp = 0;
+		for (int i = year1; i < year2; i++)
+		{
+			if (check_leap_year(i))
+				temp = temp + 366;
+			else
+				temp = temp + 365;
+		}
 
-        if (month1 == month2)
-        {
-            if (day1 == day2)      //for same month, same day but diff year
-                return temp;
-            else if (day1 < day2)
-                return temp + (day2 - day1);
-            else
-                return temp - (day1 - day2);
-        }
-        else if (month1 < month2)
-        {
-            int result = 0;
-            for (int i = month1; i < month2; i++)
-                result = result + no_of_days_in_month(i, year2);
+		if (month1 == month2)
+		{
+			if (day1 == day2)      //for same month, same day but diff year
+				return temp;
+			else if (day1 < day2)
+				return temp + (day2 - day1);
+			else
+				return temp - (day1 - day2);
+		}
+		else if (month1 < month2)
+		{
+			int result = 0;
+			for (int i = month1; i < month2; i++)
+				result = result + no_of_days_in_month(i, year2);
 
-            if (day1 == day2)      // for same day, diff year and diff month
-                return temp + result;
-            else if (day1 < day2)
-            {
-                result = result + (day2 - day1);
-                return temp + result;
-            }
-            else
-            {
-                result = result - (day1 - day2);
-                return temp + result;
-            }
-        }
-        else
-        {
-            int result = 0;
-            for (int i = month2; i < month1; i++)
-                result = result + no_of_days_in_month(i, year2);
+			if (day1 == day2)      // for same day, diff year and diff month
+				return temp + result;
+			else if (day1 < day2)
+			{
+				result = result + (day2 - day1);
+				return temp + result;
+			}
+			else
+			{
+				result = result - (day1 - day2);
+				return temp + result;
+			}
+		}
+		else
+		{
+			int result = 0;
+			for (int i = month2; i < month1; i++)
+				result = result + no_of_days_in_month(i, year2);
 
-            if (day1 == day2)
-                return temp - result;
-            else if (day2 < day1)
-            {
-                result = result + (day1 - day2);
-                return temp - result;
-            }
-            else
-            {
-                result = result - (day2 - day1);
-                return temp - result;
-            }
-        }
-    }
-    else
-    {
-        int temp = 0;
-        for (int i = year2; i < year1; i++)
-        {
-            if (check_leap_year(i))
-                temp = temp + 366;
-            else
-                temp = temp + 365;
-        }
+			if (day1 == day2)
+				return temp - result;
+			else if (day2 < day1)
+			{
+				result = result + (day1 - day2);
+				return temp - result;
+			}
+			else
+			{
+				result = result - (day2 - day1);
+				return temp - result;
+			}
+		}
+	}
+	else
+	{
+		int temp = 0;
+		for (int i = year2; i < year1; i++)
+		{
+			if (check_leap_year(i))
+				temp = temp + 366;
+			else
+				temp = temp + 365;
+		}
 
-        if (month1 == month2)
-        {
-            if (day1 == day2)      // for same day, same month but diff year
-                return temp;
-            else if (day2 < day1)
-                return temp + (day1 - day2);
-            else
-                return temp - (day2 - day1);
-        }
-        else if (month2 < month1)
-        {
-            int result = 0;
-            for (int i = month2; i < month1; i++)
-                result = result + no_of_days_in_month(i, year1);
+		if (month1 == month2)
+		{
+			if (day1 == day2)      // for same day, same month but diff year
+				return temp;
+			else if (day2 < day1)
+				return temp + (day1 - day2);
+			else
+				return temp - (day2 - day1);
+		}
+		else if (month2 < month1)
+		{
+			int result = 0;
+			for (int i = month2; i < month1; i++)
+				result = result + no_of_days_in_month(i, year1);
 
-            if (day1 == day2)
-                return temp + result;
-            else if (day2 < day1)
-            {
-                result = result + (day1 - day2);
-                return temp + result;
-            }
-            else
-            {
-                result = result - (day2 - day1);
-                return temp + result;
-            }
-        }
-        else
-        {
-            int result = 0;
-            for (int i = month1; i < month2; i++)
-                result = result + no_of_days_in_month(i, year1);
+			if (day1 == day2)
+				return temp + result;
+			else if (day2 < day1)
+			{
+				result = result + (day1 - day2);
+				return temp + result;
+			}
+			else
+			{
+				result = result - (day2 - day1);
+				return temp + result;
+			}
+		}
+		else
+		{
+			int result = 0;
+			for (int i = month1; i < month2; i++)
+				result = result + no_of_days_in_month(i, year1);
 
-            if (day1 == day2)      // for same day, diff year and diff month
-                return temp - result;
-            else if (day1 < day2)
-            {
-                result = result + (day2 - day1);
-                return temp - result;
-            }
-            else
-            {
-                result = result - (day1 - day2);
-                return temp - result;
-            }
-        }
-    }
+			if (day1 == day2)      // for same day, diff year and diff month
+				return temp - result;
+			else if (day1 < day2)
+			{
+				result = result + (day2 - day1);
+				return temp - result;
+			}
+			else
+			{
+				result = result - (day1 - day2);
+				return temp - result;
+			}
+		}
+	}
 }
 bool Request::validateDate(int diff)
 {
 
-    if (diff >= 90)
-        return true;
-    else
-        return false;
+	if (diff >= 90)
+		return true;
+	else
+		return false;
 }
 
 
@@ -369,164 +362,164 @@ bool Request::validateDate(int diff)
 
 int Request::offsetDays(int d, int m, int y)
 {
-    int offset = d;
+	int offset = d;
 
-    switch (m - 1)
-    {
-    case 11:
-        offset += 30;
-    case 10:
-        offset += 31;
-    case 9:
-        offset += 30;
-    case 8:
-        offset += 31;
-    case 7:
-        offset += 31;
-    case 6:
-        offset += 30;
-    case 5:
-        offset += 31;
-    case 4:
-        offset += 30;
-    case 3:
-        offset += 31;
-    case 2:
-        offset += 28;
-    case 1:
-        offset += 31;
-    }
+	switch (m - 1)
+	{
+	case 11:
+		offset += 30;
+	case 10:
+		offset += 31;
+	case 9:
+		offset += 30;
+	case 8:
+		offset += 31;
+	case 7:
+		offset += 31;
+	case 6:
+		offset += 30;
+	case 5:
+		offset += 31;
+	case 4:
+		offset += 30;
+	case 3:
+		offset += 31;
+	case 2:
+		offset += 28;
+	case 1:
+		offset += 31;
+	}
 
-    if (check_leap_year(y) && m > 2)
-        offset += 1;
+	if (check_leap_year(y) && m > 2)
+		offset += 1;
 
-    return offset;
+	return offset;
 }
 
 // Given a year and days elapsed in it, finds
 // date by storing results in d and m.
 void Request::revoffsetDays(int offset, int y, int* d, int* m)
 {
-    int month[13] = { 0, 31, 28, 31, 30, 31, 30,
-                      31, 31, 30, 31, 30, 31 };
+	int month[13] = { 0, 31, 28, 31, 30, 31, 30,
+					  31, 31, 30, 31, 30, 31 };
 
-    if (check_leap_year(y)) {
-    month[2] = 29;
-}
-    int i;
-    for (i = 1; i <= 12; i++)
-    {
-        if (offset <= month[i])
-            break;
-        offset = offset - month[i];
-    }
+	if (check_leap_year(y)) {
+		month[2] = 29;
+	}
+	int i;
+	for (i = 1; i <= 12; i++)
+	{
+		if (offset <= month[i])
+			break;
+		offset = offset - month[i];
+	}
 
-    *d = offset;
-    *m = i;
+	*d = offset;
+	*m = i;
 }
 
 // Add x days to the given date.
 std::string Request::addDays(int d1, int m1, int y1, int x)
 {
-    int offset1 = offsetDays(d1, m1, y1);
-    int remDays = check_leap_year(y1) ? (366 - offset1) : (365 - offset1);
+	int offset1 = offsetDays(d1, m1, y1);
+	int remDays = check_leap_year(y1) ? (366 - offset1) : (365 - offset1);
 
-    // y2 is going to store result year and
-    // offset2 is going to store offset days
-    // in result year.
-    int y2, offset2;
-    if (x <= remDays)
-    {
-        y2 = y1;
-        offset2 = offset1 + x;
-    }
+	// y2 is going to store result year and
+	// offset2 is going to store offset days
+	// in result year.
+	int y2, offset2;
+	if (x <= remDays)
+	{
+		y2 = y1;
+		offset2 = offset1 + x;
+	}
 
-    else
-    {
-        // x may store thousands of days.
-        // We find correct year and offset
-        // in the year.
-        x -= remDays;
-        y2 = y1 + 1;
-        int y2days = check_leap_year(y2) ? 366 : 365;
-        while (x >= y2days)
-        {
-            x -= y2days;
-            y2++;
-            y2days = check_leap_year(y2) ? 366 : 365;
-        }
-        offset2 = x;
-    }
+	else
+	{
+		// x may store thousands of days.
+		// We find correct year and offset
+		// in the year.
+		x -= remDays;
+		y2 = y1 + 1;
+		int y2days = check_leap_year(y2) ? 366 : 365;
+		while (x >= y2days)
+		{
+			x -= y2days;
+			y2++;
+			y2days = check_leap_year(y2) ? 366 : 365;
+		}
+		offset2 = x;
+	}
 
-    // Find values of day and month from
-    // offset of result year.
-    int m2, d2;
-    revoffsetDays(offset2, y2, &d2, &m2);
+	// Find values of day and month from
+	// offset of result year.
+	int m2, d2;
+	revoffsetDays(offset2, y2, &d2, &m2);
 
-    string date = to_string(d2) + "-" + to_string(m2) + "-" + to_string(y2);
-    return date;
+	string date = to_string(d2) + "-" + to_string(m2) + "-" + to_string(y2);
+	return date;
 }
 
-void Request::InsertBloodAdmin(std::string id,int Num, std::string Time, std::string Blood )
+void Request::InsertBloodAdmin(std::string id, int Num, std::string date, std::string Blood)
 {
 
-    fstream DR;
-    DR.open("DonationRequestData.csv", ios::app);
-    for (int i; i < Num; i++)
-    {
-        DR << id<< "," << Blood << "," << Time << "," << "1" << endl;
+	fstream DR;
+	DR.open("DonationRequestData.csv", ios::app);
+	for (int i; i < Num; i++)
+	{
+		DR << id << "," << Blood << "," << date << "," << "1" << endl;
 
-    }
-    DR.close();
+	}
+	DR.close();
 
 
 }
-void Request::UpdateBloodReq(int cnt, std::string blood,int id,std::string date )
+void Request::UpdateBloodReq(int cnt, std::string blood, int id, std::string date)
 {
-    fstream file_1, file_2;
-    file_1.open("DonationRequestData.csv", ios::in | ios::app);
-    file_2.open("temp_file.csv", ios::out | ios::app);
-    std::vector<std::string> Blood_data;
-    while (file_1.good())
-    {
-        Blood_data.clear();
-        getline(file_1, line);
-        stringstream s_line(line);
-        while (getline(s_line, unit, ','))
-        {
-            Blood_data.push_back(unit);
-        }
-        if (Blood_data.size() != 0)
-        {
+	fstream file_1, file_2;
+	file_1.open("DonationRequestData.csv", ios::in | ios::app);
+	file_2.open("temp_file.csv", ios::out | ios::app);
+	std::vector<std::string> Blood_data;
+	while (file_1.good())
+	{
+		Blood_data.clear();
+		getline(file_1, line);
+		stringstream s_line(line);
+		while (getline(s_line, unit, ','))
+		{
+			Blood_data.push_back(unit);
+		}
+		if (Blood_data.size() != 0)
+		{
 
-            if (Blood_data[1] == blood && cnt != 0 && Blood_data[3] == "1" && stoi(Blood_data[0])==id && Blood_data[2]==date)
-            {
-                Blood_data[3] = "0";
-                for (int i = 0; i < 4; ++i)
-                {
-                    file_2 << Blood_data[i] << ",";
-                }
-                file_2 << endl;
-                cnt--;
-            }
-            else
-            {
+			if (Blood_data[1] == blood && cnt != 0 && Blood_data[3] == "1" && stoi(Blood_data[0]) == id && Blood_data[2] == date)
+			{
+				Blood_data[3] = "0";
+				for (int i = 0; i < 4; ++i)
+				{
+					file_2 << Blood_data[i] << ",";
+				}
+				file_2 << endl;
+				cnt--;
+			}
+			else
+			{
 
-                for (int i = 0; i < 4; ++i)
-                {
-                    file_2 << Blood_data[i] << ",";
-                }
-                file_2 << endl;
-            }
-
-
-        }
+				for (int i = 0; i < 4; ++i)
+				{
+					file_2 << Blood_data[i] << ",";
+				}
+				file_2 << endl;
+			}
 
 
-    }
-    file_1.close();
-    file_2.close();
-    remove("DonationRequestData.csv");
-    rename("temp_file.csv", "DonationRequestData.csv");
+		}
+
+
+	}
+	file_1.close();
+	file_2.close();
+	remove("DonationRequestData.csv");
+	rename("temp_file.csv", "DonationRequestData.csv");
 
 }

@@ -11,10 +11,10 @@ Donor::Donor() {
 
 }
 
-Donor::Donor(int id, string fName, string lName, int age, string email, string password, string gender, string bloodType, string diseases, string medicine, string date) 
+Donor::Donor(int id, string fName, string lName, int age, string email, string password, string gender, string bloodType, string diseases, string medicine, string date)
 	:User(id, fName, lName, email, password, age, gender, bloodType)
 {
- 
+
 	this->listOfDiseases = diseases;
 	this->medication = medicine;
 	this->latestDonationDate = date;
@@ -38,15 +38,15 @@ void Donor::readData()
 			totalNumberOfDonors++;
 			allDonors.push_back(temp);
 
-			data.insert(make_pair(row[4],temp));
+			data.insert(make_pair(row[4], temp));
 
 			lastDonorID = stoi(row[0]);
 		}
 	}
-	
+
 	totalNumberOfDonorss = to_string(totalNumberOfDonors);
 	totalNumberOfDonors = 0;
-	
+
 	f.close();
 }
 
@@ -55,33 +55,33 @@ void Donor::Register(string fName, string lName, int age, string email, string p
 	fstream donor;
 	donor.open("data.csv", ios::out | ios::app);
 	lastDonorID++;
-	setId( lastDonorID);
-	
+	setId(lastDonorID);
+
 	currentUserIndex = getId();
 
 	if (diseases == "")
 		diseases = "NULL";
 	if (medicine == "")
 		medicine = "NULL";
-	 
+
 	//Donor(ID, fName, lName, age, email, password, gender, bloodType, diseases, medicine, date);
-	donor << getId()<< "," << fName << "," << lName
+	donor << getId() << "," << fName << "," << lName
 		<< "," << age << "," << email << "," << password
 		<< "," << gender << "," << bloodType << "," << diseases
 		<< "," << medicine << "," << date << "\n";
 	donor.close();
 }
 
-bool Donor::Login(string e_mail,string password) {
+bool Donor::Login(string e_mail, string password) {
 	readData();
-	 
+
 	bool login = false;
-	 
+
 	readData();
 	string p = data[e_mail].getPassword();
 	if (p == password && password != "") {
 		login = true;
-		currentUserIndex = data[e_mail].getId() ;
+		currentUserIndex = data[e_mail].getId();
 	}
 	else {
 		login = false;
@@ -89,11 +89,11 @@ bool Donor::Login(string e_mail,string password) {
 	return login;
 }
 
-void Donor::DonationRequest(std::string hos, std::string Time ,int ID,std::string email) {
+void Donor::DonationRequest(std::string hos, std::string Time, int ID, std::string email) {
 	fstream DR;
 	DR.open("DonationRequestData.csv", ios::app);
-	
-	DR << ID  << ","<< data[email].getBloodType() << "," <<Time << "," <<"2" << endl;
+
+	DR << ID << "," << data[email].getBloodType() << "," << Time << "," << "2" << endl;
 	DR.close();
 }
 
@@ -102,16 +102,16 @@ void Donor::DeleteAccount(string email)
 	fstream fin, fout;
 	fin.open("data.csv", ios::in);
 	fout.open("DonorData.csv", ios::out);
-	string line, word,  tempEmail;
+	string line, word, tempEmail;
 	vector<string>row;
 
-	while (!fin.eof()) 
+	while (!fin.eof())
 	{
 		row.clear();
 		getline(fin, line);
 		stringstream s(line);
 
-		while (getline(s, word, ',')) 
+		while (getline(s, word, ','))
 		{
 			row.push_back(word);
 		}
@@ -121,14 +121,14 @@ void Donor::DeleteAccount(string email)
 			tempEmail = row[4];
 			if (tempEmail != email) {
 				if (!fin.eof()) {
-					for (int i = 0; i < row.size(); ++i) 
+					for (int i = 0; i < row.size(); ++i)
 					{
 						fout << row[i] << ",";
 					}
-					fout  <<  endl;
+					fout << endl;
 				}
 			}
-		 
+
 			if (fin.eof())
 				break;
 		}
@@ -140,7 +140,7 @@ void Donor::DeleteAccount(string email)
 	remove("data.csv");
 	rename("DonorData.csv", "data.csv");
 }
-void Donor::UpdateAccount(int index,int currentUserIndex, std::string updated) {
+void Donor::UpdateAccount(int index, int currentUserIndex, std::string updated) {
 	fstream file_1, file_2;
 	string line, unit;
 	std::vector<std::string> Donor_Data;
@@ -160,7 +160,7 @@ void Donor::UpdateAccount(int index,int currentUserIndex, std::string updated) {
 			if (stoi(Donor_Data[0]) == currentUserIndex)
 			{
 				Donor_Data[index] = updated;
-				for (int i = 0; i < Donor_Data.size(); i++) 
+				for (int i = 0; i < Donor_Data.size(); i++)
 				{
 					file_2 << Donor_Data[i] << ",";
 				}
@@ -288,7 +288,7 @@ std::string Donor::gettotalNumberOfDonorss()
 
 void Donor::setCurrentUser(int index)
 {
-currentUserIndex = index;
+	currentUserIndex = index;
 }
 
 
