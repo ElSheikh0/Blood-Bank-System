@@ -6,14 +6,14 @@
 
 class User
 {
-public:
+private:
     int Id = 0, Age = 0;
     std::string firstName, lastName, e_mail, password, gender, bloodType, line, unit, totalNumberOfUsers;
    
 public:
     User(int Id, std::string firstName, std::string lastName, std::string e_mail, std::string password, int Age, std::string gender, std::string bloodType);
     User();
-  /*  int getId();
+   int getId();
     int getAge();
     std::string getFirstname();
     std::string getLastName();
@@ -28,7 +28,7 @@ public:
     void setE_mail(std::string);
     void setPassword(std::string);
     void setGender(std::string);
-    void setBloodType(std::string);*/
+    void setBloodType(std::string);
    
     ~User();
 

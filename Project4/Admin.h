@@ -5,21 +5,23 @@
 #include<iostream>
 #include <vector>
 #include <algorithm>
+#include <unordered_map>
+#include <unordered_map>
 
 //using namespace std;
+
 
 class Admin
 {
 private:
-	//int ID = 0, totalNumberOfAdmin = 0 ;
-	
-    std::vector<Admin> allAdmin;
+
     std::string username;
     std::string password;
-	
+    std::unordered_map<std::string, std::string> dataAdmin;
 
 public:
 	Admin();
+    
 	bool LoginAdmin(std::string, std::string);
 	~Admin();
 };
@@ -39,10 +41,10 @@ public:
     int check_leap_year(int year);
     int no_of_days_in_month(int month, int year);
     void change_state(int index, std::string update, int currentUserIndex);
-    
     int  offsetDays(int d, int m, int y);
-     void revoffsetDays(int offset, int y, int* d, int* m);
-     std::string addDays(int d1, int m1, int y1, int x);
- 
+    void revoffsetDays(int offset, int y, int* d, int* m);
+    std::string addDays(int d1, int m1, int y1, int x);
+     void UpdateBloodReq(int cnt, std::string blood,int id,std::string data );
+     void InsertBloodAdmin(std::string id,int,std::string,std::string);
     Request(int Donor_ID, std::string blood,std::string date,  std::string state);
 };

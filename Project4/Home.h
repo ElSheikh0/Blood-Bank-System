@@ -32,12 +32,13 @@ namespace Project4 {
 	public ref class Home : public System::Windows::Forms::Form
 	{
 	public:
-
+	
 		int i = 0;
 		int indexDoAdmin = -1;
 		int indexReAdmin = -1;
 		int indexReqDoAdmin = -1;
 		bool DoSingup = false;
+		bool ReSingnup = false;
 		bool femaleRegDo = false;
 		bool maleRegDo = false;
 		bool femaleRegRe = false;
@@ -365,22 +366,29 @@ namespace Project4 {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn8;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn9;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn10;
+	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Button^ butInsertBloodAdmin;
+	private: System::Windows::Forms::DateTimePicker^ dateTimePickerRecBloodAdmin;
+	private: System::Windows::Forms::TextBox^ textBoxQuBlodAdmin;
+	private: System::Windows::Forms::ComboBox^ comboBoxBloodInsertAdmin;
+	private: System::Windows::Forms::Button^ butAdminPageInsert;
+	private: System::Windows::Forms::TextBox^ textBoxIdBlodAdmin;
+
+	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::DataGridView^ dataGridView6;
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ butDIsplayBloodAdmin;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn13;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn14;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn15;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn16;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn17;
+	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ butRejectReq;
 
 
@@ -412,7 +420,7 @@ namespace Project4 {
 	private: System::Windows::Forms::Panel^ titelbar;
 	private: System::Windows::Forms::Button^ exit;
 	private: System::Windows::Forms::Button^ minScreen;
-		   System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Home::typeid));
+    System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Home::typeid));
 	private: System::Windows::Forms::Button^ fullScreen;
 	private: System::Windows::Forms::Panel^ panelDonorLogin;
 	private: System::Windows::Forms::Button^ backbtn;
@@ -498,14 +506,14 @@ namespace Project4 {
 			   this->butSettingDo = (gcnew System::Windows::Forms::Button());
 			   this->butReqDo = (gcnew System::Windows::Forms::Button());
 			   this->butHomeDo = (gcnew System::Windows::Forms::Button());
-			   this->panelDelAccoDo = (gcnew System::Windows::Forms::Panel());
-			   this->butNoDelAccoDo = (gcnew System::Windows::Forms::Button());
-			   this->butYesDelAccoDo = (gcnew System::Windows::Forms::Button());
-			   this->butExitDelAccoPanelDo = (gcnew System::Windows::Forms::Button());
 			   this->panelUpdateFname = (gcnew System::Windows::Forms::Panel());
 			   this->butSaveFnameDo = (gcnew System::Windows::Forms::Button());
 			   this->textBoxUpdateFname = (gcnew System::Windows::Forms::TextBox());
 			   this->butExittPanelFnameDo = (gcnew System::Windows::Forms::Button());
+			   this->panelDelAccoDo = (gcnew System::Windows::Forms::Panel());
+			   this->butNoDelAccoDo = (gcnew System::Windows::Forms::Button());
+			   this->butYesDelAccoDo = (gcnew System::Windows::Forms::Button());
+			   this->butExitDelAccoPanelDo = (gcnew System::Windows::Forms::Button());
 			   this->DonorSingup = (gcnew System::Windows::Forms::Panel());
 			   this->textBoxMedRegDo = (gcnew System::Windows::Forms::TextBox());
 			   this->textBoxDisRegDo = (gcnew System::Windows::Forms::TextBox());
@@ -558,6 +566,34 @@ namespace Project4 {
 			   this->labelBloodeHomRe = (gcnew System::Windows::Forms::Label());
 			   this->labelDocnameHomRe = (gcnew System::Windows::Forms::Label());
 			   this->labelUsernameHomRe = (gcnew System::Windows::Forms::Label());
+			   this->panelDisplayBlood = (gcnew System::Windows::Forms::Panel());
+			   this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
+			   this->Column15 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->Column16 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			   this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->butDisplayBlood = (gcnew System::Windows::Forms::Button());
+			   this->panelRequestRe = (gcnew System::Windows::Forms::Panel());
+			   this->comboBoxReqBloodeRe = (gcnew System::Windows::Forms::ComboBox());
+			   this->textBoxQuantityReqRe = (gcnew System::Windows::Forms::TextBox());
+			   this->textBoxReqHosRe = (gcnew System::Windows::Forms::TextBox());
+			   this->button8 = (gcnew System::Windows::Forms::Button());
+			   this->panelSerchRe = (gcnew System::Windows::Forms::Panel());
+			   this->labelExDataBlood = (gcnew System::Windows::Forms::Label());
+			   this->labelABab = (gcnew System::Windows::Forms::Label());
+			   this->labelAB = (gcnew System::Windows::Forms::Label());
+			   this->labelOo = (gcnew System::Windows::Forms::Label());
+			   this->labelO = (gcnew System::Windows::Forms::Label());
+			   this->labelBb = (gcnew System::Windows::Forms::Label());
+			   this->labelB = (gcnew System::Windows::Forms::Label());
+			   this->labelAa = (gcnew System::Windows::Forms::Label());
+			   this->labelA = (gcnew System::Windows::Forms::Label());
+			   this->butSerRe = (gcnew System::Windows::Forms::Button());
+			   this->dateTimePickerSerRe = (gcnew System::Windows::Forms::DateTimePicker());
 			   this->panelSettingRe = (gcnew System::Windows::Forms::Panel());
 			   this->labelDocSetRe = (gcnew System::Windows::Forms::Label());
 			   this->labelHosSetRe = (gcnew System::Windows::Forms::Label());
@@ -581,34 +617,6 @@ namespace Project4 {
 			   this->butSettingRe = (gcnew System::Windows::Forms::Button());
 			   this->butReqRe = (gcnew System::Windows::Forms::Button());
 			   this->butHomeRe = (gcnew System::Windows::Forms::Button());
-			   this->panelDisplayBlood = (gcnew System::Windows::Forms::Panel());
-			   this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
-			   this->Column15 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->Column16 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			   this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->butDisplayBlood = (gcnew System::Windows::Forms::Button());
-			   this->panelSerchRe = (gcnew System::Windows::Forms::Panel());
-			   this->labelExDataBlood = (gcnew System::Windows::Forms::Label());
-			   this->labelABab = (gcnew System::Windows::Forms::Label());
-			   this->labelAB = (gcnew System::Windows::Forms::Label());
-			   this->labelOo = (gcnew System::Windows::Forms::Label());
-			   this->labelO = (gcnew System::Windows::Forms::Label());
-			   this->labelBb = (gcnew System::Windows::Forms::Label());
-			   this->labelB = (gcnew System::Windows::Forms::Label());
-			   this->labelAa = (gcnew System::Windows::Forms::Label());
-			   this->labelA = (gcnew System::Windows::Forms::Label());
-			   this->butSerRe = (gcnew System::Windows::Forms::Button());
-			   this->dateTimePickerSerRe = (gcnew System::Windows::Forms::DateTimePicker());
-			   this->panelRequestRe = (gcnew System::Windows::Forms::Panel());
-			   this->comboBoxReqBloodeRe = (gcnew System::Windows::Forms::ComboBox());
-			   this->textBoxQuantityReqRe = (gcnew System::Windows::Forms::TextBox());
-			   this->textBoxReqHosRe = (gcnew System::Windows::Forms::TextBox());
-			   this->button8 = (gcnew System::Windows::Forms::Button());
 			   this->panelDelAcconetRe = (gcnew System::Windows::Forms::Panel());
 			   this->butNoDelAccoRe = (gcnew System::Windows::Forms::Button());
 			   this->butYesDelAccoRe = (gcnew System::Windows::Forms::Button());
@@ -624,16 +632,57 @@ namespace Project4 {
 			   this->labelNumofAllReq = (gcnew System::Windows::Forms::Label());
 			   this->labelNumofRe = (gcnew System::Windows::Forms::Label());
 			   this->labelNumofDo = (gcnew System::Windows::Forms::Label());
+			   this->panelRequestAdmin = (gcnew System::Windows::Forms::Panel());
+			   this->butValidReqDoAdmin = (gcnew System::Windows::Forms::Button());
+			   this->butBackReqAdmin = (gcnew System::Windows::Forms::Button());
+			   this->butNextReqAdmin = (gcnew System::Windows::Forms::Button());
+			   this->labelAgeDoReqAdmin = (gcnew System::Windows::Forms::Label());
+			   this->labelEmailDoReqAdmin = (gcnew System::Windows::Forms::Label());
+			   this->labelBHosDoReqAdmin = (gcnew System::Windows::Forms::Label());
+			   this->labelBloodDoReqAdmin = (gcnew System::Windows::Forms::Label());
+			   this->labelDateDoReqAdmin = (gcnew System::Windows::Forms::Label());
+			   this->textBoxIdDoReqAdmin = (gcnew System::Windows::Forms::TextBox());
+			   this->labelLnameDoReqAdmin = (gcnew System::Windows::Forms::Label());
+			   this->labelFnameDoReqAdmin = (gcnew System::Windows::Forms::Label());
+			   this->panel2 = (gcnew System::Windows::Forms::Panel());
+			   this->button3 = (gcnew System::Windows::Forms::Button());
+			   this->comboBoxBloodInsertAdmin = (gcnew System::Windows::Forms::ComboBox());
+			   this->butDIsplayBloodAdmin = (gcnew System::Windows::Forms::Button());
+			   this->textBoxIdBlodAdmin = (gcnew System::Windows::Forms::TextBox());
+			   this->butInsertBloodAdmin = (gcnew System::Windows::Forms::Button());
+			   this->dateTimePickerRecBloodAdmin = (gcnew System::Windows::Forms::DateTimePicker());
+			   this->textBoxQuBlodAdmin = (gcnew System::Windows::Forms::TextBox());
+			   this->panelDoAdmin = (gcnew System::Windows::Forms::Panel());
+			   this->labelGenderAdminDo = (gcnew System::Windows::Forms::Label());
+			   this->butGenderAdminDo = (gcnew System::Windows::Forms::Button());
+			   this->butBackRcoDoAdmin = (gcnew System::Windows::Forms::Button());
+			   this->butNextRcoDoAdmin = (gcnew System::Windows::Forms::Button());
+			   this->butBloodeAdminDo = (gcnew System::Windows::Forms::Button());
+			   this->butLastDonAdminDo = (gcnew System::Windows::Forms::Button());
+			   this->butDisAdminDo = (gcnew System::Windows::Forms::Button());
+			   this->labelBloodeAdminDo = (gcnew System::Windows::Forms::Label());
+			   this->labelDisAdminDo = (gcnew System::Windows::Forms::Label());
+			   this->labelLastDonAdminDo = (gcnew System::Windows::Forms::Label());
+			   this->labelAgeAdminDo = (gcnew System::Windows::Forms::Label());
+			   this->butAgeAdminDo = (gcnew System::Windows::Forms::Button());
+			   this->textBoxIdAdminDo = (gcnew System::Windows::Forms::TextBox());
+			   this->butLnameAdminDo = (gcnew System::Windows::Forms::Button());
+			   this->butEmailnameAdminDo = (gcnew System::Windows::Forms::Button());
+			   this->butPasAdminDo = (gcnew System::Windows::Forms::Button());
+			   this->labelLnameAdminDo = (gcnew System::Windows::Forms::Label());
+			   this->labelPasAdminDo = (gcnew System::Windows::Forms::Label());
+			   this->labelEmailAdminDo = (gcnew System::Windows::Forms::Label());
+			   this->labelFnameAdminDo = (gcnew System::Windows::Forms::Label());
+			   this->butFnameAdminDo = (gcnew System::Windows::Forms::Button());
+			   this->butInsertAdminDo = (gcnew System::Windows::Forms::Button());
+			   this->butDelAcoAdminDo = (gcnew System::Windows::Forms::Button());
 			   this->panelMenuAdmin = (gcnew System::Windows::Forms::Panel());
+			   this->butAdminPageInsert = (gcnew System::Windows::Forms::Button());
 			   this->button10 = (gcnew System::Windows::Forms::Button());
 			   this->butAdminPageDo = (gcnew System::Windows::Forms::Button());
 			   this->butAdminPageRe = (gcnew System::Windows::Forms::Button());
 			   this->butAdminPageReq = (gcnew System::Windows::Forms::Button());
 			   this->butAdminPageHo = (gcnew System::Windows::Forms::Button());
-			   this->panelDelAccoAdmin = (gcnew System::Windows::Forms::Panel());
-			   this->butNoDelAcoAdmin = (gcnew System::Windows::Forms::Button());
-			   this->butYesDelAcoAdmin = (gcnew System::Windows::Forms::Button());
-			   this->butExitDelAcoAdmin = (gcnew System::Windows::Forms::Button());
 			   this->panelRejectReq = (gcnew System::Windows::Forms::Panel());
 			   this->butExitRejectPanel = (gcnew System::Windows::Forms::Button());
 			   this->butRejectReq = (gcnew System::Windows::Forms::Button());
@@ -684,31 +733,6 @@ namespace Project4 {
 			   this->textBoxBloodInAdminDo = (gcnew System::Windows::Forms::TextBox());
 			   this->textBoxFnameInAdminDo = (gcnew System::Windows::Forms::TextBox());
 			   this->butExitInsertDo = (gcnew System::Windows::Forms::Button());
-			   this->panelDisplayReDate = (gcnew System::Windows::Forms::Panel());
-			   this->butExitDisplayReDate = (gcnew System::Windows::Forms::Button());
-			   this->dataGridView4 = (gcnew System::Windows::Forms::DataGridView());
-			   this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->dataGridViewTextBoxColumn4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->dataGridViewTextBoxColumn5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->dataGridViewTextBoxColumn6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->dataGridViewTextBoxColumn7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->dataGridViewTextBoxColumn8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->dataGridViewTextBoxColumn9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->dataGridViewTextBoxColumn10 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->panelRequestAdmin = (gcnew System::Windows::Forms::Panel());
-			   this->butValidReqDoAdmin = (gcnew System::Windows::Forms::Button());
-			   this->butBackReqAdmin = (gcnew System::Windows::Forms::Button());
-			   this->butNextReqAdmin = (gcnew System::Windows::Forms::Button());
-			   this->labelAgeDoReqAdmin = (gcnew System::Windows::Forms::Label());
-			   this->labelEmailDoReqAdmin = (gcnew System::Windows::Forms::Label());
-			   this->labelBHosDoReqAdmin = (gcnew System::Windows::Forms::Label());
-			   this->labelBloodDoReqAdmin = (gcnew System::Windows::Forms::Label());
-			   this->labelDateDoReqAdmin = (gcnew System::Windows::Forms::Label());
-			   this->textBoxIdDoReqAdmin = (gcnew System::Windows::Forms::TextBox());
-			   this->labelLnameDoReqAdmin = (gcnew System::Windows::Forms::Label());
-			   this->labelFnameDoReqAdmin = (gcnew System::Windows::Forms::Label());
 			   this->panelReAdmin = (gcnew System::Windows::Forms::Panel());
 			   this->labelGenderAdminRe = (gcnew System::Windows::Forms::Label());
 			   this->butGenderAdminRe = (gcnew System::Windows::Forms::Button());
@@ -733,33 +757,34 @@ namespace Project4 {
 			   this->butFnameAdminRe = (gcnew System::Windows::Forms::Button());
 			   this->butInsertRe = (gcnew System::Windows::Forms::Button());
 			   this->butDelAcoAdminRe = (gcnew System::Windows::Forms::Button());
-			   this->panelDoAdmin = (gcnew System::Windows::Forms::Panel());
-			   this->labelGenderAdminDo = (gcnew System::Windows::Forms::Label());
-			   this->butGenderAdminDo = (gcnew System::Windows::Forms::Button());
-			   this->butBackRcoDoAdmin = (gcnew System::Windows::Forms::Button());
-			   this->butNextRcoDoAdmin = (gcnew System::Windows::Forms::Button());
-			   this->butBloodeAdminDo = (gcnew System::Windows::Forms::Button());
-			   this->butLastDonAdminDo = (gcnew System::Windows::Forms::Button());
-			   this->butDisAdminDo = (gcnew System::Windows::Forms::Button());
-			   this->labelBloodeAdminDo = (gcnew System::Windows::Forms::Label());
-			   this->labelDisAdminDo = (gcnew System::Windows::Forms::Label());
-			   this->labelLastDonAdminDo = (gcnew System::Windows::Forms::Label());
-			   this->labelAgeAdminDo = (gcnew System::Windows::Forms::Label());
-			   this->butAgeAdminDo = (gcnew System::Windows::Forms::Button());
-			   this->textBoxIdAdminDo = (gcnew System::Windows::Forms::TextBox());
-			   this->butLnameAdminDo = (gcnew System::Windows::Forms::Button());
-			   this->butEmailnameAdminDo = (gcnew System::Windows::Forms::Button());
-			   this->butPasAdminDo = (gcnew System::Windows::Forms::Button());
-			   this->labelLnameAdminDo = (gcnew System::Windows::Forms::Label());
-			   this->labelPasAdminDo = (gcnew System::Windows::Forms::Label());
-			   this->labelEmailAdminDo = (gcnew System::Windows::Forms::Label());
-			   this->labelFnameAdminDo = (gcnew System::Windows::Forms::Label());
-			   this->butFnameAdminDo = (gcnew System::Windows::Forms::Button());
-			   this->butInsertAdminDo = (gcnew System::Windows::Forms::Button());
-			   this->butDelAcoAdminDo = (gcnew System::Windows::Forms::Button());
 			   this->panelAcceptReq = (gcnew System::Windows::Forms::Panel());
 			   this->butExitAcceptReqPanel = (gcnew System::Windows::Forms::Button());
 			   this->butAcceptReqDoAdmin = (gcnew System::Windows::Forms::Button());
+			   this->panelDelAccoAdmin = (gcnew System::Windows::Forms::Panel());
+			   this->butNoDelAcoAdmin = (gcnew System::Windows::Forms::Button());
+			   this->butYesDelAcoAdmin = (gcnew System::Windows::Forms::Button());
+			   this->butExitDelAcoAdmin = (gcnew System::Windows::Forms::Button());
+			   this->panel3 = (gcnew System::Windows::Forms::Panel());
+			   this->button4 = (gcnew System::Windows::Forms::Button());
+			   this->dataGridView6 = (gcnew System::Windows::Forms::DataGridView());
+			   this->dataGridViewTextBoxColumn13 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->dataGridViewTextBoxColumn14 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->dataGridViewTextBoxColumn15 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->dataGridViewTextBoxColumn16 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->dataGridViewTextBoxColumn17 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->panelDisplayReDate = (gcnew System::Windows::Forms::Panel());
+			   this->butExitDisplayReDate = (gcnew System::Windows::Forms::Button());
+			   this->dataGridView4 = (gcnew System::Windows::Forms::DataGridView());
+			   this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->dataGridViewTextBoxColumn4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->dataGridViewTextBoxColumn5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->dataGridViewTextBoxColumn6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->dataGridViewTextBoxColumn7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->dataGridViewTextBoxColumn8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->dataGridViewTextBoxColumn9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->dataGridViewTextBoxColumn10 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			   this->toolTip1 = (gcnew System::Windows::Forms::ToolTip(this->components));
 			   this->titelbar->SuspendLayout();
 			   this->panelDonorLogin->SuspendLayout();
@@ -768,8 +793,8 @@ namespace Project4 {
 			   this->panelSettingDo->SuspendLayout();
 			   this->panelRequestDo->SuspendLayout();
 			   this->panelNavbarDo->SuspendLayout();
-			   this->panelDelAccoDo->SuspendLayout();
 			   this->panelUpdateFname->SuspendLayout();
+			   this->panelDelAccoDo->SuspendLayout();
 			   this->DonorSingup->SuspendLayout();
 			   this->main->SuspendLayout();
 			   this->panelLoginRe->SuspendLayout();
@@ -778,19 +803,21 @@ namespace Project4 {
 			   this->panelMassegSingup->SuspendLayout();
 			   this->panelRoomRe->SuspendLayout();
 			   this->panelHomeRe->SuspendLayout();
-			   this->panelSettingRe->SuspendLayout();
-			   this->panelMenuBarRe->SuspendLayout();
 			   this->panelDisplayBlood->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
-			   this->panelSerchRe->SuspendLayout();
 			   this->panelRequestRe->SuspendLayout();
+			   this->panelSerchRe->SuspendLayout();
+			   this->panelSettingRe->SuspendLayout();
+			   this->panelMenuBarRe->SuspendLayout();
 			   this->panelDelAcconetRe->SuspendLayout();
 			   this->panelUpdateDateRe->SuspendLayout();
 			   this->panelRoomAdmin->SuspendLayout();
 			   this->panelHomeAdmin->SuspendLayout();
+			   this->panelRequestAdmin->SuspendLayout();
+			   this->panel2->SuspendLayout();
+			   this->panelDoAdmin->SuspendLayout();
 			   this->panelMenuAdmin->SuspendLayout();
-			   this->panelDelAccoAdmin->SuspendLayout();
 			   this->panelRejectReq->SuspendLayout();
 			   this->panelDisplayDoDate->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
@@ -798,12 +825,13 @@ namespace Project4 {
 			   this->panelUpdateAdminDo->SuspendLayout();
 			   this->panelInsertRe->SuspendLayout();
 			   this->panelInserDo->SuspendLayout();
+			   this->panelReAdmin->SuspendLayout();
+			   this->panelAcceptReq->SuspendLayout();
+			   this->panelDelAccoAdmin->SuspendLayout();
+			   this->panel3->SuspendLayout();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView6))->BeginInit();
 			   this->panelDisplayReDate->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView4))->BeginInit();
-			   this->panelRequestAdmin->SuspendLayout();
-			   this->panelReAdmin->SuspendLayout();
-			   this->panelDoAdmin->SuspendLayout();
-			   this->panelAcceptReq->SuspendLayout();
 			   this->SuspendLayout();
 			   // 
 			   // titelbar
@@ -816,7 +844,7 @@ namespace Project4 {
 			   this->titelbar->Dock = System::Windows::Forms::DockStyle::Top;
 			   this->titelbar->Location = System::Drawing::Point(0, 0);
 			   this->titelbar->Name = L"titelbar";
-			   this->titelbar->Size = System::Drawing::Size(950, 55);
+			   this->titelbar->Size = System::Drawing::Size(950, 50);
 			   this->titelbar->TabIndex = 1;
 			   this->titelbar->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Home::titelbar_MouseDown);
 			   this->titelbar->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Home::titelbar_MouseMove);
@@ -886,9 +914,9 @@ namespace Project4 {
 			   this->panelDonorLogin->Controls->Add(this->butLoginDo);
 			   this->panelDonorLogin->Controls->Add(this->butLSingDo);
 			   this->panelDonorLogin->Controls->Add(this->backbtn);
-			   this->panelDonorLogin->Location = System::Drawing::Point(0, 52);
+			   this->panelDonorLogin->Location = System::Drawing::Point(0, 50);
 			   this->panelDonorLogin->Name = L"panelDonorLogin";
-			   this->panelDonorLogin->Size = System::Drawing::Size(950, 599);
+			   this->panelDonorLogin->Size = System::Drawing::Size(950, 601);
 			   this->panelDonorLogin->TabIndex = 3;
 			   // 
 			   // textBoxPasLOginDO
@@ -949,7 +977,7 @@ namespace Project4 {
 			   this->butLSingDo->Name = L"butLSingDo";
 			   this->butLSingDo->Size = System::Drawing::Size(165, 44);
 			   this->butLSingDo->TabIndex = 2;
-			   this->butLSingDo->Text = L"SIngUp";
+			   this->butLSingDo->Text = L"SIgn Up";
 			   this->butLSingDo->UseVisualStyleBackColor = false;
 			   this->butLSingDo->Click += gcnew System::EventHandler(this, &Home::button2_Click_1);
 			   // 
@@ -961,7 +989,7 @@ namespace Project4 {
 			   this->backbtn->FlatAppearance->BorderSize = 0;
 			   this->backbtn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::WhiteSmoke;
 			   this->backbtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->backbtn->Location = System::Drawing::Point(5, 21);
+			   this->backbtn->Location = System::Drawing::Point(12, 17);
 			   this->backbtn->Name = L"backbtn";
 			   this->backbtn->Size = System::Drawing::Size(48, 58);
 			   this->backbtn->TabIndex = 1;
@@ -977,11 +1005,11 @@ namespace Project4 {
 			   this->panelDonorRoom->Controls->Add(this->panelSettingDo);
 			   this->panelDonorRoom->Controls->Add(this->panelRequestDo);
 			   this->panelDonorRoom->Controls->Add(this->panelNavbarDo);
-			   this->panelDonorRoom->Controls->Add(this->panelDelAccoDo);
 			   this->panelDonorRoom->Controls->Add(this->panelUpdateFname);
-			   this->panelDonorRoom->Location = System::Drawing::Point(0, 50);
+			   this->panelDonorRoom->Controls->Add(this->panelDelAccoDo);
+			   this->panelDonorRoom->Location = System::Drawing::Point(0, 51);
 			   this->panelDonorRoom->Name = L"panelDonorRoom";
-			   this->panelDonorRoom->Size = System::Drawing::Size(950, 601);
+			   this->panelDonorRoom->Size = System::Drawing::Size(950, 600);
 			   this->panelDonorRoom->TabIndex = 2;
 			   // 
 			   // panelHomeDO
@@ -996,7 +1024,7 @@ namespace Project4 {
 			   this->panelHomeDO->Controls->Add(this->labelHomePageDo);
 			   this->panelHomeDO->Location = System::Drawing::Point(205, 0);
 			   this->panelHomeDO->Name = L"panelHomeDO";
-			   this->panelHomeDO->Size = System::Drawing::Size(745, 601);
+			   this->panelHomeDO->Size = System::Drawing::Size(745, 600);
 			   this->panelHomeDO->TabIndex = 22;
 			   // 
 			   // labelBooldTypeHDo
@@ -1006,7 +1034,7 @@ namespace Project4 {
 			   this->labelBooldTypeHDo->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->labelBooldTypeHDo->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			   this->labelBooldTypeHDo->Location = System::Drawing::Point(630, 311);
+			   this->labelBooldTypeHDo->Location = System::Drawing::Point(627, 311);
 			   this->labelBooldTypeHDo->Name = L"labelBooldTypeHDo";
 			   this->labelBooldTypeHDo->Size = System::Drawing::Size(44, 25);
 			   this->labelBooldTypeHDo->TabIndex = 2;
@@ -1028,12 +1056,12 @@ namespace Project4 {
 			   // 
 			   this->labelHomePageDo->AutoSize = true;
 			   this->labelHomePageDo->BackColor = System::Drawing::Color::Transparent;
-			   this->labelHomePageDo->Font = (gcnew System::Drawing::Font(L"Sitka Small", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			   this->labelHomePageDo->Font = (gcnew System::Drawing::Font(L"Sitka Small", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->labelHomePageDo->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			   this->labelHomePageDo->Location = System::Drawing::Point(56, 241);
 			   this->labelHomePageDo->Name = L"labelHomePageDo";
-			   this->labelHomePageDo->Size = System::Drawing::Size(0, 44);
+			   this->labelHomePageDo->Size = System::Drawing::Size(0, 37);
 			   this->labelHomePageDo->TabIndex = 0;
 			   // 
 			   // panelSettingDo
@@ -1070,9 +1098,8 @@ namespace Project4 {
 			   this->labelDisSetDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			   this->labelDisSetDo->Location = System::Drawing::Point(427, 404);
 			   this->labelDisSetDo->Name = L"labelDisSetDo";
-			   this->labelDisSetDo->Size = System::Drawing::Size(58, 25);
+			   this->labelDisSetDo->Size = System::Drawing::Size(0, 25);
 			   this->labelDisSetDo->TabIndex = 16;
-			   this->labelDisSetDo->Text = L"email";
 			   this->labelDisSetDo->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			   // 
 			   // labelMidSetDo
@@ -1082,9 +1109,8 @@ namespace Project4 {
 			   this->labelMidSetDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			   this->labelMidSetDo->Location = System::Drawing::Point(72, 405);
 			   this->labelMidSetDo->Name = L"labelMidSetDo";
-			   this->labelMidSetDo->Size = System::Drawing::Size(58, 25);
+			   this->labelMidSetDo->Size = System::Drawing::Size(0, 25);
 			   this->labelMidSetDo->TabIndex = 15;
-			   this->labelMidSetDo->Text = L"email";
 			   this->labelMidSetDo->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			   // 
 			   // butEditDisDonor
@@ -1127,9 +1153,8 @@ namespace Project4 {
 				   static_cast<System::Byte>(0)));
 			   this->labelIdSetDo->Location = System::Drawing::Point(71, 154);
 			   this->labelIdSetDo->Name = L"labelIdSetDo";
-			   this->labelIdSetDo->Size = System::Drawing::Size(27, 25);
+			   this->labelIdSetDo->Size = System::Drawing::Size(0, 25);
 			   this->labelIdSetDo->TabIndex = 12;
-			   this->labelIdSetDo->Text = L"id";
 			   // 
 			   // butEditLNameDonor
 			   // 
@@ -1186,9 +1211,8 @@ namespace Project4 {
 			   this->labelLnameSetDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			   this->labelLnameSetDo->Location = System::Drawing::Point(427, 232);
 			   this->labelLnameSetDo->Name = L"labelLnameSetDo";
-			   this->labelLnameSetDo->Size = System::Drawing::Size(72, 25);
+			   this->labelLnameSetDo->Size = System::Drawing::Size(0, 25);
 			   this->labelLnameSetDo->TabIndex = 8;
-			   this->labelLnameSetDo->Text = L"Lname";
 			   this->labelLnameSetDo->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			   // 
 			   // labelPasSetDo
@@ -1198,9 +1222,8 @@ namespace Project4 {
 			   this->labelPasSetDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			   this->labelPasSetDo->Location = System::Drawing::Point(426, 318);
 			   this->labelPasSetDo->Name = L"labelPasSetDo";
-			   this->labelPasSetDo->Size = System::Drawing::Size(93, 25);
+			   this->labelPasSetDo->Size = System::Drawing::Size(0, 25);
 			   this->labelPasSetDo->TabIndex = 7;
-			   this->labelPasSetDo->Text = L"passeord";
 			   this->labelPasSetDo->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			   // 
 			   // labelEmailSetDo
@@ -1210,9 +1233,8 @@ namespace Project4 {
 			   this->labelEmailSetDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			   this->labelEmailSetDo->Location = System::Drawing::Point(70, 319);
 			   this->labelEmailSetDo->Name = L"labelEmailSetDo";
-			   this->labelEmailSetDo->Size = System::Drawing::Size(58, 25);
+			   this->labelEmailSetDo->Size = System::Drawing::Size(0, 25);
 			   this->labelEmailSetDo->TabIndex = 6;
-			   this->labelEmailSetDo->Text = L"email";
 			   this->labelEmailSetDo->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			   // 
 			   // labelNameSetDO
@@ -1222,9 +1244,8 @@ namespace Project4 {
 			   this->labelNameSetDO->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			   this->labelNameSetDO->Location = System::Drawing::Point(71, 232);
 			   this->labelNameSetDO->Name = L"labelNameSetDO";
-			   this->labelNameSetDO->Size = System::Drawing::Size(73, 25);
+			   this->labelNameSetDO->Size = System::Drawing::Size(0, 25);
 			   this->labelNameSetDO->TabIndex = 5;
-			   this->labelNameSetDO->Text = L"Fname";
 			   this->labelNameSetDO->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			   // 
 			   // butEditNameDonor
@@ -1294,7 +1315,7 @@ namespace Project4 {
 			   this->dateTimePickerDReqDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->dateTimePickerDReqDo->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			   this->dateTimePickerDReqDo->Location = System::Drawing::Point(208, 309);
+			   this->dateTimePickerDReqDo->Location = System::Drawing::Point(209, 302);
 			   this->dateTimePickerDReqDo->Name = L"dateTimePickerDReqDo";
 			   this->dateTimePickerDReqDo->Size = System::Drawing::Size(69, 26);
 			   this->dateTimePickerDReqDo->TabIndex = 16;
@@ -1305,7 +1326,7 @@ namespace Project4 {
 			   this->dateTimePickerMReqDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->dateTimePickerMReqDo->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			   this->dateTimePickerMReqDo->Location = System::Drawing::Point(313, 307);
+			   this->dateTimePickerMReqDo->Location = System::Drawing::Point(312, 302);
 			   this->dateTimePickerMReqDo->Name = L"dateTimePickerMReqDo";
 			   this->dateTimePickerMReqDo->Size = System::Drawing::Size(69, 26);
 			   this->dateTimePickerMReqDo->TabIndex = 15;
@@ -1316,13 +1337,14 @@ namespace Project4 {
 			   this->butSendReqDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butSendReqDo.BackgroundImage")));
 			   this->butSendReqDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			   this->butSendReqDo->FlatAppearance->BorderSize = 0;
+			   this->butSendReqDo->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
 			   this->butSendReqDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			   this->butSendReqDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->butSendReqDo->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->butSendReqDo->Location = System::Drawing::Point(286, 438);
+			   this->butSendReqDo->Location = System::Drawing::Point(271, 425);
 			   this->butSendReqDo->Name = L"butSendReqDo";
-			   this->butSendReqDo->Size = System::Drawing::Size(106, 31);
+			   this->butSendReqDo->Size = System::Drawing::Size(131, 40);
 			   this->butSendReqDo->TabIndex = 14;
 			   this->butSendReqDo->Text = L"Send";
 			   this->butSendReqDo->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
@@ -1335,7 +1357,7 @@ namespace Project4 {
 			   this->dateTimePickerYReqDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->dateTimePickerYReqDo->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			   this->dateTimePickerYReqDo->Location = System::Drawing::Point(421, 308);
+			   this->dateTimePickerYReqDo->Location = System::Drawing::Point(411, 303);
 			   this->dateTimePickerYReqDo->Name = L"dateTimePickerYReqDo";
 			   this->dateTimePickerYReqDo->Size = System::Drawing::Size(69, 26);
 			   this->dateTimePickerYReqDo->TabIndex = 13;
@@ -1349,7 +1371,6 @@ namespace Project4 {
 			   this->textBoxHosReqDo->Name = L"textBoxHosReqDo";
 			   this->textBoxHosReqDo->Size = System::Drawing::Size(292, 23);
 			   this->textBoxHosReqDo->TabIndex = 1;
-			   this->textBoxHosReqDo->Text = L"hosptail";
 			   // 
 			   // panelNavbarDo
 			   // 
@@ -1365,7 +1386,7 @@ namespace Project4 {
 			   this->panelNavbarDo->Controls->Add(this->butHomeDo);
 			   this->panelNavbarDo->Location = System::Drawing::Point(0, 0);
 			   this->panelNavbarDo->Name = L"panelNavbarDo";
-			   this->panelNavbarDo->Size = System::Drawing::Size(203, 601);
+			   this->panelNavbarDo->Size = System::Drawing::Size(203, 600);
 			   this->panelNavbarDo->TabIndex = 21;
 			   // 
 			   // butLogoutDo
@@ -1378,7 +1399,7 @@ namespace Project4 {
 				   static_cast<System::Int32>(static_cast<System::Byte>(129)), static_cast<System::Int32>(static_cast<System::Byte>(165)), static_cast<System::Int32>(static_cast<System::Byte>(163)));
 			   this->butLogoutDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			   this->butLogoutDo->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
-			   this->butLogoutDo->Location = System::Drawing::Point(0, 513);
+			   this->butLogoutDo->Location = System::Drawing::Point(0, 512);
 			   this->butLogoutDo->Name = L"butLogoutDo";
 			   this->butLogoutDo->Size = System::Drawing::Size(203, 77);
 			   this->butLogoutDo->TabIndex = 3;
@@ -1436,6 +1457,63 @@ namespace Project4 {
 			   this->butHomeDo->Text = L"Home";
 			   this->butHomeDo->UseVisualStyleBackColor = false;
 			   this->butHomeDo->Click += gcnew System::EventHandler(this, &Home::butHomeDo_Click);
+			   // 
+			   // panelUpdateFname
+			   // 
+			   this->panelUpdateFname->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(196)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(216)));
+			   this->panelUpdateFname->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelUpdateFname.BackgroundImage")));
+			   this->panelUpdateFname->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->panelUpdateFname->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			   this->panelUpdateFname->Controls->Add(this->butSaveFnameDo);
+			   this->panelUpdateFname->Controls->Add(this->textBoxUpdateFname);
+			   this->panelUpdateFname->Controls->Add(this->butExittPanelFnameDo);
+			   this->panelUpdateFname->Location = System::Drawing::Point(450, 237);
+			   this->panelUpdateFname->Name = L"panelUpdateFname";
+			   this->panelUpdateFname->Size = System::Drawing::Size(321, 171);
+			   this->panelUpdateFname->TabIndex = 5;
+			   // 
+			   // butSaveFnameDo
+			   // 
+			   this->butSaveFnameDo->BackColor = System::Drawing::Color::Transparent;
+			   this->butSaveFnameDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butSaveFnameDo.BackgroundImage")));
+			   this->butSaveFnameDo->FlatAppearance->BorderSize = 0;
+			   this->butSaveFnameDo->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
+			   this->butSaveFnameDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butSaveFnameDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butSaveFnameDo->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			   this->butSaveFnameDo->Location = System::Drawing::Point(116, 113);
+			   this->butSaveFnameDo->Name = L"butSaveFnameDo";
+			   this->butSaveFnameDo->Size = System::Drawing::Size(92, 34);
+			   this->butSaveFnameDo->TabIndex = 2;
+			   this->butSaveFnameDo->Text = L"Save";
+			   this->butSaveFnameDo->UseVisualStyleBackColor = false;
+			   this->butSaveFnameDo->Click += gcnew System::EventHandler(this, &Home::butSave_Click);
+			   // 
+			   // textBoxUpdateFname
+			   // 
+			   this->textBoxUpdateFname->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->textBoxUpdateFname->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->textBoxUpdateFname->Location = System::Drawing::Point(65, 64);
+			   this->textBoxUpdateFname->Name = L"textBoxUpdateFname";
+			   this->textBoxUpdateFname->Size = System::Drawing::Size(192, 25);
+			   this->textBoxUpdateFname->TabIndex = 1;
+			   // 
+			   // butExittPanelFnameDo
+			   // 
+			   this->butExittPanelFnameDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butExittPanelFnameDo.BackgroundImage")));
+			   this->butExittPanelFnameDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butExittPanelFnameDo->FlatAppearance->BorderSize = 0;
+			   this->butExittPanelFnameDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butExittPanelFnameDo->Location = System::Drawing::Point(266, 15);
+			   this->butExittPanelFnameDo->Name = L"butExittPanelFnameDo";
+			   this->butExittPanelFnameDo->Size = System::Drawing::Size(37, 39);
+			   this->butExittPanelFnameDo->TabIndex = 0;
+			   this->butExittPanelFnameDo->Text = L" ";
+			   this->butExittPanelFnameDo->UseVisualStyleBackColor = true;
+			   this->butExittPanelFnameDo->Click += gcnew System::EventHandler(this, &Home::button8_Click);
 			   // 
 			   // panelDelAccoDo
 			   // 
@@ -1504,63 +1582,6 @@ namespace Project4 {
 			   this->butExitDelAccoPanelDo->UseVisualStyleBackColor = false;
 			   this->butExitDelAccoPanelDo->Click += gcnew System::EventHandler(this, &Home::butExitDelAccoPanelDo_Click);
 			   // 
-			   // panelUpdateFname
-			   // 
-			   this->panelUpdateFname->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(196)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(216)));
-			   this->panelUpdateFname->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelUpdateFname.BackgroundImage")));
-			   this->panelUpdateFname->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			   this->panelUpdateFname->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			   this->panelUpdateFname->Controls->Add(this->butSaveFnameDo);
-			   this->panelUpdateFname->Controls->Add(this->textBoxUpdateFname);
-			   this->panelUpdateFname->Controls->Add(this->butExittPanelFnameDo);
-			   this->panelUpdateFname->Location = System::Drawing::Point(450, 237);
-			   this->panelUpdateFname->Name = L"panelUpdateFname";
-			   this->panelUpdateFname->Size = System::Drawing::Size(321, 171);
-			   this->panelUpdateFname->TabIndex = 5;
-			   // 
-			   // butSaveFnameDo
-			   // 
-			   this->butSaveFnameDo->BackColor = System::Drawing::Color::Transparent;
-			   this->butSaveFnameDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butSaveFnameDo.BackgroundImage")));
-			   this->butSaveFnameDo->FlatAppearance->BorderSize = 0;
-			   this->butSaveFnameDo->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
-			   this->butSaveFnameDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butSaveFnameDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->butSaveFnameDo->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			   this->butSaveFnameDo->Location = System::Drawing::Point(116, 113);
-			   this->butSaveFnameDo->Name = L"butSaveFnameDo";
-			   this->butSaveFnameDo->Size = System::Drawing::Size(92, 34);
-			   this->butSaveFnameDo->TabIndex = 2;
-			   this->butSaveFnameDo->Text = L"Save";
-			   this->butSaveFnameDo->UseVisualStyleBackColor = false;
-			   this->butSaveFnameDo->Click += gcnew System::EventHandler(this, &Home::butSave_Click);
-			   // 
-			   // textBoxUpdateFname
-			   // 
-			   this->textBoxUpdateFname->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			   this->textBoxUpdateFname->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->textBoxUpdateFname->Location = System::Drawing::Point(65, 64);
-			   this->textBoxUpdateFname->Name = L"textBoxUpdateFname";
-			   this->textBoxUpdateFname->Size = System::Drawing::Size(192, 25);
-			   this->textBoxUpdateFname->TabIndex = 1;
-			   // 
-			   // butExittPanelFnameDo
-			   // 
-			   this->butExittPanelFnameDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butExittPanelFnameDo.BackgroundImage")));
-			   this->butExittPanelFnameDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butExittPanelFnameDo->FlatAppearance->BorderSize = 0;
-			   this->butExittPanelFnameDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butExittPanelFnameDo->Location = System::Drawing::Point(266, 15);
-			   this->butExittPanelFnameDo->Name = L"butExittPanelFnameDo";
-			   this->butExittPanelFnameDo->Size = System::Drawing::Size(37, 39);
-			   this->butExittPanelFnameDo->TabIndex = 0;
-			   this->butExittPanelFnameDo->Text = L" ";
-			   this->butExittPanelFnameDo->UseVisualStyleBackColor = true;
-			   this->butExittPanelFnameDo->Click += gcnew System::EventHandler(this, &Home::button8_Click);
-			   // 
 			   // DonorSingup
 			   // 
 			   this->DonorSingup->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"DonorSingup.BackgroundImage")));
@@ -1581,9 +1602,9 @@ namespace Project4 {
 			   this->DonorSingup->Controls->Add(this->butBackfromSingupDo);
 			   this->DonorSingup->Font = (gcnew System::Drawing::Font(L"Impact", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->DonorSingup->Location = System::Drawing::Point(0, 50);
+			   this->DonorSingup->Location = System::Drawing::Point(0, 53);
 			   this->DonorSingup->Name = L"DonorSingup";
-			   this->DonorSingup->Size = System::Drawing::Size(949, 601);
+			   this->DonorSingup->Size = System::Drawing::Size(949, 598);
 			   this->DonorSingup->TabIndex = 6;
 			   // 
 			   // textBoxMedRegDo
@@ -1612,7 +1633,7 @@ namespace Project4 {
 			   this->textBoxNameREGDo->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			   this->textBoxNameREGDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			   this->textBoxNameREGDo->ForeColor = System::Drawing::SystemColors::InfoText;
-			   this->textBoxNameREGDo->Location = System::Drawing::Point(522, 203);
+			   this->textBoxNameREGDo->Location = System::Drawing::Point(522, 202);
 			   this->textBoxNameREGDo->Name = L"textBoxNameREGDo";
 			   this->textBoxNameREGDo->Size = System::Drawing::Size(169, 23);
 			   this->textBoxNameREGDo->TabIndex = 3;
@@ -1622,7 +1643,7 @@ namespace Project4 {
 			   this->textBoxLastnameReDo->Anchor = System::Windows::Forms::AnchorStyles::None;
 			   this->textBoxLastnameReDo->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			   this->textBoxLastnameReDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			   this->textBoxLastnameReDo->Location = System::Drawing::Point(743, 203);
+			   this->textBoxLastnameReDo->Location = System::Drawing::Point(743, 202);
 			   this->textBoxLastnameReDo->Name = L"textBoxLastnameReDo";
 			   this->textBoxLastnameReDo->Size = System::Drawing::Size(173, 23);
 			   this->textBoxLastnameReDo->TabIndex = 13;
@@ -1632,10 +1653,12 @@ namespace Project4 {
 			   this->textBoxLastDataRegDo->CustomFormat = L"dd-MM-yyyy";
 			   this->textBoxLastDataRegDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			   this->textBoxLastDataRegDo->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			   this->textBoxLastDataRegDo->Location = System::Drawing::Point(735, 405);
+			   this->textBoxLastDataRegDo->Location = System::Drawing::Point(736, 398);
 			   this->textBoxLastDataRegDo->Name = L"textBoxLastDataRegDo";
 			   this->textBoxLastDataRegDo->Size = System::Drawing::Size(181, 30);
 			   this->textBoxLastDataRegDo->TabIndex = 12;
+			   this->textBoxLastDataRegDo->Value = System::DateTime(2000, 1, 1, 0, 0, 0, 0);
+			   this->textBoxLastDataRegDo->MouseHover += gcnew System::EventHandler(this, &Home::textBoxLastDataRegDo_MouseHover);
 			   // 
 			   // radioButtonFemaleRegDo
 			   // 
@@ -1644,7 +1667,7 @@ namespace Project4 {
 			   this->radioButtonFemaleRegDo->FlatAppearance->BorderSize = 0;
 			   this->radioButtonFemaleRegDo->FlatStyle = System::Windows::Forms::FlatStyle::System;
 			   this->radioButtonFemaleRegDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			   this->radioButtonFemaleRegDo->Location = System::Drawing::Point(517, 394);
+			   this->radioButtonFemaleRegDo->Location = System::Drawing::Point(513, 394);
 			   this->radioButtonFemaleRegDo->Name = L"radioButtonFemaleRegDo";
 			   this->radioButtonFemaleRegDo->Size = System::Drawing::Size(107, 30);
 			   this->radioButtonFemaleRegDo->TabIndex = 11;
@@ -1659,7 +1682,7 @@ namespace Project4 {
 			   this->radioButtonMaleRegDo->BackColor = System::Drawing::Color::Transparent;
 			   this->radioButtonMaleRegDo->FlatStyle = System::Windows::Forms::FlatStyle::System;
 			   this->radioButtonMaleRegDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			   this->radioButtonMaleRegDo->Location = System::Drawing::Point(630, 393);
+			   this->radioButtonMaleRegDo->Location = System::Drawing::Point(637, 394);
 			   this->radioButtonMaleRegDo->Name = L"radioButtonMaleRegDo";
 			   this->radioButtonMaleRegDo->Size = System::Drawing::Size(85, 30);
 			   this->radioButtonMaleRegDo->TabIndex = 10;
@@ -1674,8 +1697,8 @@ namespace Project4 {
 			   this->comboBoxBooldTypeSingupDO->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			   this->comboBoxBooldTypeSingupDO->FormattingEnabled = true;
 			   this->comboBoxBooldTypeSingupDO->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
-				   L"A", L"A-", L"B", L"B-", L"O",
-					   L"O-", L"AB", L"AB-"
+				   L"A+", L"A-", L"B+", L"B-", L"O+",
+					   L"O-", L"AB+", L"AB-"
 			   });
 			   this->comboBoxBooldTypeSingupDO->Location = System::Drawing::Point(746, 330);
 			   this->comboBoxBooldTypeSingupDO->Name = L"comboBoxBooldTypeSingupDO";
@@ -1688,7 +1711,7 @@ namespace Project4 {
 			   this->textBoxAgeRegDo->Anchor = System::Windows::Forms::AnchorStyles::None;
 			   this->textBoxAgeRegDo->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			   this->textBoxAgeRegDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			   this->textBoxAgeRegDo->Location = System::Drawing::Point(524, 335);
+			   this->textBoxAgeRegDo->Location = System::Drawing::Point(524, 334);
 			   this->textBoxAgeRegDo->Name = L"textBoxAgeRegDo";
 			   this->textBoxAgeRegDo->Size = System::Drawing::Size(177, 23);
 			   this->textBoxAgeRegDo->TabIndex = 7;
@@ -1698,7 +1721,7 @@ namespace Project4 {
 			   this->textBoxPasRegDo->Anchor = System::Windows::Forms::AnchorStyles::None;
 			   this->textBoxPasRegDo->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			   this->textBoxPasRegDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			   this->textBoxPasRegDo->Location = System::Drawing::Point(743, 268);
+			   this->textBoxPasRegDo->Location = System::Drawing::Point(743, 267);
 			   this->textBoxPasRegDo->Name = L"textBoxPasRegDo";
 			   this->textBoxPasRegDo->PasswordChar = '*';
 			   this->textBoxPasRegDo->Size = System::Drawing::Size(173, 23);
@@ -1710,7 +1733,7 @@ namespace Project4 {
 			   this->textBoxMailRegDo->Anchor = System::Windows::Forms::AnchorStyles::None;
 			   this->textBoxMailRegDo->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			   this->textBoxMailRegDo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			   this->textBoxMailRegDo->Location = System::Drawing::Point(526, 268);
+			   this->textBoxMailRegDo->Location = System::Drawing::Point(526, 267);
 			   this->textBoxMailRegDo->Name = L"textBoxMailRegDo";
 			   this->textBoxMailRegDo->Size = System::Drawing::Size(168, 23);
 			   this->textBoxMailRegDo->TabIndex = 4;
@@ -1849,9 +1872,9 @@ namespace Project4 {
 			   this->panelLoginRe->Controls->Add(this->textBoxPasLoginRe);
 			   this->panelLoginRe->Controls->Add(this->textBoxEmailLoginRe);
 			   this->panelLoginRe->Controls->Add(this->butBackfromRe);
-			   this->panelLoginRe->Location = System::Drawing::Point(0, 51);
+			   this->panelLoginRe->Location = System::Drawing::Point(0, 50);
 			   this->panelLoginRe->Name = L"panelLoginRe";
-			   this->panelLoginRe->Size = System::Drawing::Size(950, 600);
+			   this->panelLoginRe->Size = System::Drawing::Size(950, 601);
 			   this->panelLoginRe->TabIndex = 4;
 			   // 
 			   // butSingupFormLoginRe
@@ -1869,7 +1892,7 @@ namespace Project4 {
 			   this->butSingupFormLoginRe->Name = L"butSingupFormLoginRe";
 			   this->butSingupFormLoginRe->Size = System::Drawing::Size(171, 49);
 			   this->butSingupFormLoginRe->TabIndex = 4;
-			   this->butSingupFormLoginRe->Text = L"Singup";
+			   this->butSingupFormLoginRe->Text = L"Sign up";
 			   this->butSingupFormLoginRe->UseVisualStyleBackColor = false;
 			   this->butSingupFormLoginRe->Click += gcnew System::EventHandler(this, &Home::butSingupFormLoginRe_Click);
 			   // 
@@ -1896,7 +1919,7 @@ namespace Project4 {
 			   // 
 			   this->textBoxPasLoginRe->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			   this->textBoxPasLoginRe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			   this->textBoxPasLoginRe->Location = System::Drawing::Point(124, 265);
+			   this->textBoxPasLoginRe->Location = System::Drawing::Point(117, 261);
 			   this->textBoxPasLoginRe->Name = L"textBoxPasLoginRe";
 			   this->textBoxPasLoginRe->Size = System::Drawing::Size(335, 23);
 			   this->textBoxPasLoginRe->TabIndex = 2;
@@ -1907,7 +1930,7 @@ namespace Project4 {
 			   this->textBoxEmailLoginRe->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			   this->textBoxEmailLoginRe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			   this->textBoxEmailLoginRe->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			   this->textBoxEmailLoginRe->Location = System::Drawing::Point(117, 173);
+			   this->textBoxEmailLoginRe->Location = System::Drawing::Point(117, 170);
 			   this->textBoxEmailLoginRe->Name = L"textBoxEmailLoginRe";
 			   this->textBoxEmailLoginRe->Size = System::Drawing::Size(342, 23);
 			   this->textBoxEmailLoginRe->TabIndex = 1;
@@ -1946,9 +1969,9 @@ namespace Project4 {
 			   this->panelSinguRe->Controls->Add(this->textBoxAgeSingupRe);
 			   this->panelSinguRe->Controls->Add(this->textBoxHosSingupRe);
 			   this->panelSinguRe->Controls->Add(this->textBoxFnameSingupRe);
-			   this->panelSinguRe->Location = System::Drawing::Point(0, 52);
+			   this->panelSinguRe->Location = System::Drawing::Point(0, 50);
 			   this->panelSinguRe->Name = L"panelSinguRe";
-			   this->panelSinguRe->Size = System::Drawing::Size(950, 599);
+			   this->panelSinguRe->Size = System::Drawing::Size(950, 601);
 			   this->panelSinguRe->TabIndex = 5;
 			   // 
 			   // butBackFromRegRe
@@ -1958,9 +1981,9 @@ namespace Project4 {
 			   this->butBackFromRegRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			   this->butBackFromRegRe->FlatAppearance->BorderSize = 0;
 			   this->butBackFromRegRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butBackFromRegRe->Location = System::Drawing::Point(12, 17);
+			   this->butBackFromRegRe->Location = System::Drawing::Point(12, 24);
 			   this->butBackFromRegRe->Name = L"butBackFromRegRe";
-			   this->butBackFromRegRe->Size = System::Drawing::Size(74, 64);
+			   this->butBackFromRegRe->Size = System::Drawing::Size(55, 53);
 			   this->butBackFromRegRe->TabIndex = 17;
 			   this->butBackFromRegRe->UseVisualStyleBackColor = false;
 			   this->butBackFromRegRe->Click += gcnew System::EventHandler(this, &Home::button7_Click_1);
@@ -2050,14 +2073,14 @@ namespace Project4 {
 			   this->comboBoxBloodSingupRe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			   this->comboBoxBloodSingupRe->FormattingEnabled = true;
 			   this->comboBoxBloodSingupRe->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
-				   L"A", L"A-", L"B", L"B-", L"O", L"O-",
-					   L"AB", L"AB-"
+				   L"A+", L"A-", L"B+", L"B-", L"O+",
+					   L"O-", L"AB+", L"AB-"
 			   });
 			   this->comboBoxBloodSingupRe->Location = System::Drawing::Point(36, 482);
 			   this->comboBoxBloodSingupRe->Name = L"comboBoxBloodSingupRe";
 			   this->comboBoxBloodSingupRe->Size = System::Drawing::Size(241, 28);
 			   this->comboBoxBloodSingupRe->TabIndex = 9;
-			   this->comboBoxBloodSingupRe->Text = L"A";
+			   this->comboBoxBloodSingupRe->Text = L"A+";
 			   // 
 			   // textBoxLnameSingupRe
 			   // 
@@ -2132,9 +2155,9 @@ namespace Project4 {
 			   this->panelLoginAdmin->Controls->Add(this->butLoginAdmin);
 			   this->panelLoginAdmin->Controls->Add(this->textBoxPassAdmin);
 			   this->panelLoginAdmin->Controls->Add(this->textBoxUsernameAdmin);
-			   this->panelLoginAdmin->Location = System::Drawing::Point(0, 51);
+			   this->panelLoginAdmin->Location = System::Drawing::Point(0, 55);
 			   this->panelLoginAdmin->Name = L"panelLoginAdmin";
-			   this->panelLoginAdmin->Size = System::Drawing::Size(950, 600);
+			   this->panelLoginAdmin->Size = System::Drawing::Size(950, 596);
 			   this->panelLoginAdmin->TabIndex = 5;
 			   // 
 			   // butBackFromAdminLogin
@@ -2162,9 +2185,9 @@ namespace Project4 {
 			   this->butLoginAdmin->Font = (gcnew System::Drawing::Font(L"Impact", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->butLoginAdmin->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->butLoginAdmin->Location = System::Drawing::Point(161, 453);
+			   this->butLoginAdmin->Location = System::Drawing::Point(158, 445);
 			   this->butLoginAdmin->Name = L"butLoginAdmin";
-			   this->butLoginAdmin->Size = System::Drawing::Size(161, 50);
+			   this->butLoginAdmin->Size = System::Drawing::Size(175, 50);
 			   this->butLoginAdmin->TabIndex = 6;
 			   this->butLoginAdmin->Text = L"Login";
 			   this->butLoginAdmin->UseVisualStyleBackColor = false;
@@ -2174,7 +2197,7 @@ namespace Project4 {
 			   // 
 			   this->textBoxPassAdmin->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			   this->textBoxPassAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			   this->textBoxPassAdmin->Location = System::Drawing::Point(91, 372);
+			   this->textBoxPassAdmin->Location = System::Drawing::Point(89, 367);
 			   this->textBoxPassAdmin->Name = L"textBoxPassAdmin";
 			   this->textBoxPassAdmin->Size = System::Drawing::Size(317, 23);
 			   this->textBoxPassAdmin->TabIndex = 5;
@@ -2185,7 +2208,7 @@ namespace Project4 {
 			   this->textBoxUsernameAdmin->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			   this->textBoxUsernameAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			   this->textBoxUsernameAdmin->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			   this->textBoxUsernameAdmin->Location = System::Drawing::Point(89, 298);
+			   this->textBoxUsernameAdmin->Location = System::Drawing::Point(89, 294);
 			   this->textBoxUsernameAdmin->Name = L"textBoxUsernameAdmin";
 			   this->textBoxUsernameAdmin->Size = System::Drawing::Size(317, 23);
 			   this->textBoxUsernameAdmin->TabIndex = 4;
@@ -2220,16 +2243,16 @@ namespace Project4 {
 				   | System::Windows::Forms::AnchorStyles::Left)
 				   | System::Windows::Forms::AnchorStyles::Right));
 			   this->panelRoomRe->Controls->Add(this->panelHomeRe);
+			   this->panelRoomRe->Controls->Add(this->panelDisplayBlood);
+			   this->panelRoomRe->Controls->Add(this->panelRequestRe);
+			   this->panelRoomRe->Controls->Add(this->panelSerchRe);
 			   this->panelRoomRe->Controls->Add(this->panelSettingRe);
 			   this->panelRoomRe->Controls->Add(this->panelMenuBarRe);
-			   this->panelRoomRe->Controls->Add(this->panelDisplayBlood);
-			   this->panelRoomRe->Controls->Add(this->panelSerchRe);
-			   this->panelRoomRe->Controls->Add(this->panelRequestRe);
 			   this->panelRoomRe->Controls->Add(this->panelDelAcconetRe);
 			   this->panelRoomRe->Controls->Add(this->panelUpdateDateRe);
-			   this->panelRoomRe->Location = System::Drawing::Point(0, 50);
+			   this->panelRoomRe->Location = System::Drawing::Point(0, 52);
 			   this->panelRoomRe->Name = L"panelRoomRe";
-			   this->panelRoomRe->Size = System::Drawing::Size(950, 598);
+			   this->panelRoomRe->Size = System::Drawing::Size(950, 596);
 			   this->panelRoomRe->TabIndex = 15;
 			   // 
 			   // panelHomeRe
@@ -2243,9 +2266,9 @@ namespace Project4 {
 			   this->panelHomeRe->Controls->Add(this->labelBloodeHomRe);
 			   this->panelHomeRe->Controls->Add(this->labelDocnameHomRe);
 			   this->panelHomeRe->Controls->Add(this->labelUsernameHomRe);
-			   this->panelHomeRe->Location = System::Drawing::Point(205, 3);
+			   this->panelHomeRe->Location = System::Drawing::Point(205, -2);
 			   this->panelHomeRe->Name = L"panelHomeRe";
-			   this->panelHomeRe->Size = System::Drawing::Size(745, 603);
+			   this->panelHomeRe->Size = System::Drawing::Size(745, 597);
 			   this->panelHomeRe->TabIndex = 22;
 			   // 
 			   // labelHosnameHomRe
@@ -2255,11 +2278,10 @@ namespace Project4 {
 			   this->labelHosnameHomRe->Font = (gcnew System::Drawing::Font(L"Eras Medium ITC", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->labelHosnameHomRe->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			   this->labelHosnameHomRe->Location = System::Drawing::Point(56, 320);
+			   this->labelHosnameHomRe->Location = System::Drawing::Point(62, 405);
 			   this->labelHosnameHomRe->Name = L"labelHosnameHomRe";
-			   this->labelHosnameHomRe->Size = System::Drawing::Size(73, 27);
+			   this->labelHosnameHomRe->Size = System::Drawing::Size(0, 27);
 			   this->labelHosnameHomRe->TabIndex = 3;
-			   this->labelHosnameHomRe->Text = L"name";
 			   // 
 			   // labelBloodeHomRe
 			   // 
@@ -2268,7 +2290,7 @@ namespace Project4 {
 			   this->labelBloodeHomRe->Font = (gcnew System::Drawing::Font(L"Kristen ITC", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->labelBloodeHomRe->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			   this->labelBloodeHomRe->Location = System::Drawing::Point(626, 307);
+			   this->labelBloodeHomRe->Location = System::Drawing::Point(626, 305);
 			   this->labelBloodeHomRe->Name = L"labelBloodeHomRe";
 			   this->labelBloodeHomRe->Size = System::Drawing::Size(48, 27);
 			   this->labelBloodeHomRe->TabIndex = 2;
@@ -2281,11 +2303,10 @@ namespace Project4 {
 			   this->labelDocnameHomRe->Font = (gcnew System::Drawing::Font(L"Eras Medium ITC", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->labelDocnameHomRe->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			   this->labelDocnameHomRe->Location = System::Drawing::Point(59, 401);
+			   this->labelDocnameHomRe->Location = System::Drawing::Point(56, 316);
 			   this->labelDocnameHomRe->Name = L"labelDocnameHomRe";
-			   this->labelDocnameHomRe->Size = System::Drawing::Size(51, 27);
+			   this->labelDocnameHomRe->Size = System::Drawing::Size(0, 27);
 			   this->labelDocnameHomRe->TabIndex = 1;
-			   this->labelDocnameHomRe->Text = L"hos";
 			   // 
 			   // labelUsernameHomRe
 			   // 
@@ -2296,359 +2317,8 @@ namespace Project4 {
 			   this->labelUsernameHomRe->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			   this->labelUsernameHomRe->Location = System::Drawing::Point(55, 226);
 			   this->labelUsernameHomRe->Name = L"labelUsernameHomRe";
-			   this->labelUsernameHomRe->Size = System::Drawing::Size(73, 27);
+			   this->labelUsernameHomRe->Size = System::Drawing::Size(0, 27);
 			   this->labelUsernameHomRe->TabIndex = 0;
-			   this->labelUsernameHomRe->Text = L"name";
-			   // 
-			   // panelSettingRe
-			   // 
-			   this->panelSettingRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				   | System::Windows::Forms::AnchorStyles::Left)
-				   | System::Windows::Forms::AnchorStyles::Right));
-			   this->panelSettingRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelSettingRe.BackgroundImage")));
-			   this->panelSettingRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			   this->panelSettingRe->Controls->Add(this->labelDocSetRe);
-			   this->panelSettingRe->Controls->Add(this->labelHosSetRe);
-			   this->panelSettingRe->Controls->Add(this->butEditLnameRe);
-			   this->panelSettingRe->Controls->Add(this->butEditFnameRe);
-			   this->panelSettingRe->Controls->Add(this->labelIdSetRe);
-			   this->panelSettingRe->Controls->Add(this->butEditPasRe);
-			   this->panelSettingRe->Controls->Add(this->butEditDocRe);
-			   this->panelSettingRe->Controls->Add(this->butEditHosRe);
-			   this->panelSettingRe->Controls->Add(this->labelLnameSetRe);
-			   this->panelSettingRe->Controls->Add(this->labelPasSetRe);
-			   this->panelSettingRe->Controls->Add(this->labelEmailSetRe);
-			   this->panelSettingRe->Controls->Add(this->labelFnameSetRe);
-			   this->panelSettingRe->Controls->Add(this->butEditMailRe);
-			   this->panelSettingRe->Controls->Add(this->butUpdataRe);
-			   this->panelSettingRe->Controls->Add(this->butDelAccRe);
-			   this->panelSettingRe->Location = System::Drawing::Point(203, 2);
-			   this->panelSettingRe->Name = L"panelSettingRe";
-			   this->panelSettingRe->Size = System::Drawing::Size(747, 599);
-			   this->panelSettingRe->TabIndex = 1;
-			   // 
-			   // labelDocSetRe
-			   // 
-			   this->labelDocSetRe->AutoSize = true;
-			   this->labelDocSetRe->BackColor = System::Drawing::Color::Transparent;
-			   this->labelDocSetRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelDocSetRe->Location = System::Drawing::Point(63, 385);
-			   this->labelDocSetRe->Name = L"labelDocSetRe";
-			   this->labelDocSetRe->Size = System::Drawing::Size(0, 27);
-			   this->labelDocSetRe->TabIndex = 16;
-			   // 
-			   // labelHosSetRe
-			   // 
-			   this->labelHosSetRe->AutoSize = true;
-			   this->labelHosSetRe->BackColor = System::Drawing::Color::Transparent;
-			   this->labelHosSetRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelHosSetRe->Location = System::Drawing::Point(64, 474);
-			   this->labelHosSetRe->Name = L"labelHosSetRe";
-			   this->labelHosSetRe->Size = System::Drawing::Size(0, 27);
-			   this->labelHosSetRe->TabIndex = 15;
-			   // 
-			   // butEditLnameRe
-			   // 
-			   this->butEditLnameRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butEditLnameRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butEditLnameRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butEditLnameRe.BackgroundImage")));
-			   this->butEditLnameRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butEditLnameRe->FlatAppearance->BorderSize = 0;
-			   this->butEditLnameRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butEditLnameRe->Location = System::Drawing::Point(634, 146);
-			   this->butEditLnameRe->Name = L"butEditLnameRe";
-			   this->butEditLnameRe->Size = System::Drawing::Size(27, 38);
-			   this->butEditLnameRe->TabIndex = 14;
-			   this->butEditLnameRe->Text = L" ";
-			   this->butEditLnameRe->UseVisualStyleBackColor = false;
-			   this->butEditLnameRe->Click += gcnew System::EventHandler(this, &Home::butEditLnameRe_Click);
-			   // 
-			   // butEditFnameRe
-			   // 
-			   this->butEditFnameRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butEditFnameRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butEditFnameRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butEditFnameRe.BackgroundImage")));
-			   this->butEditFnameRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butEditFnameRe->FlatAppearance->BorderSize = 0;
-			   this->butEditFnameRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butEditFnameRe->Location = System::Drawing::Point(365, 143);
-			   this->butEditFnameRe->Name = L"butEditFnameRe";
-			   this->butEditFnameRe->Size = System::Drawing::Size(27, 38);
-			   this->butEditFnameRe->TabIndex = 13;
-			   this->butEditFnameRe->Text = L" ";
-			   this->butEditFnameRe->UseVisualStyleBackColor = false;
-			   this->butEditFnameRe->Click += gcnew System::EventHandler(this, &Home::butEditFnameRe_Click);
-			   // 
-			   // labelIdSetRe
-			   // 
-			   this->labelIdSetRe->AutoSize = true;
-			   this->labelIdSetRe->BackColor = System::Drawing::Color::Transparent;
-			   this->labelIdSetRe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelIdSetRe->Location = System::Drawing::Point(71, 154);
-			   this->labelIdSetRe->Name = L"labelIdSetRe";
-			   this->labelIdSetRe->Size = System::Drawing::Size(0, 25);
-			   this->labelIdSetRe->TabIndex = 12;
-			   // 
-			   // butEditPasRe
-			   // 
-			   this->butEditPasRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butEditPasRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butEditPasRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butEditPasRe.BackgroundImage")));
-			   this->butEditPasRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butEditPasRe->FlatAppearance->BorderSize = 0;
-			   this->butEditPasRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butEditPasRe->Location = System::Drawing::Point(365, 310);
-			   this->butEditPasRe->Name = L"butEditPasRe";
-			   this->butEditPasRe->Size = System::Drawing::Size(27, 29);
-			   this->butEditPasRe->TabIndex = 11;
-			   this->butEditPasRe->Text = L" ";
-			   this->butEditPasRe->UseVisualStyleBackColor = false;
-			   this->butEditPasRe->Click += gcnew System::EventHandler(this, &Home::butEditPasRe_Click);
-			   // 
-			   // butEditDocRe
-			   // 
-			   this->butEditDocRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butEditDocRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butEditDocRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butEditDocRe.BackgroundImage")));
-			   this->butEditDocRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butEditDocRe->FlatAppearance->BorderSize = 0;
-			   this->butEditDocRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butEditDocRe->Location = System::Drawing::Point(365, 382);
-			   this->butEditDocRe->Name = L"butEditDocRe";
-			   this->butEditDocRe->Size = System::Drawing::Size(27, 34);
-			   this->butEditDocRe->TabIndex = 10;
-			   this->butEditDocRe->Text = L" ";
-			   this->butEditDocRe->UseVisualStyleBackColor = false;
-			   this->butEditDocRe->Click += gcnew System::EventHandler(this, &Home::butEditDocRe_Click);
-			   // 
-			   // butEditHosRe
-			   // 
-			   this->butEditHosRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butEditHosRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butEditHosRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butEditHosRe.BackgroundImage")));
-			   this->butEditHosRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butEditHosRe->FlatAppearance->BorderSize = 0;
-			   this->butEditHosRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butEditHosRe->Location = System::Drawing::Point(366, 467);
-			   this->butEditHosRe->Name = L"butEditHosRe";
-			   this->butEditHosRe->Size = System::Drawing::Size(27, 38);
-			   this->butEditHosRe->TabIndex = 9;
-			   this->butEditHosRe->Text = L" ";
-			   this->butEditHosRe->UseVisualStyleBackColor = false;
-			   this->butEditHosRe->Click += gcnew System::EventHandler(this, &Home::butEditHosRe_Click);
-			   // 
-			   // labelLnameSetRe
-			   // 
-			   this->labelLnameSetRe->AutoSize = true;
-			   this->labelLnameSetRe->BackColor = System::Drawing::Color::Transparent;
-			   this->labelLnameSetRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelLnameSetRe->Location = System::Drawing::Point(435, 151);
-			   this->labelLnameSetRe->Name = L"labelLnameSetRe";
-			   this->labelLnameSetRe->Size = System::Drawing::Size(0, 27);
-			   this->labelLnameSetRe->TabIndex = 8;
-			   // 
-			   // labelPasSetRe
-			   // 
-			   this->labelPasSetRe->AutoSize = true;
-			   this->labelPasSetRe->BackColor = System::Drawing::Color::Transparent;
-			   this->labelPasSetRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelPasSetRe->Location = System::Drawing::Point(63, 309);
-			   this->labelPasSetRe->Name = L"labelPasSetRe";
-			   this->labelPasSetRe->Size = System::Drawing::Size(0, 27);
-			   this->labelPasSetRe->TabIndex = 7;
-			   // 
-			   // labelEmailSetRe
-			   // 
-			   this->labelEmailSetRe->AutoSize = true;
-			   this->labelEmailSetRe->BackColor = System::Drawing::Color::Transparent;
-			   this->labelEmailSetRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelEmailSetRe->Location = System::Drawing::Point(63, 229);
-			   this->labelEmailSetRe->Name = L"labelEmailSetRe";
-			   this->labelEmailSetRe->Size = System::Drawing::Size(0, 27);
-			   this->labelEmailSetRe->TabIndex = 6;
-			   // 
-			   // labelFnameSetRe
-			   // 
-			   this->labelFnameSetRe->AutoSize = true;
-			   this->labelFnameSetRe->BackColor = System::Drawing::Color::Transparent;
-			   this->labelFnameSetRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelFnameSetRe->Location = System::Drawing::Point(179, 149);
-			   this->labelFnameSetRe->Name = L"labelFnameSetRe";
-			   this->labelFnameSetRe->Size = System::Drawing::Size(0, 27);
-			   this->labelFnameSetRe->TabIndex = 5;
-			   // 
-			   // butEditMailRe
-			   // 
-			   this->butEditMailRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butEditMailRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butEditMailRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butEditMailRe.BackgroundImage")));
-			   this->butEditMailRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butEditMailRe->FlatAppearance->BorderSize = 0;
-			   this->butEditMailRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butEditMailRe->Location = System::Drawing::Point(367, 226);
-			   this->butEditMailRe->Name = L"butEditMailRe";
-			   this->butEditMailRe->Size = System::Drawing::Size(27, 31);
-			   this->butEditMailRe->TabIndex = 4;
-			   this->butEditMailRe->Text = L" ";
-			   this->butEditMailRe->UseVisualStyleBackColor = false;
-			   this->butEditMailRe->Click += gcnew System::EventHandler(this, &Home::butEditMailRe_Click);
-			   // 
-			   // butUpdataRe
-			   // 
-			   this->butUpdataRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butUpdataRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butUpdataRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butUpdataRe.BackgroundImage")));
-			   this->butUpdataRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butUpdataRe->FlatAppearance->BorderSize = 0;
-			   this->butUpdataRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butUpdataRe->Location = System::Drawing::Point(86, 540);
-			   this->butUpdataRe->Name = L"butUpdataRe";
-			   this->butUpdataRe->Size = System::Drawing::Size(58, 51);
-			   this->butUpdataRe->TabIndex = 3;
-			   this->butUpdataRe->UseVisualStyleBackColor = false;
-			   this->butUpdataRe->Click += gcnew System::EventHandler(this, &Home::butUpdataRe_Click);
-			   // 
-			   // butDelAccRe
-			   // 
-			   this->butDelAccRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butDelAccRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butDelAccRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butDelAccRe.BackgroundImage")));
-			   this->butDelAccRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butDelAccRe->FlatAppearance->BorderSize = 0;
-			   this->butDelAccRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butDelAccRe->Location = System::Drawing::Point(17, 538);
-			   this->butDelAccRe->Name = L"butDelAccRe";
-			   this->butDelAccRe->Size = System::Drawing::Size(51, 55);
-			   this->butDelAccRe->TabIndex = 1;
-			   this->butDelAccRe->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			   this->butDelAccRe->UseVisualStyleBackColor = false;
-			   this->butDelAccRe->Click += gcnew System::EventHandler(this, &Home::butDelAccRe_Click);
-			   // 
-			   // panelMenuBarRe
-			   // 
-			   this->panelMenuBarRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				   | System::Windows::Forms::AnchorStyles::Left));
-			   this->panelMenuBarRe->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(167)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(242)));
-			   this->panelMenuBarRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelMenuBarRe.BackgroundImage")));
-			   this->panelMenuBarRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			   this->panelMenuBarRe->Controls->Add(this->butDisplayBloodRe);
-			   this->panelMenuBarRe->Controls->Add(this->butLogOutRe);
-			   this->panelMenuBarRe->Controls->Add(this->butSerchRe);
-			   this->panelMenuBarRe->Controls->Add(this->butSettingRe);
-			   this->panelMenuBarRe->Controls->Add(this->butReqRe);
-			   this->panelMenuBarRe->Controls->Add(this->butHomeRe);
-			   this->panelMenuBarRe->Location = System::Drawing::Point(0, 0);
-			   this->panelMenuBarRe->Name = L"panelMenuBarRe";
-			   this->panelMenuBarRe->Size = System::Drawing::Size(203, 601);
-			   this->panelMenuBarRe->TabIndex = 21;
-			   // 
-			   // butDisplayBloodRe
-			   // 
-			   this->butDisplayBloodRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butDisplayBloodRe->FlatAppearance->BorderSize = 0;
-			   this->butDisplayBloodRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butDisplayBloodRe->Font = (gcnew System::Drawing::Font(L"Impact", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->butDisplayBloodRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(85)));
-			   this->butDisplayBloodRe->Location = System::Drawing::Point(8, 246);
-			   this->butDisplayBloodRe->Name = L"butDisplayBloodRe";
-			   this->butDisplayBloodRe->Size = System::Drawing::Size(191, 63);
-			   this->butDisplayBloodRe->TabIndex = 5;
-			   this->butDisplayBloodRe->Text = L"Display";
-			   this->butDisplayBloodRe->UseVisualStyleBackColor = false;
-			   this->butDisplayBloodRe->Click += gcnew System::EventHandler(this, &Home::butDisplayBloodRe_Click);
-			   // 
-			   // butLogOutRe
-			   // 
-			   this->butLogOutRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butLogOutRe->FlatAppearance->BorderSize = 0;
-			   this->butLogOutRe->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(55)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(129)), static_cast<System::Int32>(static_cast<System::Byte>(165)), static_cast<System::Int32>(static_cast<System::Byte>(163)));
-			   this->butLogOutRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butLogOutRe->ForeColor = System::Drawing::Color::Transparent;
-			   this->butLogOutRe->Location = System::Drawing::Point(12, 515);
-			   this->butLogOutRe->Name = L"butLogOutRe";
-			   this->butLogOutRe->Size = System::Drawing::Size(176, 73);
-			   this->butLogOutRe->TabIndex = 4;
-			   this->butLogOutRe->UseVisualStyleBackColor = false;
-			   this->butLogOutRe->Click += gcnew System::EventHandler(this, &Home::button1_Click_1);
-			   // 
-			   // butSerchRe
-			   // 
-			   this->butSerchRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butSerchRe->FlatAppearance->BorderSize = 0;
-			   this->butSerchRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butSerchRe->Font = (gcnew System::Drawing::Font(L"Impact", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->butSerchRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(85)));
-			   this->butSerchRe->Location = System::Drawing::Point(8, 167);
-			   this->butSerchRe->Name = L"butSerchRe";
-			   this->butSerchRe->Size = System::Drawing::Size(191, 60);
-			   this->butSerchRe->TabIndex = 3;
-			   this->butSerchRe->Text = L"Search";
-			   this->butSerchRe->UseVisualStyleBackColor = false;
-			   this->butSerchRe->Click += gcnew System::EventHandler(this, &Home::butSerchRe_Click);
-			   // 
-			   // butSettingRe
-			   // 
-			   this->butSettingRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butSettingRe->FlatAppearance->BorderSize = 0;
-			   this->butSettingRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butSettingRe->Font = (gcnew System::Drawing::Font(L"Impact", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->butSettingRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(85)));
-			   this->butSettingRe->Location = System::Drawing::Point(8, 326);
-			   this->butSettingRe->Name = L"butSettingRe";
-			   this->butSettingRe->Size = System::Drawing::Size(191, 63);
-			   this->butSettingRe->TabIndex = 2;
-			   this->butSettingRe->Text = L"Setting";
-			   this->butSettingRe->UseVisualStyleBackColor = false;
-			   this->butSettingRe->Click += gcnew System::EventHandler(this, &Home::butSettingRe_Click);
-			   // 
-			   // butReqRe
-			   // 
-			   this->butReqRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butReqRe->FlatAppearance->BorderSize = 0;
-			   this->butReqRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butReqRe->Font = (gcnew System::Drawing::Font(L"Impact", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->butReqRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(85)));
-			   this->butReqRe->Location = System::Drawing::Point(0, 89);
-			   this->butReqRe->Name = L"butReqRe";
-			   this->butReqRe->Size = System::Drawing::Size(200, 60);
-			   this->butReqRe->TabIndex = 1;
-			   this->butReqRe->Text = L"Request";
-			   this->butReqRe->UseVisualStyleBackColor = false;
-			   this->butReqRe->Click += gcnew System::EventHandler(this, &Home::butReqRe_Click);
-			   // 
-			   // butHomeRe
-			   // 
-			   this->butHomeRe->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(85)));
-			   this->butHomeRe->FlatAppearance->BorderSize = 0;
-			   this->butHomeRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butHomeRe->Font = (gcnew System::Drawing::Font(L"Impact", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->butHomeRe->ForeColor = System::Drawing::Color::White;
-			   this->butHomeRe->Location = System::Drawing::Point(8, 11);
-			   this->butHomeRe->Name = L"butHomeRe";
-			   this->butHomeRe->Size = System::Drawing::Size(189, 64);
-			   this->butHomeRe->TabIndex = 0;
-			   this->butHomeRe->Text = L"Home";
-			   this->butHomeRe->UseVisualStyleBackColor = false;
-			   this->butHomeRe->Click += gcnew System::EventHandler(this, &Home::butHomeRe_Click);
 			   // 
 			   // panelDisplayBlood
 			   // 
@@ -2660,9 +2330,9 @@ namespace Project4 {
 			   this->panelDisplayBlood->Controls->Add(this->dataGridView3);
 			   this->panelDisplayBlood->Controls->Add(this->dataGridView1);
 			   this->panelDisplayBlood->Controls->Add(this->butDisplayBlood);
-			   this->panelDisplayBlood->Location = System::Drawing::Point(203, 2);
+			   this->panelDisplayBlood->Location = System::Drawing::Point(203, -2);
 			   this->panelDisplayBlood->Name = L"panelDisplayBlood";
-			   this->panelDisplayBlood->Size = System::Drawing::Size(747, 599);
+			   this->panelDisplayBlood->Size = System::Drawing::Size(747, 598);
 			   this->panelDisplayBlood->TabIndex = 26;
 			   // 
 			   // dataGridView3
@@ -2749,13 +2419,88 @@ namespace Project4 {
 			   // 
 			   // butDisplayBlood
 			   // 
+			   this->butDisplayBlood->BackColor = System::Drawing::Color::Transparent;
+			   this->butDisplayBlood->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butDisplayBlood.BackgroundImage")));
+			   this->butDisplayBlood->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->butDisplayBlood->FlatAppearance->BorderSize = 0;
+			   this->butDisplayBlood->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
+			   this->butDisplayBlood->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butDisplayBlood->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butDisplayBlood->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			   this->butDisplayBlood->Location = System::Drawing::Point(315, 519);
 			   this->butDisplayBlood->Name = L"butDisplayBlood";
-			   this->butDisplayBlood->Size = System::Drawing::Size(112, 55);
+			   this->butDisplayBlood->Size = System::Drawing::Size(157, 55);
 			   this->butDisplayBlood->TabIndex = 4;
 			   this->butDisplayBlood->Text = L"Display";
-			   this->butDisplayBlood->UseVisualStyleBackColor = true;
+			   this->butDisplayBlood->UseVisualStyleBackColor = false;
 			   this->butDisplayBlood->Click += gcnew System::EventHandler(this, &Home::butDisplayBlood_Click);
+			   // 
+			   // panelRequestRe
+			   // 
+			   this->panelRequestRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelRequestRe.BackgroundImage")));
+			   this->panelRequestRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->panelRequestRe->Controls->Add(this->comboBoxReqBloodeRe);
+			   this->panelRequestRe->Controls->Add(this->textBoxQuantityReqRe);
+			   this->panelRequestRe->Controls->Add(this->textBoxReqHosRe);
+			   this->panelRequestRe->Controls->Add(this->button8);
+			   this->panelRequestRe->Location = System::Drawing::Point(205, 4);
+			   this->panelRequestRe->Name = L"panelRequestRe";
+			   this->panelRequestRe->Size = System::Drawing::Size(745, 592);
+			   this->panelRequestRe->TabIndex = 1;
+			   // 
+			   // comboBoxReqBloodeRe
+			   // 
+			   this->comboBoxReqBloodeRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->comboBoxReqBloodeRe->FormattingEnabled = true;
+			   this->comboBoxReqBloodeRe->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
+				   L"A+", L"A-", L"B+", L"B-", L"O+", L"O-",
+					   L"AB+", L"AB-"
+			   });
+			   this->comboBoxReqBloodeRe->Location = System::Drawing::Point(194, 218);
+			   this->comboBoxReqBloodeRe->Name = L"comboBoxReqBloodeRe";
+			   this->comboBoxReqBloodeRe->Size = System::Drawing::Size(296, 24);
+			   this->comboBoxReqBloodeRe->TabIndex = 18;
+			   this->comboBoxReqBloodeRe->Text = L"A+";
+			   // 
+			   // textBoxQuantityReqRe
+			   // 
+			   this->textBoxQuantityReqRe->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->textBoxQuantityReqRe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
+				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			   this->textBoxQuantityReqRe->Location = System::Drawing::Point(194, 402);
+			   this->textBoxQuantityReqRe->Name = L"textBoxQuantityReqRe";
+			   this->textBoxQuantityReqRe->Size = System::Drawing::Size(296, 23);
+			   this->textBoxQuantityReqRe->TabIndex = 17;
+			   // 
+			   // textBoxReqHosRe
+			   // 
+			   this->textBoxReqHosRe->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->textBoxReqHosRe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->textBoxReqHosRe->Location = System::Drawing::Point(197, 310);
+			   this->textBoxReqHosRe->Name = L"textBoxReqHosRe";
+			   this->textBoxReqHosRe->Size = System::Drawing::Size(293, 23);
+			   this->textBoxReqHosRe->TabIndex = 16;
+			   // 
+			   // button8
+			   // 
+			   this->button8->BackColor = System::Drawing::Color::Transparent;
+			   this->button8->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button8.BackgroundImage")));
+			   this->button8->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->button8->FlatAppearance->BorderSize = 0;
+			   this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->button8->Font = (gcnew System::Drawing::Font(L"Impact", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->button8->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->button8->Location = System::Drawing::Point(293, 468);
+			   this->button8->Name = L"button8";
+			   this->button8->Size = System::Drawing::Size(140, 47);
+			   this->button8->TabIndex = 14;
+			   this->button8->Text = L"Send";
+			   this->button8->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
+			   this->button8->UseVisualStyleBackColor = false;
+			   this->button8->Click += gcnew System::EventHandler(this, &Home::button8_Click_1);
 			   // 
 			   // panelSerchRe
 			   // 
@@ -2777,7 +2522,7 @@ namespace Project4 {
 			   this->panelSerchRe->Controls->Add(this->dateTimePickerSerRe);
 			   this->panelSerchRe->Location = System::Drawing::Point(203, 2);
 			   this->panelSerchRe->Name = L"panelSerchRe";
-			   this->panelSerchRe->Size = System::Drawing::Size(747, 599);
+			   this->panelSerchRe->Size = System::Drawing::Size(747, 594);
 			   this->panelSerchRe->TabIndex = 24;
 			   // 
 			   // labelExDataBlood
@@ -2905,11 +2650,11 @@ namespace Project4 {
 			   this->butSerRe->Font = (gcnew System::Drawing::Font(L"Impact", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->butSerRe->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->butSerRe->Location = System::Drawing::Point(316, 178);
+			   this->butSerRe->Location = System::Drawing::Point(319, 171);
 			   this->butSerRe->Name = L"butSerRe";
-			   this->butSerRe->Size = System::Drawing::Size(132, 41);
+			   this->butSerRe->Size = System::Drawing::Size(132, 43);
 			   this->butSerRe->TabIndex = 15;
-			   this->butSerRe->Text = L"Serch";
+			   this->butSerRe->Text = L"Search";
 			   this->butSerRe->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
 			   this->butSerRe->UseVisualStyleBackColor = false;
 			   this->butSerRe->Click += gcnew System::EventHandler(this, &Home::butSerRe_Click);
@@ -2927,71 +2672,355 @@ namespace Project4 {
 			   this->dateTimePickerSerRe->Size = System::Drawing::Size(290, 30);
 			   this->dateTimePickerSerRe->TabIndex = 13;
 			   // 
-			   // panelRequestRe
+			   // panelSettingRe
 			   // 
-			   this->panelRequestRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelRequestRe.BackgroundImage")));
-			   this->panelRequestRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			   this->panelRequestRe->Controls->Add(this->comboBoxReqBloodeRe);
-			   this->panelRequestRe->Controls->Add(this->textBoxQuantityReqRe);
-			   this->panelRequestRe->Controls->Add(this->textBoxReqHosRe);
-			   this->panelRequestRe->Controls->Add(this->button8);
-			   this->panelRequestRe->Location = System::Drawing::Point(205, 4);
-			   this->panelRequestRe->Name = L"panelRequestRe";
-			   this->panelRequestRe->Size = System::Drawing::Size(745, 597);
-			   this->panelRequestRe->TabIndex = 1;
+			   this->panelSettingRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				   | System::Windows::Forms::AnchorStyles::Left)
+				   | System::Windows::Forms::AnchorStyles::Right));
+			   this->panelSettingRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelSettingRe.BackgroundImage")));
+			   this->panelSettingRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->panelSettingRe->Controls->Add(this->labelDocSetRe);
+			   this->panelSettingRe->Controls->Add(this->labelHosSetRe);
+			   this->panelSettingRe->Controls->Add(this->butEditLnameRe);
+			   this->panelSettingRe->Controls->Add(this->butEditFnameRe);
+			   this->panelSettingRe->Controls->Add(this->labelIdSetRe);
+			   this->panelSettingRe->Controls->Add(this->butEditPasRe);
+			   this->panelSettingRe->Controls->Add(this->butEditDocRe);
+			   this->panelSettingRe->Controls->Add(this->butEditHosRe);
+			   this->panelSettingRe->Controls->Add(this->labelLnameSetRe);
+			   this->panelSettingRe->Controls->Add(this->labelPasSetRe);
+			   this->panelSettingRe->Controls->Add(this->labelEmailSetRe);
+			   this->panelSettingRe->Controls->Add(this->labelFnameSetRe);
+			   this->panelSettingRe->Controls->Add(this->butEditMailRe);
+			   this->panelSettingRe->Controls->Add(this->butUpdataRe);
+			   this->panelSettingRe->Controls->Add(this->butDelAccRe);
+			   this->panelSettingRe->Location = System::Drawing::Point(203, 2);
+			   this->panelSettingRe->Name = L"panelSettingRe";
+			   this->panelSettingRe->Size = System::Drawing::Size(747, 596);
+			   this->panelSettingRe->TabIndex = 1;
 			   // 
-			   // comboBoxReqBloodeRe
+			   // labelDocSetRe
 			   // 
-			   this->comboBoxReqBloodeRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->comboBoxReqBloodeRe->FormattingEnabled = true;
-			   this->comboBoxReqBloodeRe->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
-				   L"A", L"A-", L"B", L"B-", L"O", L"O-",
-					   L"AB", L"AB-"
-			   });
-			   this->comboBoxReqBloodeRe->Location = System::Drawing::Point(194, 218);
-			   this->comboBoxReqBloodeRe->Name = L"comboBoxReqBloodeRe";
-			   this->comboBoxReqBloodeRe->Size = System::Drawing::Size(296, 24);
-			   this->comboBoxReqBloodeRe->TabIndex = 18;
-			   this->comboBoxReqBloodeRe->Text = L"A";
-			   // 
-			   // textBoxQuantityReqRe
-			   // 
-			   this->textBoxQuantityReqRe->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			   this->textBoxQuantityReqRe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
-				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->textBoxQuantityReqRe->Location = System::Drawing::Point(194, 402);
-			   this->textBoxQuantityReqRe->Name = L"textBoxQuantityReqRe";
-			   this->textBoxQuantityReqRe->Size = System::Drawing::Size(296, 23);
-			   this->textBoxQuantityReqRe->TabIndex = 17;
-			   // 
-			   // textBoxReqHosRe
-			   // 
-			   this->textBoxReqHosRe->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			   this->textBoxReqHosRe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			   this->labelDocSetRe->AutoSize = true;
+			   this->labelDocSetRe->BackColor = System::Drawing::Color::Transparent;
+			   this->labelDocSetRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->textBoxReqHosRe->Location = System::Drawing::Point(197, 310);
-			   this->textBoxReqHosRe->Name = L"textBoxReqHosRe";
-			   this->textBoxReqHosRe->Size = System::Drawing::Size(293, 23);
-			   this->textBoxReqHosRe->TabIndex = 16;
+			   this->labelDocSetRe->Location = System::Drawing::Point(63, 385);
+			   this->labelDocSetRe->Name = L"labelDocSetRe";
+			   this->labelDocSetRe->Size = System::Drawing::Size(0, 27);
+			   this->labelDocSetRe->TabIndex = 16;
 			   // 
-			   // button8
+			   // labelHosSetRe
 			   // 
-			   this->button8->BackColor = System::Drawing::Color::Transparent;
-			   this->button8->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button8.BackgroundImage")));
-			   this->button8->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->button8->FlatAppearance->BorderSize = 0;
-			   this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->button8->Font = (gcnew System::Drawing::Font(L"Impact", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			   this->labelHosSetRe->AutoSize = true;
+			   this->labelHosSetRe->BackColor = System::Drawing::Color::Transparent;
+			   this->labelHosSetRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->button8->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->button8->Location = System::Drawing::Point(303, 478);
-			   this->button8->Name = L"button8";
-			   this->button8->Size = System::Drawing::Size(132, 41);
-			   this->button8->TabIndex = 14;
-			   this->button8->Text = L"Send";
-			   this->button8->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
-			   this->button8->UseVisualStyleBackColor = false;
-			   this->button8->Click += gcnew System::EventHandler(this, &Home::button8_Click_1);
+			   this->labelHosSetRe->Location = System::Drawing::Point(64, 474);
+			   this->labelHosSetRe->Name = L"labelHosSetRe";
+			   this->labelHosSetRe->Size = System::Drawing::Size(0, 27);
+			   this->labelHosSetRe->TabIndex = 15;
+			   // 
+			   // butEditLnameRe
+			   // 
+			   this->butEditLnameRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butEditLnameRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butEditLnameRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butEditLnameRe.BackgroundImage")));
+			   this->butEditLnameRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butEditLnameRe->FlatAppearance->BorderSize = 0;
+			   this->butEditLnameRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butEditLnameRe->Location = System::Drawing::Point(634, 143);
+			   this->butEditLnameRe->Name = L"butEditLnameRe";
+			   this->butEditLnameRe->Size = System::Drawing::Size(27, 38);
+			   this->butEditLnameRe->TabIndex = 14;
+			   this->butEditLnameRe->Text = L" ";
+			   this->butEditLnameRe->UseVisualStyleBackColor = false;
+			   this->butEditLnameRe->Click += gcnew System::EventHandler(this, &Home::butEditLnameRe_Click);
+			   // 
+			   // butEditFnameRe
+			   // 
+			   this->butEditFnameRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butEditFnameRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butEditFnameRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butEditFnameRe.BackgroundImage")));
+			   this->butEditFnameRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butEditFnameRe->FlatAppearance->BorderSize = 0;
+			   this->butEditFnameRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butEditFnameRe->Location = System::Drawing::Point(369, 143);
+			   this->butEditFnameRe->Name = L"butEditFnameRe";
+			   this->butEditFnameRe->Size = System::Drawing::Size(27, 38);
+			   this->butEditFnameRe->TabIndex = 13;
+			   this->butEditFnameRe->Text = L" ";
+			   this->butEditFnameRe->UseVisualStyleBackColor = false;
+			   this->butEditFnameRe->Click += gcnew System::EventHandler(this, &Home::butEditFnameRe_Click);
+			   // 
+			   // labelIdSetRe
+			   // 
+			   this->labelIdSetRe->AutoSize = true;
+			   this->labelIdSetRe->BackColor = System::Drawing::Color::Transparent;
+			   this->labelIdSetRe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelIdSetRe->Location = System::Drawing::Point(71, 154);
+			   this->labelIdSetRe->Name = L"labelIdSetRe";
+			   this->labelIdSetRe->Size = System::Drawing::Size(0, 25);
+			   this->labelIdSetRe->TabIndex = 12;
+			   // 
+			   // butEditPasRe
+			   // 
+			   this->butEditPasRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butEditPasRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butEditPasRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butEditPasRe.BackgroundImage")));
+			   this->butEditPasRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butEditPasRe->FlatAppearance->BorderSize = 0;
+			   this->butEditPasRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butEditPasRe->Location = System::Drawing::Point(365, 307);
+			   this->butEditPasRe->Name = L"butEditPasRe";
+			   this->butEditPasRe->Size = System::Drawing::Size(27, 29);
+			   this->butEditPasRe->TabIndex = 11;
+			   this->butEditPasRe->Text = L" ";
+			   this->butEditPasRe->UseVisualStyleBackColor = false;
+			   this->butEditPasRe->Click += gcnew System::EventHandler(this, &Home::butEditPasRe_Click);
+			   // 
+			   // butEditDocRe
+			   // 
+			   this->butEditDocRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butEditDocRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butEditDocRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butEditDocRe.BackgroundImage")));
+			   this->butEditDocRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butEditDocRe->FlatAppearance->BorderSize = 0;
+			   this->butEditDocRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butEditDocRe->Location = System::Drawing::Point(365, 379);
+			   this->butEditDocRe->Name = L"butEditDocRe";
+			   this->butEditDocRe->Size = System::Drawing::Size(27, 34);
+			   this->butEditDocRe->TabIndex = 10;
+			   this->butEditDocRe->Text = L" ";
+			   this->butEditDocRe->UseVisualStyleBackColor = false;
+			   this->butEditDocRe->Click += gcnew System::EventHandler(this, &Home::butEditDocRe_Click);
+			   // 
+			   // butEditHosRe
+			   // 
+			   this->butEditHosRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butEditHosRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butEditHosRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butEditHosRe.BackgroundImage")));
+			   this->butEditHosRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butEditHosRe->FlatAppearance->BorderSize = 0;
+			   this->butEditHosRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butEditHosRe->Location = System::Drawing::Point(366, 464);
+			   this->butEditHosRe->Name = L"butEditHosRe";
+			   this->butEditHosRe->Size = System::Drawing::Size(27, 38);
+			   this->butEditHosRe->TabIndex = 9;
+			   this->butEditHosRe->Text = L" ";
+			   this->butEditHosRe->UseVisualStyleBackColor = false;
+			   this->butEditHosRe->Click += gcnew System::EventHandler(this, &Home::butEditHosRe_Click);
+			   // 
+			   // labelLnameSetRe
+			   // 
+			   this->labelLnameSetRe->AutoSize = true;
+			   this->labelLnameSetRe->BackColor = System::Drawing::Color::Transparent;
+			   this->labelLnameSetRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelLnameSetRe->Location = System::Drawing::Point(435, 151);
+			   this->labelLnameSetRe->Name = L"labelLnameSetRe";
+			   this->labelLnameSetRe->Size = System::Drawing::Size(0, 27);
+			   this->labelLnameSetRe->TabIndex = 8;
+			   // 
+			   // labelPasSetRe
+			   // 
+			   this->labelPasSetRe->AutoSize = true;
+			   this->labelPasSetRe->BackColor = System::Drawing::Color::Transparent;
+			   this->labelPasSetRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelPasSetRe->Location = System::Drawing::Point(63, 309);
+			   this->labelPasSetRe->Name = L"labelPasSetRe";
+			   this->labelPasSetRe->Size = System::Drawing::Size(0, 27);
+			   this->labelPasSetRe->TabIndex = 7;
+			   // 
+			   // labelEmailSetRe
+			   // 
+			   this->labelEmailSetRe->AutoSize = true;
+			   this->labelEmailSetRe->BackColor = System::Drawing::Color::Transparent;
+			   this->labelEmailSetRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelEmailSetRe->Location = System::Drawing::Point(63, 229);
+			   this->labelEmailSetRe->Name = L"labelEmailSetRe";
+			   this->labelEmailSetRe->Size = System::Drawing::Size(0, 27);
+			   this->labelEmailSetRe->TabIndex = 6;
+			   // 
+			   // labelFnameSetRe
+			   // 
+			   this->labelFnameSetRe->AutoSize = true;
+			   this->labelFnameSetRe->BackColor = System::Drawing::Color::Transparent;
+			   this->labelFnameSetRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelFnameSetRe->Location = System::Drawing::Point(179, 149);
+			   this->labelFnameSetRe->Name = L"labelFnameSetRe";
+			   this->labelFnameSetRe->Size = System::Drawing::Size(0, 27);
+			   this->labelFnameSetRe->TabIndex = 5;
+			   // 
+			   // butEditMailRe
+			   // 
+			   this->butEditMailRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butEditMailRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butEditMailRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butEditMailRe.BackgroundImage")));
+			   this->butEditMailRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butEditMailRe->FlatAppearance->BorderSize = 0;
+			   this->butEditMailRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butEditMailRe->Location = System::Drawing::Point(367, 223);
+			   this->butEditMailRe->Name = L"butEditMailRe";
+			   this->butEditMailRe->Size = System::Drawing::Size(27, 31);
+			   this->butEditMailRe->TabIndex = 4;
+			   this->butEditMailRe->Text = L" ";
+			   this->butEditMailRe->UseVisualStyleBackColor = false;
+			   this->butEditMailRe->Click += gcnew System::EventHandler(this, &Home::butEditMailRe_Click);
+			   // 
+			   // butUpdataRe
+			   // 
+			   this->butUpdataRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butUpdataRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butUpdataRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butUpdataRe.BackgroundImage")));
+			   this->butUpdataRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butUpdataRe->FlatAppearance->BorderSize = 0;
+			   this->butUpdataRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butUpdataRe->Location = System::Drawing::Point(86, 537);
+			   this->butUpdataRe->Name = L"butUpdataRe";
+			   this->butUpdataRe->Size = System::Drawing::Size(58, 51);
+			   this->butUpdataRe->TabIndex = 3;
+			   this->butUpdataRe->UseVisualStyleBackColor = false;
+			   this->butUpdataRe->Click += gcnew System::EventHandler(this, &Home::butUpdataRe_Click);
+			   // 
+			   // butDelAccRe
+			   // 
+			   this->butDelAccRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butDelAccRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butDelAccRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butDelAccRe.BackgroundImage")));
+			   this->butDelAccRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butDelAccRe->FlatAppearance->BorderSize = 0;
+			   this->butDelAccRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butDelAccRe->Location = System::Drawing::Point(17, 535);
+			   this->butDelAccRe->Name = L"butDelAccRe";
+			   this->butDelAccRe->Size = System::Drawing::Size(51, 55);
+			   this->butDelAccRe->TabIndex = 1;
+			   this->butDelAccRe->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			   this->butDelAccRe->UseVisualStyleBackColor = false;
+			   this->butDelAccRe->Click += gcnew System::EventHandler(this, &Home::butDelAccRe_Click);
+			   // 
+			   // panelMenuBarRe
+			   // 
+			   this->panelMenuBarRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				   | System::Windows::Forms::AnchorStyles::Left));
+			   this->panelMenuBarRe->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(167)), static_cast<System::Int32>(static_cast<System::Byte>(221)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(242)));
+			   this->panelMenuBarRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelMenuBarRe.BackgroundImage")));
+			   this->panelMenuBarRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->panelMenuBarRe->Controls->Add(this->butDisplayBloodRe);
+			   this->panelMenuBarRe->Controls->Add(this->butLogOutRe);
+			   this->panelMenuBarRe->Controls->Add(this->butSerchRe);
+			   this->panelMenuBarRe->Controls->Add(this->butSettingRe);
+			   this->panelMenuBarRe->Controls->Add(this->butReqRe);
+			   this->panelMenuBarRe->Controls->Add(this->butHomeRe);
+			   this->panelMenuBarRe->Location = System::Drawing::Point(0, 0);
+			   this->panelMenuBarRe->Name = L"panelMenuBarRe";
+			   this->panelMenuBarRe->Size = System::Drawing::Size(203, 599);
+			   this->panelMenuBarRe->TabIndex = 21;
+			   // 
+			   // butDisplayBloodRe
+			   // 
+			   this->butDisplayBloodRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butDisplayBloodRe->FlatAppearance->BorderSize = 0;
+			   this->butDisplayBloodRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butDisplayBloodRe->Font = (gcnew System::Drawing::Font(L"Impact", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butDisplayBloodRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(85)));
+			   this->butDisplayBloodRe->Location = System::Drawing::Point(8, 242);
+			   this->butDisplayBloodRe->Name = L"butDisplayBloodRe";
+			   this->butDisplayBloodRe->Size = System::Drawing::Size(191, 63);
+			   this->butDisplayBloodRe->TabIndex = 5;
+			   this->butDisplayBloodRe->Text = L"Display";
+			   this->butDisplayBloodRe->UseVisualStyleBackColor = false;
+			   this->butDisplayBloodRe->Click += gcnew System::EventHandler(this, &Home::butDisplayBloodRe_Click);
+			   // 
+			   // butLogOutRe
+			   // 
+			   this->butLogOutRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butLogOutRe->FlatAppearance->BorderSize = 0;
+			   this->butLogOutRe->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(55)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(129)), static_cast<System::Int32>(static_cast<System::Byte>(165)), static_cast<System::Int32>(static_cast<System::Byte>(163)));
+			   this->butLogOutRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butLogOutRe->ForeColor = System::Drawing::Color::Transparent;
+			   this->butLogOutRe->Location = System::Drawing::Point(12, 515);
+			   this->butLogOutRe->Name = L"butLogOutRe";
+			   this->butLogOutRe->Size = System::Drawing::Size(176, 73);
+			   this->butLogOutRe->TabIndex = 4;
+			   this->butLogOutRe->UseVisualStyleBackColor = false;
+			   this->butLogOutRe->Click += gcnew System::EventHandler(this, &Home::button1_Click_1);
+			   // 
+			   // butSerchRe
+			   // 
+			   this->butSerchRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butSerchRe->FlatAppearance->BorderSize = 0;
+			   this->butSerchRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butSerchRe->Font = (gcnew System::Drawing::Font(L"Impact", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butSerchRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(85)));
+			   this->butSerchRe->Location = System::Drawing::Point(8, 167);
+			   this->butSerchRe->Name = L"butSerchRe";
+			   this->butSerchRe->Size = System::Drawing::Size(191, 60);
+			   this->butSerchRe->TabIndex = 3;
+			   this->butSerchRe->Text = L"Search";
+			   this->butSerchRe->UseVisualStyleBackColor = false;
+			   this->butSerchRe->Click += gcnew System::EventHandler(this, &Home::butSerchRe_Click);
+			   // 
+			   // butSettingRe
+			   // 
+			   this->butSettingRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butSettingRe->FlatAppearance->BorderSize = 0;
+			   this->butSettingRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butSettingRe->Font = (gcnew System::Drawing::Font(L"Impact", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butSettingRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(85)));
+			   this->butSettingRe->Location = System::Drawing::Point(8, 320);
+			   this->butSettingRe->Name = L"butSettingRe";
+			   this->butSettingRe->Size = System::Drawing::Size(191, 63);
+			   this->butSettingRe->TabIndex = 2;
+			   this->butSettingRe->Text = L"Setting";
+			   this->butSettingRe->UseVisualStyleBackColor = false;
+			   this->butSettingRe->Click += gcnew System::EventHandler(this, &Home::butSettingRe_Click);
+			   // 
+			   // butReqRe
+			   // 
+			   this->butReqRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butReqRe->FlatAppearance->BorderSize = 0;
+			   this->butReqRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butReqRe->Font = (gcnew System::Drawing::Font(L"Impact", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butReqRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(85)));
+			   this->butReqRe->Location = System::Drawing::Point(0, 89);
+			   this->butReqRe->Name = L"butReqRe";
+			   this->butReqRe->Size = System::Drawing::Size(200, 60);
+			   this->butReqRe->TabIndex = 1;
+			   this->butReqRe->Text = L"Request";
+			   this->butReqRe->UseVisualStyleBackColor = false;
+			   this->butReqRe->Click += gcnew System::EventHandler(this, &Home::butReqRe_Click);
+			   // 
+			   // butHomeRe
+			   // 
+			   this->butHomeRe->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(85)));
+			   this->butHomeRe->FlatAppearance->BorderSize = 0;
+			   this->butHomeRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butHomeRe->Font = (gcnew System::Drawing::Font(L"Impact", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butHomeRe->ForeColor = System::Drawing::Color::White;
+			   this->butHomeRe->Location = System::Drawing::Point(8, 10);
+			   this->butHomeRe->Name = L"butHomeRe";
+			   this->butHomeRe->Size = System::Drawing::Size(189, 65);
+			   this->butHomeRe->TabIndex = 0;
+			   this->butHomeRe->Text = L"Home";
+			   this->butHomeRe->UseVisualStyleBackColor = false;
+			   this->butHomeRe->Click += gcnew System::EventHandler(this, &Home::butHomeRe_Click);
 			   // 
 			   // panelDelAcconetRe
 			   // 
@@ -3125,19 +3154,21 @@ namespace Project4 {
 				   | System::Windows::Forms::AnchorStyles::Left)
 				   | System::Windows::Forms::AnchorStyles::Right));
 			   this->panelRoomAdmin->Controls->Add(this->panelHomeAdmin);
+			   this->panelRoomAdmin->Controls->Add(this->panelRequestAdmin);
+			   this->panelRoomAdmin->Controls->Add(this->panel2);
+			   this->panelRoomAdmin->Controls->Add(this->panelDoAdmin);
 			   this->panelRoomAdmin->Controls->Add(this->panelMenuAdmin);
-			   this->panelRoomAdmin->Controls->Add(this->panelDelAccoAdmin);
 			   this->panelRoomAdmin->Controls->Add(this->panelRejectReq);
 			   this->panelRoomAdmin->Controls->Add(this->panelDisplayDoDate);
 			   this->panelRoomAdmin->Controls->Add(this->panelUpdateAdminRe);
 			   this->panelRoomAdmin->Controls->Add(this->panelUpdateAdminDo);
 			   this->panelRoomAdmin->Controls->Add(this->panelInsertRe);
 			   this->panelRoomAdmin->Controls->Add(this->panelInserDo);
-			   this->panelRoomAdmin->Controls->Add(this->panelDisplayReDate);
-			   this->panelRoomAdmin->Controls->Add(this->panelRequestAdmin);
 			   this->panelRoomAdmin->Controls->Add(this->panelReAdmin);
-			   this->panelRoomAdmin->Controls->Add(this->panelDoAdmin);
 			   this->panelRoomAdmin->Controls->Add(this->panelAcceptReq);
+			   this->panelRoomAdmin->Controls->Add(this->panelDelAccoAdmin);
+			   this->panelRoomAdmin->Controls->Add(this->panel3);
+			   this->panelRoomAdmin->Controls->Add(this->panelDisplayReDate);
 			   this->panelRoomAdmin->Location = System::Drawing::Point(0, 50);
 			   this->panelRoomAdmin->Name = L"panelRoomAdmin";
 			   this->panelRoomAdmin->Size = System::Drawing::Size(950, 601);
@@ -3155,9 +3186,9 @@ namespace Project4 {
 			   this->panelHomeAdmin->Controls->Add(this->labelNumofAllReq);
 			   this->panelHomeAdmin->Controls->Add(this->labelNumofRe);
 			   this->panelHomeAdmin->Controls->Add(this->labelNumofDo);
-			   this->panelHomeAdmin->Location = System::Drawing::Point(203, 1);
+			   this->panelHomeAdmin->Location = System::Drawing::Point(203, 2);
 			   this->panelHomeAdmin->Name = L"panelHomeAdmin";
-			   this->panelHomeAdmin->Size = System::Drawing::Size(747, 600);
+			   this->panelHomeAdmin->Size = System::Drawing::Size(747, 599);
 			   this->panelHomeAdmin->TabIndex = 22;
 			   // 
 			   // butDisplayReDate
@@ -3198,7 +3229,7 @@ namespace Project4 {
 				   static_cast<System::Byte>(0)));
 			   this->labelNumofAllReq->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(222)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
-			   this->labelNumofAllReq->Location = System::Drawing::Point(640, 407);
+			   this->labelNumofAllReq->Location = System::Drawing::Point(652, 402);
 			   this->labelNumofAllReq->Name = L"labelNumofAllReq";
 			   this->labelNumofAllReq->Size = System::Drawing::Size(34, 40);
 			   this->labelNumofAllReq->TabIndex = 2;
@@ -3212,7 +3243,7 @@ namespace Project4 {
 				   static_cast<System::Byte>(0)));
 			   this->labelNumofRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(222)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(55)));
-			   this->labelNumofRe->Location = System::Drawing::Point(409, 405);
+			   this->labelNumofRe->Location = System::Drawing::Point(420, 402);
 			   this->labelNumofRe->Name = L"labelNumofRe";
 			   this->labelNumofRe->Size = System::Drawing::Size(34, 40);
 			   this->labelNumofRe->TabIndex = 1;
@@ -3226,11 +3257,689 @@ namespace Project4 {
 				   static_cast<System::Byte>(0)));
 			   this->labelNumofDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(222)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(55)));
-			   this->labelNumofDo->Location = System::Drawing::Point(190, 407);
+			   this->labelNumofDo->Location = System::Drawing::Point(200, 402);
 			   this->labelNumofDo->Name = L"labelNumofDo";
 			   this->labelNumofDo->Size = System::Drawing::Size(34, 40);
 			   this->labelNumofDo->TabIndex = 0;
 			   this->labelNumofDo->Text = L"0";
+			   // 
+			   // panelRequestAdmin
+			   // 
+			   this->panelRequestAdmin->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				   | System::Windows::Forms::AnchorStyles::Left)
+				   | System::Windows::Forms::AnchorStyles::Right));
+			   this->panelRequestAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelRequestAdmin.BackgroundImage")));
+			   this->panelRequestAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->panelRequestAdmin->Controls->Add(this->butValidReqDoAdmin);
+			   this->panelRequestAdmin->Controls->Add(this->butBackReqAdmin);
+			   this->panelRequestAdmin->Controls->Add(this->butNextReqAdmin);
+			   this->panelRequestAdmin->Controls->Add(this->labelAgeDoReqAdmin);
+			   this->panelRequestAdmin->Controls->Add(this->labelEmailDoReqAdmin);
+			   this->panelRequestAdmin->Controls->Add(this->labelBHosDoReqAdmin);
+			   this->panelRequestAdmin->Controls->Add(this->labelBloodDoReqAdmin);
+			   this->panelRequestAdmin->Controls->Add(this->labelDateDoReqAdmin);
+			   this->panelRequestAdmin->Controls->Add(this->textBoxIdDoReqAdmin);
+			   this->panelRequestAdmin->Controls->Add(this->labelLnameDoReqAdmin);
+			   this->panelRequestAdmin->Controls->Add(this->labelFnameDoReqAdmin);
+			   this->panelRequestAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->panelRequestAdmin->Location = System::Drawing::Point(203, 3);
+			   this->panelRequestAdmin->Name = L"panelRequestAdmin";
+			   this->panelRequestAdmin->Size = System::Drawing::Size(747, 598);
+			   this->panelRequestAdmin->TabIndex = 29;
+			   // 
+			   // butValidReqDoAdmin
+			   // 
+			   this->butValidReqDoAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->butValidReqDoAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butValidReqDoAdmin.BackgroundImage")));
+			   this->butValidReqDoAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->butValidReqDoAdmin->FlatAppearance->BorderSize = 0;
+			   this->butValidReqDoAdmin->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
+			   this->butValidReqDoAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butValidReqDoAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butValidReqDoAdmin->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			   this->butValidReqDoAdmin->Location = System::Drawing::Point(128, 505);
+			   this->butValidReqDoAdmin->Name = L"butValidReqDoAdmin";
+			   this->butValidReqDoAdmin->Size = System::Drawing::Size(112, 38);
+			   this->butValidReqDoAdmin->TabIndex = 23;
+			   this->butValidReqDoAdmin->Text = L"Valid";
+			   this->butValidReqDoAdmin->UseVisualStyleBackColor = false;
+			   this->butValidReqDoAdmin->Click += gcnew System::EventHandler(this, &Home::butValidReqDoAdmin_Click);
+			   // 
+			   // butBackReqAdmin
+			   // 
+			   this->butBackReqAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->butBackReqAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butBackReqAdmin.BackgroundImage")));
+			   this->butBackReqAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->butBackReqAdmin->FlatAppearance->BorderSize = 0;
+			   this->butBackReqAdmin->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
+			   this->butBackReqAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butBackReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butBackReqAdmin->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			   this->butBackReqAdmin->Location = System::Drawing::Point(305, 505);
+			   this->butBackReqAdmin->Name = L"butBackReqAdmin";
+			   this->butBackReqAdmin->Size = System::Drawing::Size(112, 36);
+			   this->butBackReqAdmin->TabIndex = 22;
+			   this->butBackReqAdmin->Text = L"Back";
+			   this->butBackReqAdmin->UseVisualStyleBackColor = false;
+			   this->butBackReqAdmin->Click += gcnew System::EventHandler(this, &Home::butBackReqAdmin_Click);
+			   // 
+			   // butNextReqAdmin
+			   // 
+			   this->butNextReqAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->butNextReqAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butNextReqAdmin.BackgroundImage")));
+			   this->butNextReqAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->butNextReqAdmin->FlatAppearance->BorderColor = System::Drawing::Color::Aqua;
+			   this->butNextReqAdmin->FlatAppearance->BorderSize = 0;
+			   this->butNextReqAdmin->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
+			   this->butNextReqAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butNextReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butNextReqAdmin->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			   this->butNextReqAdmin->Location = System::Drawing::Point(488, 506);
+			   this->butNextReqAdmin->Name = L"butNextReqAdmin";
+			   this->butNextReqAdmin->Size = System::Drawing::Size(108, 35);
+			   this->butNextReqAdmin->TabIndex = 21;
+			   this->butNextReqAdmin->Text = L"Next";
+			   this->butNextReqAdmin->UseVisualStyleBackColor = false;
+			   this->butNextReqAdmin->Click += gcnew System::EventHandler(this, &Home::butNextReqAdmin_Click);
+			   // 
+			   // labelAgeDoReqAdmin
+			   // 
+			   this->labelAgeDoReqAdmin->AutoSize = true;
+			   this->labelAgeDoReqAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->labelAgeDoReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			   this->labelAgeDoReqAdmin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelAgeDoReqAdmin->Location = System::Drawing::Point(53, 335);
+			   this->labelAgeDoReqAdmin->Name = L"labelAgeDoReqAdmin";
+			   this->labelAgeDoReqAdmin->Size = System::Drawing::Size(0, 25);
+			   this->labelAgeDoReqAdmin->TabIndex = 17;
+			   // 
+			   // labelEmailDoReqAdmin
+			   // 
+			   this->labelEmailDoReqAdmin->AutoSize = true;
+			   this->labelEmailDoReqAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->labelEmailDoReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			   this->labelEmailDoReqAdmin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelEmailDoReqAdmin->Location = System::Drawing::Point(396, 183);
+			   this->labelEmailDoReqAdmin->Name = L"labelEmailDoReqAdmin";
+			   this->labelEmailDoReqAdmin->Size = System::Drawing::Size(0, 25);
+			   this->labelEmailDoReqAdmin->TabIndex = 17;
+			   // 
+			   // labelBHosDoReqAdmin
+			   // 
+			   this->labelBHosDoReqAdmin->AutoSize = true;
+			   this->labelBHosDoReqAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->labelBHosDoReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			   this->labelBHosDoReqAdmin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelBHosDoReqAdmin->Location = System::Drawing::Point(53, 409);
+			   this->labelBHosDoReqAdmin->Name = L"labelBHosDoReqAdmin";
+			   this->labelBHosDoReqAdmin->Size = System::Drawing::Size(0, 25);
+			   this->labelBHosDoReqAdmin->TabIndex = 17;
+			   // 
+			   // labelBloodDoReqAdmin
+			   // 
+			   this->labelBloodDoReqAdmin->AutoSize = true;
+			   this->labelBloodDoReqAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->labelBloodDoReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			   this->labelBloodDoReqAdmin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelBloodDoReqAdmin->Location = System::Drawing::Point(390, 338);
+			   this->labelBloodDoReqAdmin->Name = L"labelBloodDoReqAdmin";
+			   this->labelBloodDoReqAdmin->Size = System::Drawing::Size(0, 25);
+			   this->labelBloodDoReqAdmin->TabIndex = 17;
+			   // 
+			   // labelDateDoReqAdmin
+			   // 
+			   this->labelDateDoReqAdmin->AutoSize = true;
+			   this->labelDateDoReqAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->labelDateDoReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			   this->labelDateDoReqAdmin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelDateDoReqAdmin->Location = System::Drawing::Point(396, 411);
+			   this->labelDateDoReqAdmin->Name = L"labelDateDoReqAdmin";
+			   this->labelDateDoReqAdmin->Size = System::Drawing::Size(0, 25);
+			   this->labelDateDoReqAdmin->TabIndex = 14;
+			   // 
+			   // textBoxIdDoReqAdmin
+			   // 
+			   this->textBoxIdDoReqAdmin->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->textBoxIdDoReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
+				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			   this->textBoxIdDoReqAdmin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->textBoxIdDoReqAdmin->Location = System::Drawing::Point(59, 183);
+			   this->textBoxIdDoReqAdmin->Name = L"textBoxIdDoReqAdmin";
+			   this->textBoxIdDoReqAdmin->Size = System::Drawing::Size(72, 23);
+			   this->textBoxIdDoReqAdmin->TabIndex = 12;
+			   // 
+			   // labelLnameDoReqAdmin
+			   // 
+			   this->labelLnameDoReqAdmin->AutoSize = true;
+			   this->labelLnameDoReqAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->labelLnameDoReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			   this->labelLnameDoReqAdmin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelLnameDoReqAdmin->Location = System::Drawing::Point(396, 262);
+			   this->labelLnameDoReqAdmin->Name = L"labelLnameDoReqAdmin";
+			   this->labelLnameDoReqAdmin->Size = System::Drawing::Size(0, 25);
+			   this->labelLnameDoReqAdmin->TabIndex = 8;
+			   // 
+			   // labelFnameDoReqAdmin
+			   // 
+			   this->labelFnameDoReqAdmin->AutoSize = true;
+			   this->labelFnameDoReqAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->labelFnameDoReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			   this->labelFnameDoReqAdmin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelFnameDoReqAdmin->Location = System::Drawing::Point(49, 261);
+			   this->labelFnameDoReqAdmin->Name = L"labelFnameDoReqAdmin";
+			   this->labelFnameDoReqAdmin->Size = System::Drawing::Size(0, 25);
+			   this->labelFnameDoReqAdmin->TabIndex = 5;
+			   // 
+			   // panel2
+			   // 
+			   this->panel2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				   | System::Windows::Forms::AnchorStyles::Left)
+				   | System::Windows::Forms::AnchorStyles::Right));
+			   this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
+			   this->panel2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->panel2->Controls->Add(this->button3);
+			   this->panel2->Controls->Add(this->comboBoxBloodInsertAdmin);
+			   this->panel2->Controls->Add(this->butDIsplayBloodAdmin);
+			   this->panel2->Controls->Add(this->textBoxIdBlodAdmin);
+			   this->panel2->Controls->Add(this->butInsertBloodAdmin);
+			   this->panel2->Controls->Add(this->dateTimePickerRecBloodAdmin);
+			   this->panel2->Controls->Add(this->textBoxQuBlodAdmin);
+			   this->panel2->Location = System::Drawing::Point(203, 3);
+			   this->panel2->Name = L"panel2";
+			   this->panel2->Size = System::Drawing::Size(747, 597);
+			   this->panel2->TabIndex = 33;
+			   // 
+			   // button3
+			   // 
+			   this->button3->BackColor = System::Drawing::Color::Transparent;
+			   this->button3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.BackgroundImage")));
+			   this->button3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->button3->FlatAppearance->BorderSize = 0;
+			   this->button3->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
+			   this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->button3->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			   this->button3->Location = System::Drawing::Point(182, 494);
+			   this->button3->Name = L"button3";
+			   this->button3->Size = System::Drawing::Size(144, 41);
+			   this->button3->TabIndex = 18;
+			   this->button3->Text = L"Delete";
+			   this->button3->UseVisualStyleBackColor = false;
+			   this->button3->Click += gcnew System::EventHandler(this, &Home::button3_Click_2);
+			   // 
+			   // comboBoxBloodInsertAdmin
+			   // 
+			   this->comboBoxBloodInsertAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->comboBoxBloodInsertAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			   this->comboBoxBloodInsertAdmin->FormattingEnabled = true;
+			   this->comboBoxBloodInsertAdmin->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
+				   L"A+", L"A-", L"B+", L"B-", L"O+",
+					   L"O-", L"AB+", L"AB-"
+			   });
+			   this->comboBoxBloodInsertAdmin->Location = System::Drawing::Point(237, 254);
+			   this->comboBoxBloodInsertAdmin->Name = L"comboBoxBloodInsertAdmin";
+			   this->comboBoxBloodInsertAdmin->Size = System::Drawing::Size(273, 28);
+			   this->comboBoxBloodInsertAdmin->TabIndex = 11;
+			   this->comboBoxBloodInsertAdmin->Text = L"A+";
+			   // 
+			   // butDIsplayBloodAdmin
+			   // 
+			   this->butDIsplayBloodAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->butDIsplayBloodAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butDIsplayBloodAdmin.BackgroundImage")));
+			   this->butDIsplayBloodAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->butDIsplayBloodAdmin->FlatAppearance->BorderSize = 0;
+			   this->butDIsplayBloodAdmin->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
+			   this->butDIsplayBloodAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butDIsplayBloodAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft PhagsPa", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butDIsplayBloodAdmin->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->butDIsplayBloodAdmin->Location = System::Drawing::Point(613, 559);
+			   this->butDIsplayBloodAdmin->Name = L"butDIsplayBloodAdmin";
+			   this->butDIsplayBloodAdmin->Size = System::Drawing::Size(133, 40);
+			   this->butDIsplayBloodAdmin->TabIndex = 17;
+			   this->butDIsplayBloodAdmin->Text = L"Display";
+			   this->butDIsplayBloodAdmin->UseVisualStyleBackColor = false;
+			   this->butDIsplayBloodAdmin->Click += gcnew System::EventHandler(this, &Home::butDIsplayBloodAdmin_Click);
+			   // 
+			   // textBoxIdBlodAdmin
+			   // 
+			   this->textBoxIdBlodAdmin->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->textBoxIdBlodAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->textBoxIdBlodAdmin->Location = System::Drawing::Point(242, 181);
+			   this->textBoxIdBlodAdmin->Name = L"textBoxIdBlodAdmin";
+			   this->textBoxIdBlodAdmin->Size = System::Drawing::Size(258, 20);
+			   this->textBoxIdBlodAdmin->TabIndex = 16;
+			   // 
+			   // butInsertBloodAdmin
+			   // 
+			   this->butInsertBloodAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->butInsertBloodAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butInsertBloodAdmin.BackgroundImage")));
+			   this->butInsertBloodAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->butInsertBloodAdmin->FlatAppearance->BorderSize = 0;
+			   this->butInsertBloodAdmin->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
+			   this->butInsertBloodAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butInsertBloodAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
+				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			   this->butInsertBloodAdmin->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			   this->butInsertBloodAdmin->Location = System::Drawing::Point(427, 494);
+			   this->butInsertBloodAdmin->Name = L"butInsertBloodAdmin";
+			   this->butInsertBloodAdmin->Size = System::Drawing::Size(141, 41);
+			   this->butInsertBloodAdmin->TabIndex = 14;
+			   this->butInsertBloodAdmin->Text = L"Insert";
+			   this->butInsertBloodAdmin->UseVisualStyleBackColor = false;
+			   this->butInsertBloodAdmin->Click += gcnew System::EventHandler(this, &Home::butInsertBloodAdmin_Click);
+			   // 
+			   // dateTimePickerRecBloodAdmin
+			   // 
+			   this->dateTimePickerRecBloodAdmin->CustomFormat = L"dd-MM-yyyy";
+			   this->dateTimePickerRecBloodAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			   this->dateTimePickerRecBloodAdmin->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			   this->dateTimePickerRecBloodAdmin->Location = System::Drawing::Point(246, 408);
+			   this->dateTimePickerRecBloodAdmin->Name = L"dateTimePickerRecBloodAdmin";
+			   this->dateTimePickerRecBloodAdmin->Size = System::Drawing::Size(255, 30);
+			   this->dateTimePickerRecBloodAdmin->TabIndex = 13;
+			   this->dateTimePickerRecBloodAdmin->Value = System::DateTime(2000, 1, 1, 0, 0, 0, 0);
+			   // 
+			   // textBoxQuBlodAdmin
+			   // 
+			   this->textBoxQuBlodAdmin->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->textBoxQuBlodAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->textBoxQuBlodAdmin->Location = System::Drawing::Point(247, 336);
+			   this->textBoxQuBlodAdmin->Name = L"textBoxQuBlodAdmin";
+			   this->textBoxQuBlodAdmin->Size = System::Drawing::Size(259, 20);
+			   this->textBoxQuBlodAdmin->TabIndex = 12;
+			   // 
+			   // panelDoAdmin
+			   // 
+			   this->panelDoAdmin->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				   | System::Windows::Forms::AnchorStyles::Left)
+				   | System::Windows::Forms::AnchorStyles::Right));
+			   this->panelDoAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelDoAdmin.BackgroundImage")));
+			   this->panelDoAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->panelDoAdmin->Controls->Add(this->labelGenderAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->butGenderAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->butBackRcoDoAdmin);
+			   this->panelDoAdmin->Controls->Add(this->butNextRcoDoAdmin);
+			   this->panelDoAdmin->Controls->Add(this->butBloodeAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->butLastDonAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->butDisAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->labelBloodeAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->labelDisAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->labelLastDonAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->labelAgeAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->butAgeAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->textBoxIdAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->butLnameAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->butEmailnameAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->butPasAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->labelLnameAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->labelPasAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->labelEmailAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->labelFnameAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->butFnameAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->butInsertAdminDo);
+			   this->panelDoAdmin->Controls->Add(this->butDelAcoAdminDo);
+			   this->panelDoAdmin->Location = System::Drawing::Point(205, 2);
+			   this->panelDoAdmin->Name = L"panelDoAdmin";
+			   this->panelDoAdmin->Size = System::Drawing::Size(745, 599);
+			   this->panelDoAdmin->TabIndex = 1;
+			   // 
+			   // labelGenderAdminDo
+			   // 
+			   this->labelGenderAdminDo->AutoSize = true;
+			   this->labelGenderAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->labelGenderAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelGenderAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelGenderAdminDo->Location = System::Drawing::Point(382, 159);
+			   this->labelGenderAdminDo->Name = L"labelGenderAdminDo";
+			   this->labelGenderAdminDo->Size = System::Drawing::Size(0, 27);
+			   this->labelGenderAdminDo->TabIndex = 24;
+			   // 
+			   // butGenderAdminDo
+			   // 
+			   this->butGenderAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butGenderAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->butGenderAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butGenderAdminDo.BackgroundImage")));
+			   this->butGenderAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butGenderAdminDo->FlatAppearance->BorderSize = 0;
+			   this->butGenderAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butGenderAdminDo->Location = System::Drawing::Point(441, 155);
+			   this->butGenderAdminDo->Name = L"butGenderAdminDo";
+			   this->butGenderAdminDo->Size = System::Drawing::Size(27, 31);
+			   this->butGenderAdminDo->TabIndex = 23;
+			   this->butGenderAdminDo->Text = L" ";
+			   this->butGenderAdminDo->UseVisualStyleBackColor = false;
+			   this->butGenderAdminDo->Click += gcnew System::EventHandler(this, &Home::butGenderAdminDo_Click);
+			   // 
+			   // butBackRcoDoAdmin
+			   // 
+			   this->butBackRcoDoAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->butBackRcoDoAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butBackRcoDoAdmin.BackgroundImage")));
+			   this->butBackRcoDoAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->butBackRcoDoAdmin->FlatAppearance->BorderSize = 0;
+			   this->butBackRcoDoAdmin->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
+			   this->butBackRcoDoAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butBackRcoDoAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butBackRcoDoAdmin->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			   this->butBackRcoDoAdmin->Location = System::Drawing::Point(282, 541);
+			   this->butBackRcoDoAdmin->Name = L"butBackRcoDoAdmin";
+			   this->butBackRcoDoAdmin->Size = System::Drawing::Size(120, 38);
+			   this->butBackRcoDoAdmin->TabIndex = 22;
+			   this->butBackRcoDoAdmin->Text = L"Back";
+			   this->butBackRcoDoAdmin->UseVisualStyleBackColor = false;
+			   this->butBackRcoDoAdmin->Click += gcnew System::EventHandler(this, &Home::butBackRcoDoAdmin_Click);
+			   // 
+			   // butNextRcoDoAdmin
+			   // 
+			   this->butNextRcoDoAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->butNextRcoDoAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butNextRcoDoAdmin.BackgroundImage")));
+			   this->butNextRcoDoAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->butNextRcoDoAdmin->FlatAppearance->BorderSize = 0;
+			   this->butNextRcoDoAdmin->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
+			   this->butNextRcoDoAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butNextRcoDoAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butNextRcoDoAdmin->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			   this->butNextRcoDoAdmin->Location = System::Drawing::Point(468, 541);
+			   this->butNextRcoDoAdmin->Name = L"butNextRcoDoAdmin";
+			   this->butNextRcoDoAdmin->Size = System::Drawing::Size(126, 36);
+			   this->butNextRcoDoAdmin->TabIndex = 21;
+			   this->butNextRcoDoAdmin->Text = L"Next";
+			   this->butNextRcoDoAdmin->UseVisualStyleBackColor = false;
+			   this->butNextRcoDoAdmin->Click += gcnew System::EventHandler(this, &Home::butNextRcoDoAdmin_Click);
+			   // 
+			   // butBloodeAdminDo
+			   // 
+			   this->butBloodeAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butBloodeAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->butBloodeAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butBloodeAdminDo.BackgroundImage")));
+			   this->butBloodeAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butBloodeAdminDo->FlatAppearance->BorderSize = 0;
+			   this->butBloodeAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butBloodeAdminDo->Location = System::Drawing::Point(666, 313);
+			   this->butBloodeAdminDo->Name = L"butBloodeAdminDo";
+			   this->butBloodeAdminDo->Size = System::Drawing::Size(27, 29);
+			   this->butBloodeAdminDo->TabIndex = 20;
+			   this->butBloodeAdminDo->Text = L" ";
+			   this->butBloodeAdminDo->UseVisualStyleBackColor = false;
+			   this->butBloodeAdminDo->Click += gcnew System::EventHandler(this, &Home::butBloodeAdminDo_Click);
+			   // 
+			   // butLastDonAdminDo
+			   // 
+			   this->butLastDonAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butLastDonAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->butLastDonAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butLastDonAdminDo.BackgroundImage")));
+			   this->butLastDonAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butLastDonAdminDo->FlatAppearance->BorderSize = 0;
+			   this->butLastDonAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butLastDonAdminDo->Location = System::Drawing::Point(666, 383);
+			   this->butLastDonAdminDo->Name = L"butLastDonAdminDo";
+			   this->butLastDonAdminDo->Size = System::Drawing::Size(27, 34);
+			   this->butLastDonAdminDo->TabIndex = 19;
+			   this->butLastDonAdminDo->Text = L" ";
+			   this->butLastDonAdminDo->UseVisualStyleBackColor = false;
+			   this->butLastDonAdminDo->Click += gcnew System::EventHandler(this, &Home::butLastDonAdminDo_Click);
+			   // 
+			   // butDisAdminDo
+			   // 
+			   this->butDisAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butDisAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->butDisAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butDisAdminDo.BackgroundImage")));
+			   this->butDisAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butDisAdminDo->FlatAppearance->BorderSize = 0;
+			   this->butDisAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butDisAdminDo->Location = System::Drawing::Point(666, 461);
+			   this->butDisAdminDo->Name = L"butDisAdminDo";
+			   this->butDisAdminDo->Size = System::Drawing::Size(27, 38);
+			   this->butDisAdminDo->TabIndex = 18;
+			   this->butDisAdminDo->Text = L" ";
+			   this->butDisAdminDo->UseVisualStyleBackColor = false;
+			   this->butDisAdminDo->Click += gcnew System::EventHandler(this, &Home::butDisAdminDo_Click);
+			   // 
+			   // labelBloodeAdminDo
+			   // 
+			   this->labelBloodeAdminDo->AutoSize = true;
+			   this->labelBloodeAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->labelBloodeAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelBloodeAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelBloodeAdminDo->Location = System::Drawing::Point(391, 317);
+			   this->labelBloodeAdminDo->Name = L"labelBloodeAdminDo";
+			   this->labelBloodeAdminDo->Size = System::Drawing::Size(0, 27);
+			   this->labelBloodeAdminDo->TabIndex = 17;
+			   // 
+			   // labelDisAdminDo
+			   // 
+			   this->labelDisAdminDo->AutoSize = true;
+			   this->labelDisAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->labelDisAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelDisAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelDisAdminDo->Location = System::Drawing::Point(391, 470);
+			   this->labelDisAdminDo->Name = L"labelDisAdminDo";
+			   this->labelDisAdminDo->Size = System::Drawing::Size(0, 27);
+			   this->labelDisAdminDo->TabIndex = 16;
+			   // 
+			   // labelLastDonAdminDo
+			   // 
+			   this->labelLastDonAdminDo->AutoSize = true;
+			   this->labelLastDonAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->labelLastDonAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelLastDonAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelLastDonAdminDo->Location = System::Drawing::Point(385, 392);
+			   this->labelLastDonAdminDo->Name = L"labelLastDonAdminDo";
+			   this->labelLastDonAdminDo->Size = System::Drawing::Size(0, 27);
+			   this->labelLastDonAdminDo->TabIndex = 15;
+			   // 
+			   // labelAgeAdminDo
+			   // 
+			   this->labelAgeAdminDo->AutoSize = true;
+			   this->labelAgeAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->labelAgeAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelAgeAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelAgeAdminDo->Location = System::Drawing::Point(391, 239);
+			   this->labelAgeAdminDo->Name = L"labelAgeAdminDo";
+			   this->labelAgeAdminDo->Size = System::Drawing::Size(0, 27);
+			   this->labelAgeAdminDo->TabIndex = 14;
+			   // 
+			   // butAgeAdminDo
+			   // 
+			   this->butAgeAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butAgeAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->butAgeAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butAgeAdminDo.BackgroundImage")));
+			   this->butAgeAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butAgeAdminDo->FlatAppearance->BorderSize = 0;
+			   this->butAgeAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butAgeAdminDo->Location = System::Drawing::Point(666, 237);
+			   this->butAgeAdminDo->Name = L"butAgeAdminDo";
+			   this->butAgeAdminDo->Size = System::Drawing::Size(27, 31);
+			   this->butAgeAdminDo->TabIndex = 13;
+			   this->butAgeAdminDo->Text = L" ";
+			   this->butAgeAdminDo->UseVisualStyleBackColor = false;
+			   this->butAgeAdminDo->Click += gcnew System::EventHandler(this, &Home::butAgeAdminDo_Click);
+			   // 
+			   // textBoxIdAdminDo
+			   // 
+			   this->textBoxIdAdminDo->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->textBoxIdAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->textBoxIdAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->textBoxIdAdminDo->Location = System::Drawing::Point(57, 150);
+			   this->textBoxIdAdminDo->Name = L"textBoxIdAdminDo";
+			   this->textBoxIdAdminDo->Size = System::Drawing::Size(38, 26);
+			   this->textBoxIdAdminDo->TabIndex = 12;
+			   // 
+			   // butLnameAdminDo
+			   // 
+			   this->butLnameAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butLnameAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->butLnameAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butLnameAdminDo.BackgroundImage")));
+			   this->butLnameAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butLnameAdminDo->FlatAppearance->BorderSize = 0;
+			   this->butLnameAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butLnameAdminDo->Location = System::Drawing::Point(322, 310);
+			   this->butLnameAdminDo->Name = L"butLnameAdminDo";
+			   this->butLnameAdminDo->Size = System::Drawing::Size(27, 29);
+			   this->butLnameAdminDo->TabIndex = 11;
+			   this->butLnameAdminDo->Text = L" ";
+			   this->butLnameAdminDo->UseVisualStyleBackColor = false;
+			   this->butLnameAdminDo->Click += gcnew System::EventHandler(this, &Home::butLnameAdminDo_Click);
+			   // 
+			   // butEmailnameAdminDo
+			   // 
+			   this->butEmailnameAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butEmailnameAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->butEmailnameAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butEmailnameAdminDo.BackgroundImage")));
+			   this->butEmailnameAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butEmailnameAdminDo->FlatAppearance->BorderSize = 0;
+			   this->butEmailnameAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butEmailnameAdminDo->Location = System::Drawing::Point(322, 386);
+			   this->butEmailnameAdminDo->Name = L"butEmailnameAdminDo";
+			   this->butEmailnameAdminDo->Size = System::Drawing::Size(27, 34);
+			   this->butEmailnameAdminDo->TabIndex = 10;
+			   this->butEmailnameAdminDo->Text = L" ";
+			   this->butEmailnameAdminDo->UseVisualStyleBackColor = false;
+			   this->butEmailnameAdminDo->Click += gcnew System::EventHandler(this, &Home::butEmailnameAdminDo_Click);
+			   // 
+			   // butPasAdminDo
+			   // 
+			   this->butPasAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butPasAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->butPasAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butPasAdminDo.BackgroundImage")));
+			   this->butPasAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butPasAdminDo->FlatAppearance->BorderSize = 0;
+			   this->butPasAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butPasAdminDo->Location = System::Drawing::Point(322, 461);
+			   this->butPasAdminDo->Name = L"butPasAdminDo";
+			   this->butPasAdminDo->Size = System::Drawing::Size(27, 38);
+			   this->butPasAdminDo->TabIndex = 9;
+			   this->butPasAdminDo->Text = L" ";
+			   this->butPasAdminDo->UseVisualStyleBackColor = false;
+			   this->butPasAdminDo->Click += gcnew System::EventHandler(this, &Home::butPasAdminDo_Click);
+			   // 
+			   // labelLnameAdminDo
+			   // 
+			   this->labelLnameAdminDo->AutoSize = true;
+			   this->labelLnameAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->labelLnameAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelLnameAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelLnameAdminDo->Location = System::Drawing::Point(51, 313);
+			   this->labelLnameAdminDo->Name = L"labelLnameAdminDo";
+			   this->labelLnameAdminDo->Size = System::Drawing::Size(0, 27);
+			   this->labelLnameAdminDo->TabIndex = 8;
+			   // 
+			   // labelPasAdminDo
+			   // 
+			   this->labelPasAdminDo->AutoSize = true;
+			   this->labelPasAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->labelPasAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelPasAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelPasAdminDo->Location = System::Drawing::Point(52, 468);
+			   this->labelPasAdminDo->Name = L"labelPasAdminDo";
+			   this->labelPasAdminDo->Size = System::Drawing::Size(0, 27);
+			   this->labelPasAdminDo->TabIndex = 7;
+			   // 
+			   // labelEmailAdminDo
+			   // 
+			   this->labelEmailAdminDo->AutoSize = true;
+			   this->labelEmailAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->labelEmailAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelEmailAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelEmailAdminDo->Location = System::Drawing::Point(52, 393);
+			   this->labelEmailAdminDo->Name = L"labelEmailAdminDo";
+			   this->labelEmailAdminDo->Size = System::Drawing::Size(0, 27);
+			   this->labelEmailAdminDo->TabIndex = 6;
+			   // 
+			   // labelFnameAdminDo
+			   // 
+			   this->labelFnameAdminDo->AutoSize = true;
+			   this->labelFnameAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->labelFnameAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelFnameAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelFnameAdminDo->Location = System::Drawing::Point(52, 239);
+			   this->labelFnameAdminDo->Name = L"labelFnameAdminDo";
+			   this->labelFnameAdminDo->Size = System::Drawing::Size(0, 27);
+			   this->labelFnameAdminDo->TabIndex = 5;
+			   // 
+			   // butFnameAdminDo
+			   // 
+			   this->butFnameAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butFnameAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->butFnameAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butFnameAdminDo.BackgroundImage")));
+			   this->butFnameAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butFnameAdminDo->FlatAppearance->BorderSize = 0;
+			   this->butFnameAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butFnameAdminDo->Location = System::Drawing::Point(322, 236);
+			   this->butFnameAdminDo->Name = L"butFnameAdminDo";
+			   this->butFnameAdminDo->Size = System::Drawing::Size(27, 31);
+			   this->butFnameAdminDo->TabIndex = 4;
+			   this->butFnameAdminDo->Text = L" ";
+			   this->butFnameAdminDo->UseVisualStyleBackColor = false;
+			   this->butFnameAdminDo->Click += gcnew System::EventHandler(this, &Home::butFnameAdminDo_Click);
+			   // 
+			   // butInsertAdminDo
+			   // 
+			   this->butInsertAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butInsertAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->butInsertAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butInsertAdminDo.BackgroundImage")));
+			   this->butInsertAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butInsertAdminDo->FlatAppearance->BorderSize = 0;
+			   this->butInsertAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butInsertAdminDo->Location = System::Drawing::Point(101, 540);
+			   this->butInsertAdminDo->Name = L"butInsertAdminDo";
+			   this->butInsertAdminDo->Size = System::Drawing::Size(50, 51);
+			   this->butInsertAdminDo->TabIndex = 2;
+			   this->butInsertAdminDo->UseVisualStyleBackColor = false;
+			   this->butInsertAdminDo->Click += gcnew System::EventHandler(this, &Home::butInsertAdminDo_Click);
+			   // 
+			   // butDelAcoAdminDo
+			   // 
+			   this->butDelAcoAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butDelAcoAdminDo->BackColor = System::Drawing::Color::Transparent;
+			   this->butDelAcoAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butDelAcoAdminDo.BackgroundImage")));
+			   this->butDelAcoAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butDelAcoAdminDo->FlatAppearance->BorderSize = 0;
+			   this->butDelAcoAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butDelAcoAdminDo->Location = System::Drawing::Point(27, 538);
+			   this->butDelAcoAdminDo->Name = L"butDelAcoAdminDo";
+			   this->butDelAcoAdminDo->Size = System::Drawing::Size(51, 53);
+			   this->butDelAcoAdminDo->TabIndex = 1;
+			   this->butDelAcoAdminDo->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			   this->butDelAcoAdminDo->UseVisualStyleBackColor = false;
+			   this->butDelAcoAdminDo->Click += gcnew System::EventHandler(this, &Home::butDelAcoAdminDo_Click_1);
 			   // 
 			   // panelMenuAdmin
 			   // 
@@ -3240,15 +3949,32 @@ namespace Project4 {
 				   static_cast<System::Int32>(static_cast<System::Byte>(242)));
 			   this->panelMenuAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelMenuAdmin.BackgroundImage")));
 			   this->panelMenuAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->panelMenuAdmin->Controls->Add(this->butAdminPageInsert);
 			   this->panelMenuAdmin->Controls->Add(this->button10);
 			   this->panelMenuAdmin->Controls->Add(this->butAdminPageDo);
 			   this->panelMenuAdmin->Controls->Add(this->butAdminPageRe);
 			   this->panelMenuAdmin->Controls->Add(this->butAdminPageReq);
 			   this->panelMenuAdmin->Controls->Add(this->butAdminPageHo);
-			   this->panelMenuAdmin->Location = System::Drawing::Point(0, -2);
+			   this->panelMenuAdmin->Location = System::Drawing::Point(0, 4);
 			   this->panelMenuAdmin->Name = L"panelMenuAdmin";
-			   this->panelMenuAdmin->Size = System::Drawing::Size(203, 603);
+			   this->panelMenuAdmin->Size = System::Drawing::Size(203, 597);
 			   this->panelMenuAdmin->TabIndex = 21;
+			   // 
+			   // butAdminPageInsert
+			   // 
+			   this->butAdminPageInsert->BackColor = System::Drawing::Color::Transparent;
+			   this->butAdminPageInsert->FlatAppearance->BorderSize = 0;
+			   this->butAdminPageInsert->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butAdminPageInsert->Font = (gcnew System::Drawing::Font(L"Overpass", 13.8F, System::Drawing::FontStyle::Bold));
+			   this->butAdminPageInsert->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(5)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(50)), static_cast<System::Int32>(static_cast<System::Byte>(83)));
+			   this->butAdminPageInsert->Location = System::Drawing::Point(0, 319);
+			   this->butAdminPageInsert->Name = L"butAdminPageInsert";
+			   this->butAdminPageInsert->Size = System::Drawing::Size(197, 70);
+			   this->butAdminPageInsert->TabIndex = 4;
+			   this->butAdminPageInsert->Text = L"Manage Blood";
+			   this->butAdminPageInsert->UseVisualStyleBackColor = false;
+			   this->butAdminPageInsert->Click += gcnew System::EventHandler(this, &Home::butAdminPageInsert_Click);
 			   // 
 			   // button10
 			   // 
@@ -3260,7 +3986,7 @@ namespace Project4 {
 				   static_cast<System::Int32>(static_cast<System::Byte>(129)), static_cast<System::Int32>(static_cast<System::Byte>(165)), static_cast<System::Int32>(static_cast<System::Byte>(163)));
 			   this->button10->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			   this->button10->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
-			   this->button10->Location = System::Drawing::Point(0, 515);
+			   this->button10->Location = System::Drawing::Point(0, 509);
 			   this->button10->Name = L"button10";
 			   this->button10->Size = System::Drawing::Size(203, 77);
 			   this->button10->TabIndex = 3;
@@ -3273,13 +3999,12 @@ namespace Project4 {
 			   this->butAdminPageDo->BackColor = System::Drawing::Color::Transparent;
 			   this->butAdminPageDo->FlatAppearance->BorderSize = 0;
 			   this->butAdminPageDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butAdminPageDo->Font = (gcnew System::Drawing::Font(L"Impact", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
+			   this->butAdminPageDo->Font = (gcnew System::Drawing::Font(L"Overpass", 19.8F, System::Drawing::FontStyle::Bold));
 			   this->butAdminPageDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(5)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(83)));
-			   this->butAdminPageDo->Location = System::Drawing::Point(0, 168);
+			   this->butAdminPageDo->Location = System::Drawing::Point(0, 158);
 			   this->butAdminPageDo->Name = L"butAdminPageDo";
-			   this->butAdminPageDo->Size = System::Drawing::Size(197, 60);
+			   this->butAdminPageDo->Size = System::Drawing::Size(197, 69);
 			   this->butAdminPageDo->TabIndex = 2;
 			   this->butAdminPageDo->Text = L"Donor";
 			   this->butAdminPageDo->UseVisualStyleBackColor = false;
@@ -3290,13 +4015,12 @@ namespace Project4 {
 			   this->butAdminPageRe->BackColor = System::Drawing::Color::Transparent;
 			   this->butAdminPageRe->FlatAppearance->BorderSize = 0;
 			   this->butAdminPageRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butAdminPageRe->Font = (gcnew System::Drawing::Font(L"Impact", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
+			   this->butAdminPageRe->Font = (gcnew System::Drawing::Font(L"Overpass", 19.8F, System::Drawing::FontStyle::Bold));
 			   this->butAdminPageRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(5)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(83)));
 			   this->butAdminPageRe->Location = System::Drawing::Point(5, 244);
 			   this->butAdminPageRe->Name = L"butAdminPageRe";
-			   this->butAdminPageRe->Size = System::Drawing::Size(197, 60);
+			   this->butAdminPageRe->Size = System::Drawing::Size(197, 66);
 			   this->butAdminPageRe->TabIndex = 2;
 			   this->butAdminPageRe->Text = L"Recipient";
 			   this->butAdminPageRe->UseVisualStyleBackColor = false;
@@ -3307,13 +4031,12 @@ namespace Project4 {
 			   this->butAdminPageReq->BackColor = System::Drawing::Color::Transparent;
 			   this->butAdminPageReq->FlatAppearance->BorderSize = 0;
 			   this->butAdminPageReq->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butAdminPageReq->Font = (gcnew System::Drawing::Font(L"Impact", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
+			   this->butAdminPageReq->Font = (gcnew System::Drawing::Font(L"Overpass", 19.8F, System::Drawing::FontStyle::Bold));
 			   this->butAdminPageReq->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(5)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(83)));
-			   this->butAdminPageReq->Location = System::Drawing::Point(3, 89);
+			   this->butAdminPageReq->Location = System::Drawing::Point(3, 83);
 			   this->butAdminPageReq->Name = L"butAdminPageReq";
-			   this->butAdminPageReq->Size = System::Drawing::Size(197, 60);
+			   this->butAdminPageReq->Size = System::Drawing::Size(197, 74);
 			   this->butAdminPageReq->TabIndex = 1;
 			   this->butAdminPageReq->Text = L"Request";
 			   this->butAdminPageReq->UseVisualStyleBackColor = false;
@@ -3335,68 +4058,6 @@ namespace Project4 {
 			   this->butAdminPageHo->Text = L"Home";
 			   this->butAdminPageHo->UseVisualStyleBackColor = false;
 			   this->butAdminPageHo->Click += gcnew System::EventHandler(this, &Home::butAdminPageHo_Click);
-			   // 
-			   // panelDelAccoAdmin
-			   // 
-			   this->panelDelAccoAdmin->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(196)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(216)));
-			   this->panelDelAccoAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelDelAccoAdmin.BackgroundImage")));
-			   this->panelDelAccoAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			   this->panelDelAccoAdmin->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			   this->panelDelAccoAdmin->Controls->Add(this->butNoDelAcoAdmin);
-			   this->panelDelAccoAdmin->Controls->Add(this->butYesDelAcoAdmin);
-			   this->panelDelAccoAdmin->Controls->Add(this->butExitDelAcoAdmin);
-			   this->panelDelAccoAdmin->Location = System::Drawing::Point(247, 197);
-			   this->panelDelAccoAdmin->Name = L"panelDelAccoAdmin";
-			   this->panelDelAccoAdmin->Size = System::Drawing::Size(456, 208);
-			   this->panelDelAccoAdmin->TabIndex = 26;
-			   // 
-			   // butNoDelAcoAdmin
-			   // 
-			   this->butNoDelAcoAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->butNoDelAcoAdmin->FlatAppearance->BorderSize = 0;
-			   this->butNoDelAcoAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butNoDelAcoAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->butNoDelAcoAdmin->ForeColor = System::Drawing::Color::WhiteSmoke;
-			   this->butNoDelAcoAdmin->Location = System::Drawing::Point(40, 139);
-			   this->butNoDelAcoAdmin->Name = L"butNoDelAcoAdmin";
-			   this->butNoDelAcoAdmin->Size = System::Drawing::Size(130, 33);
-			   this->butNoDelAcoAdmin->TabIndex = 3;
-			   this->butNoDelAcoAdmin->Text = L"No";
-			   this->butNoDelAcoAdmin->UseVisualStyleBackColor = false;
-			   this->butNoDelAcoAdmin->Click += gcnew System::EventHandler(this, &Home::butNoDelAcoAdminDo_Click);
-			   // 
-			   // butYesDelAcoAdmin
-			   // 
-			   this->butYesDelAcoAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->butYesDelAcoAdmin->FlatAppearance->BorderSize = 0;
-			   this->butYesDelAcoAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butYesDelAcoAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->butYesDelAcoAdmin->ForeColor = System::Drawing::Color::WhiteSmoke;
-			   this->butYesDelAcoAdmin->Location = System::Drawing::Point(283, 137);
-			   this->butYesDelAcoAdmin->Name = L"butYesDelAcoAdmin";
-			   this->butYesDelAcoAdmin->Size = System::Drawing::Size(129, 33);
-			   this->butYesDelAcoAdmin->TabIndex = 2;
-			   this->butYesDelAcoAdmin->Text = L"Yes";
-			   this->butYesDelAcoAdmin->UseVisualStyleBackColor = false;
-			   this->butYesDelAcoAdmin->Click += gcnew System::EventHandler(this, &Home::butYesDelAcoAdminDo_Click);
-			   // 
-			   // butExitDelAcoAdmin
-			   // 
-			   this->butExitDelAcoAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->butExitDelAcoAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butExitDelAcoAdmin.BackgroundImage")));
-			   this->butExitDelAcoAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butExitDelAcoAdmin->FlatAppearance->BorderSize = 0;
-			   this->butExitDelAcoAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butExitDelAcoAdmin->Location = System::Drawing::Point(424, -2);
-			   this->butExitDelAcoAdmin->Name = L"butExitDelAcoAdmin";
-			   this->butExitDelAcoAdmin->Size = System::Drawing::Size(28, 34);
-			   this->butExitDelAcoAdmin->TabIndex = 0;
-			   this->butExitDelAcoAdmin->Text = L" ";
-			   this->butExitDelAcoAdmin->UseVisualStyleBackColor = false;
-			   this->butExitDelAcoAdmin->Click += gcnew System::EventHandler(this, &Home::butExitDelAcoAdminDo_Click);
 			   // 
 			   // panelRejectReq
 			   // 
@@ -3449,9 +4110,9 @@ namespace Project4 {
 			   this->panelDisplayDoDate->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			   this->panelDisplayDoDate->Controls->Add(this->button1);
 			   this->panelDisplayDoDate->Controls->Add(this->dataGridView2);
-			   this->panelDisplayDoDate->Location = System::Drawing::Point(0, 0);
+			   this->panelDisplayDoDate->Location = System::Drawing::Point(0, 3);
 			   this->panelDisplayDoDate->Name = L"panelDisplayDoDate";
-			   this->panelDisplayDoDate->Size = System::Drawing::Size(950, 601);
+			   this->panelDisplayDoDate->Size = System::Drawing::Size(950, 598);
 			   this->panelDisplayDoDate->TabIndex = 31;
 			   // 
 			   // button1
@@ -4015,6 +4676,569 @@ namespace Project4 {
 			   this->butExitInsertDo->UseVisualStyleBackColor = false;
 			   this->butExitInsertDo->Click += gcnew System::EventHandler(this, &Home::butExitInsertDo_Click);
 			   // 
+			   // panelReAdmin
+			   // 
+			   this->panelReAdmin->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				   | System::Windows::Forms::AnchorStyles::Left)
+				   | System::Windows::Forms::AnchorStyles::Right));
+			   this->panelReAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelReAdmin.BackgroundImage")));
+			   this->panelReAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->panelReAdmin->Controls->Add(this->labelGenderAdminRe);
+			   this->panelReAdmin->Controls->Add(this->butGenderAdminRe);
+			   this->panelReAdmin->Controls->Add(this->butBackRcoReAdmin);
+			   this->panelReAdmin->Controls->Add(this->butNextRcoReAdmin);
+			   this->panelReAdmin->Controls->Add(this->butBloodeAdminRe);
+			   this->panelReAdmin->Controls->Add(this->butHosAdminRe);
+			   this->panelReAdmin->Controls->Add(this->butDocAdminRe);
+			   this->panelReAdmin->Controls->Add(this->labelBloodeAdminRe);
+			   this->panelReAdmin->Controls->Add(this->labelDocAdminRe);
+			   this->panelReAdmin->Controls->Add(this->labelHosAdminRe);
+			   this->panelReAdmin->Controls->Add(this->labelAgeAdminRe);
+			   this->panelReAdmin->Controls->Add(this->butAgeAdminRe);
+			   this->panelReAdmin->Controls->Add(this->textBoxIdAdminRe);
+			   this->panelReAdmin->Controls->Add(this->butLnameAdminRe);
+			   this->panelReAdmin->Controls->Add(this->butEmailAdminRe);
+			   this->panelReAdmin->Controls->Add(this->butBPasAdminRe);
+			   this->panelReAdmin->Controls->Add(this->labelLnameAdminRe);
+			   this->panelReAdmin->Controls->Add(this->labelPasAdminRe);
+			   this->panelReAdmin->Controls->Add(this->labelEmailAdminRe);
+			   this->panelReAdmin->Controls->Add(this->labelFnameAdminRe);
+			   this->panelReAdmin->Controls->Add(this->butFnameAdminRe);
+			   this->panelReAdmin->Controls->Add(this->butInsertRe);
+			   this->panelReAdmin->Controls->Add(this->butDelAcoAdminRe);
+			   this->panelReAdmin->Location = System::Drawing::Point(203, 3);
+			   this->panelReAdmin->Name = L"panelReAdmin";
+			   this->panelReAdmin->Size = System::Drawing::Size(747, 598);
+			   this->panelReAdmin->TabIndex = 23;
+			   // 
+			   // labelGenderAdminRe
+			   // 
+			   this->labelGenderAdminRe->AutoSize = true;
+			   this->labelGenderAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->labelGenderAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelGenderAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelGenderAdminRe->Location = System::Drawing::Point(388, 160);
+			   this->labelGenderAdminRe->Name = L"labelGenderAdminRe";
+			   this->labelGenderAdminRe->Size = System::Drawing::Size(0, 27);
+			   this->labelGenderAdminRe->TabIndex = 24;
+			   // 
+			   // butGenderAdminRe
+			   // 
+			   this->butGenderAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butGenderAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butGenderAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butGenderAdminRe.BackgroundImage")));
+			   this->butGenderAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butGenderAdminRe->FlatAppearance->BorderSize = 0;
+			   this->butGenderAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butGenderAdminRe->Location = System::Drawing::Point(441, 154);
+			   this->butGenderAdminRe->Name = L"butGenderAdminRe";
+			   this->butGenderAdminRe->Size = System::Drawing::Size(27, 31);
+			   this->butGenderAdminRe->TabIndex = 23;
+			   this->butGenderAdminRe->Text = L" ";
+			   this->butGenderAdminRe->UseVisualStyleBackColor = false;
+			   this->butGenderAdminRe->Click += gcnew System::EventHandler(this, &Home::butGenderAdminRe_Click);
+			   // 
+			   // butBackRcoReAdmin
+			   // 
+			   this->butBackRcoReAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->butBackRcoReAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butBackRcoReAdmin.BackgroundImage")));
+			   this->butBackRcoReAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->butBackRcoReAdmin->FlatAppearance->BorderSize = 0;
+			   this->butBackRcoReAdmin->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
+			   this->butBackRcoReAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butBackRcoReAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butBackRcoReAdmin->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			   this->butBackRcoReAdmin->Location = System::Drawing::Point(365, 549);
+			   this->butBackRcoReAdmin->Name = L"butBackRcoReAdmin";
+			   this->butBackRcoReAdmin->Size = System::Drawing::Size(75, 36);
+			   this->butBackRcoReAdmin->TabIndex = 22;
+			   this->butBackRcoReAdmin->Text = L"Back";
+			   this->butBackRcoReAdmin->UseVisualStyleBackColor = false;
+			   this->butBackRcoReAdmin->Click += gcnew System::EventHandler(this, &Home::butBackRcoReAdmin_Click);
+			   // 
+			   // butNextRcoReAdmin
+			   // 
+			   this->butNextRcoReAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->butNextRcoReAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butNextRcoReAdmin.BackgroundImage")));
+			   this->butNextRcoReAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->butNextRcoReAdmin->FlatAppearance->BorderSize = 0;
+			   this->butNextRcoReAdmin->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
+			   this->butNextRcoReAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butNextRcoReAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butNextRcoReAdmin->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			   this->butNextRcoReAdmin->Location = System::Drawing::Point(522, 549);
+			   this->butNextRcoReAdmin->Name = L"butNextRcoReAdmin";
+			   this->butNextRcoReAdmin->Size = System::Drawing::Size(75, 36);
+			   this->butNextRcoReAdmin->TabIndex = 21;
+			   this->butNextRcoReAdmin->Text = L"Next";
+			   this->butNextRcoReAdmin->UseVisualStyleBackColor = false;
+			   this->butNextRcoReAdmin->Click += gcnew System::EventHandler(this, &Home::butNextRcoReAdmin_Click);
+			   // 
+			   // butBloodeAdminRe
+			   // 
+			   this->butBloodeAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butBloodeAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butBloodeAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butBloodeAdminRe.BackgroundImage")));
+			   this->butBloodeAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butBloodeAdminRe->FlatAppearance->BorderSize = 0;
+			   this->butBloodeAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butBloodeAdminRe->Location = System::Drawing::Point(666, 312);
+			   this->butBloodeAdminRe->Name = L"butBloodeAdminRe";
+			   this->butBloodeAdminRe->Size = System::Drawing::Size(27, 29);
+			   this->butBloodeAdminRe->TabIndex = 20;
+			   this->butBloodeAdminRe->Text = L" ";
+			   this->butBloodeAdminRe->UseVisualStyleBackColor = false;
+			   this->butBloodeAdminRe->Click += gcnew System::EventHandler(this, &Home::butBloodeAdminRe_Click);
+			   // 
+			   // butHosAdminRe
+			   // 
+			   this->butHosAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butHosAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butHosAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butHosAdminRe.BackgroundImage")));
+			   this->butHosAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butHosAdminRe->FlatAppearance->BorderSize = 0;
+			   this->butHosAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butHosAdminRe->Location = System::Drawing::Point(666, 382);
+			   this->butHosAdminRe->Name = L"butHosAdminRe";
+			   this->butHosAdminRe->Size = System::Drawing::Size(27, 34);
+			   this->butHosAdminRe->TabIndex = 19;
+			   this->butHosAdminRe->Text = L" ";
+			   this->butHosAdminRe->UseVisualStyleBackColor = false;
+			   this->butHosAdminRe->Click += gcnew System::EventHandler(this, &Home::butHosAdminRe_Click);
+			   // 
+			   // butDocAdminRe
+			   // 
+			   this->butDocAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butDocAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butDocAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butDocAdminRe.BackgroundImage")));
+			   this->butDocAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butDocAdminRe->FlatAppearance->BorderSize = 0;
+			   this->butDocAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butDocAdminRe->Location = System::Drawing::Point(666, 460);
+			   this->butDocAdminRe->Name = L"butDocAdminRe";
+			   this->butDocAdminRe->Size = System::Drawing::Size(27, 38);
+			   this->butDocAdminRe->TabIndex = 18;
+			   this->butDocAdminRe->Text = L" ";
+			   this->butDocAdminRe->UseVisualStyleBackColor = false;
+			   this->butDocAdminRe->Click += gcnew System::EventHandler(this, &Home::butDocAdminRe_Click);
+			   // 
+			   // labelBloodeAdminRe
+			   // 
+			   this->labelBloodeAdminRe->AutoSize = true;
+			   this->labelBloodeAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->labelBloodeAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelBloodeAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelBloodeAdminRe->Location = System::Drawing::Point(393, 318);
+			   this->labelBloodeAdminRe->Name = L"labelBloodeAdminRe";
+			   this->labelBloodeAdminRe->Size = System::Drawing::Size(0, 27);
+			   this->labelBloodeAdminRe->TabIndex = 17;
+			   // 
+			   // labelDocAdminRe
+			   // 
+			   this->labelDocAdminRe->AutoSize = true;
+			   this->labelDocAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->labelDocAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelDocAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelDocAdminRe->Location = System::Drawing::Point(393, 471);
+			   this->labelDocAdminRe->Name = L"labelDocAdminRe";
+			   this->labelDocAdminRe->Size = System::Drawing::Size(0, 27);
+			   this->labelDocAdminRe->TabIndex = 16;
+			   // 
+			   // labelHosAdminRe
+			   // 
+			   this->labelHosAdminRe->AutoSize = true;
+			   this->labelHosAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->labelHosAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelHosAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelHosAdminRe->Location = System::Drawing::Point(391, 393);
+			   this->labelHosAdminRe->Name = L"labelHosAdminRe";
+			   this->labelHosAdminRe->Size = System::Drawing::Size(0, 27);
+			   this->labelHosAdminRe->TabIndex = 15;
+			   // 
+			   // labelAgeAdminRe
+			   // 
+			   this->labelAgeAdminRe->AutoSize = true;
+			   this->labelAgeAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->labelAgeAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelAgeAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelAgeAdminRe->Location = System::Drawing::Point(393, 240);
+			   this->labelAgeAdminRe->Name = L"labelAgeAdminRe";
+			   this->labelAgeAdminRe->Size = System::Drawing::Size(0, 27);
+			   this->labelAgeAdminRe->TabIndex = 14;
+			   // 
+			   // butAgeAdminRe
+			   // 
+			   this->butAgeAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butAgeAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butAgeAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butAgeAdminRe.BackgroundImage")));
+			   this->butAgeAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butAgeAdminRe->FlatAppearance->BorderSize = 0;
+			   this->butAgeAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butAgeAdminRe->Location = System::Drawing::Point(666, 236);
+			   this->butAgeAdminRe->Name = L"butAgeAdminRe";
+			   this->butAgeAdminRe->Size = System::Drawing::Size(27, 31);
+			   this->butAgeAdminRe->TabIndex = 13;
+			   this->butAgeAdminRe->Text = L" ";
+			   this->butAgeAdminRe->UseVisualStyleBackColor = false;
+			   this->butAgeAdminRe->Click += gcnew System::EventHandler(this, &Home::butAgeAdminRe_Click);
+			   // 
+			   // textBoxIdAdminRe
+			   // 
+			   this->textBoxIdAdminRe->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->textBoxIdAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->textBoxIdAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->textBoxIdAdminRe->Location = System::Drawing::Point(57, 150);
+			   this->textBoxIdAdminRe->Name = L"textBoxIdAdminRe";
+			   this->textBoxIdAdminRe->Size = System::Drawing::Size(38, 26);
+			   this->textBoxIdAdminRe->TabIndex = 12;
+			   // 
+			   // butLnameAdminRe
+			   // 
+			   this->butLnameAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butLnameAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butLnameAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butLnameAdminRe.BackgroundImage")));
+			   this->butLnameAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butLnameAdminRe->FlatAppearance->BorderSize = 0;
+			   this->butLnameAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butLnameAdminRe->Location = System::Drawing::Point(322, 309);
+			   this->butLnameAdminRe->Name = L"butLnameAdminRe";
+			   this->butLnameAdminRe->Size = System::Drawing::Size(27, 29);
+			   this->butLnameAdminRe->TabIndex = 11;
+			   this->butLnameAdminRe->Text = L" ";
+			   this->butLnameAdminRe->UseVisualStyleBackColor = false;
+			   this->butLnameAdminRe->Click += gcnew System::EventHandler(this, &Home::butLnameAdminRe_Click);
+			   // 
+			   // butEmailAdminRe
+			   // 
+			   this->butEmailAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butEmailAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butEmailAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butEmailAdminRe.BackgroundImage")));
+			   this->butEmailAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butEmailAdminRe->FlatAppearance->BorderSize = 0;
+			   this->butEmailAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butEmailAdminRe->Location = System::Drawing::Point(322, 385);
+			   this->butEmailAdminRe->Name = L"butEmailAdminRe";
+			   this->butEmailAdminRe->Size = System::Drawing::Size(27, 34);
+			   this->butEmailAdminRe->TabIndex = 10;
+			   this->butEmailAdminRe->Text = L" ";
+			   this->butEmailAdminRe->UseVisualStyleBackColor = false;
+			   this->butEmailAdminRe->Click += gcnew System::EventHandler(this, &Home::butEmailAdminRe_Click);
+			   // 
+			   // butBPasAdminRe
+			   // 
+			   this->butBPasAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butBPasAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butBPasAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butBPasAdminRe.BackgroundImage")));
+			   this->butBPasAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butBPasAdminRe->FlatAppearance->BorderSize = 0;
+			   this->butBPasAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butBPasAdminRe->Location = System::Drawing::Point(322, 460);
+			   this->butBPasAdminRe->Name = L"butBPasAdminRe";
+			   this->butBPasAdminRe->Size = System::Drawing::Size(27, 38);
+			   this->butBPasAdminRe->TabIndex = 9;
+			   this->butBPasAdminRe->Text = L" ";
+			   this->butBPasAdminRe->UseVisualStyleBackColor = false;
+			   this->butBPasAdminRe->Click += gcnew System::EventHandler(this, &Home::butBPasAdminRe_Click);
+			   // 
+			   // labelLnameAdminRe
+			   // 
+			   this->labelLnameAdminRe->AutoSize = true;
+			   this->labelLnameAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->labelLnameAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelLnameAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelLnameAdminRe->Location = System::Drawing::Point(53, 314);
+			   this->labelLnameAdminRe->Name = L"labelLnameAdminRe";
+			   this->labelLnameAdminRe->Size = System::Drawing::Size(0, 27);
+			   this->labelLnameAdminRe->TabIndex = 8;
+			   // 
+			   // labelPasAdminRe
+			   // 
+			   this->labelPasAdminRe->AutoSize = true;
+			   this->labelPasAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->labelPasAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelPasAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelPasAdminRe->Location = System::Drawing::Point(54, 469);
+			   this->labelPasAdminRe->Name = L"labelPasAdminRe";
+			   this->labelPasAdminRe->Size = System::Drawing::Size(0, 27);
+			   this->labelPasAdminRe->TabIndex = 7;
+			   // 
+			   // labelEmailAdminRe
+			   // 
+			   this->labelEmailAdminRe->AutoSize = true;
+			   this->labelEmailAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->labelEmailAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelEmailAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelEmailAdminRe->Location = System::Drawing::Point(54, 394);
+			   this->labelEmailAdminRe->Name = L"labelEmailAdminRe";
+			   this->labelEmailAdminRe->Size = System::Drawing::Size(0, 27);
+			   this->labelEmailAdminRe->TabIndex = 6;
+			   // 
+			   // labelFnameAdminRe
+			   // 
+			   this->labelFnameAdminRe->AutoSize = true;
+			   this->labelFnameAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->labelFnameAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->labelFnameAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			   this->labelFnameAdminRe->Location = System::Drawing::Point(54, 240);
+			   this->labelFnameAdminRe->Name = L"labelFnameAdminRe";
+			   this->labelFnameAdminRe->Size = System::Drawing::Size(0, 27);
+			   this->labelFnameAdminRe->TabIndex = 5;
+			   // 
+			   // butFnameAdminRe
+			   // 
+			   this->butFnameAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butFnameAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butFnameAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butFnameAdminRe.BackgroundImage")));
+			   this->butFnameAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butFnameAdminRe->FlatAppearance->BorderSize = 0;
+			   this->butFnameAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butFnameAdminRe->Location = System::Drawing::Point(322, 235);
+			   this->butFnameAdminRe->Name = L"butFnameAdminRe";
+			   this->butFnameAdminRe->Size = System::Drawing::Size(27, 31);
+			   this->butFnameAdminRe->TabIndex = 4;
+			   this->butFnameAdminRe->Text = L" ";
+			   this->butFnameAdminRe->UseVisualStyleBackColor = false;
+			   this->butFnameAdminRe->Click += gcnew System::EventHandler(this, &Home::butFnameAdminRe_Click);
+			   // 
+			   // butInsertRe
+			   // 
+			   this->butInsertRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butInsertRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butInsertRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butInsertRe.BackgroundImage")));
+			   this->butInsertRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butInsertRe->FlatAppearance->BorderSize = 0;
+			   this->butInsertRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butInsertRe->Location = System::Drawing::Point(91, 547);
+			   this->butInsertRe->Name = L"butInsertRe";
+			   this->butInsertRe->Size = System::Drawing::Size(40, 43);
+			   this->butInsertRe->TabIndex = 2;
+			   this->butInsertRe->UseVisualStyleBackColor = false;
+			   this->butInsertRe->Click += gcnew System::EventHandler(this, &Home::butInsertRe_Click);
+			   // 
+			   // butDelAcoAdminRe
+			   // 
+			   this->butDelAcoAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			   this->butDelAcoAdminRe->BackColor = System::Drawing::Color::Transparent;
+			   this->butDelAcoAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butDelAcoAdminRe.BackgroundImage")));
+			   this->butDelAcoAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butDelAcoAdminRe->FlatAppearance->BorderSize = 0;
+			   this->butDelAcoAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butDelAcoAdminRe->Location = System::Drawing::Point(27, 546);
+			   this->butDelAcoAdminRe->Name = L"butDelAcoAdminRe";
+			   this->butDelAcoAdminRe->Size = System::Drawing::Size(53, 44);
+			   this->butDelAcoAdminRe->TabIndex = 1;
+			   this->butDelAcoAdminRe->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			   this->butDelAcoAdminRe->UseVisualStyleBackColor = false;
+			   this->butDelAcoAdminRe->Click += gcnew System::EventHandler(this, &Home::butDelAcoAdminDo_Click);
+			   // 
+			   // panelAcceptReq
+			   // 
+			   this->panelAcceptReq->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelAcceptReq.BackgroundImage")));
+			   this->panelAcceptReq->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->panelAcceptReq->Controls->Add(this->butExitAcceptReqPanel);
+			   this->panelAcceptReq->Controls->Add(this->butAcceptReqDoAdmin);
+			   this->panelAcceptReq->Location = System::Drawing::Point(379, 140);
+			   this->panelAcceptReq->Name = L"panelAcceptReq";
+			   this->panelAcceptReq->Size = System::Drawing::Size(324, 321);
+			   this->panelAcceptReq->TabIndex = 25;
+			   // 
+			   // butExitAcceptReqPanel
+			   // 
+			   this->butExitAcceptReqPanel->BackColor = System::Drawing::Color::Transparent;
+			   this->butExitAcceptReqPanel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butExitAcceptReqPanel.BackgroundImage")));
+			   this->butExitAcceptReqPanel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butExitAcceptReqPanel->FlatAppearance->BorderSize = 0;
+			   this->butExitAcceptReqPanel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butExitAcceptReqPanel->Location = System::Drawing::Point(294, 0);
+			   this->butExitAcceptReqPanel->Name = L"butExitAcceptReqPanel";
+			   this->butExitAcceptReqPanel->Size = System::Drawing::Size(27, 30);
+			   this->butExitAcceptReqPanel->TabIndex = 25;
+			   this->butExitAcceptReqPanel->Text = L" ";
+			   this->butExitAcceptReqPanel->UseVisualStyleBackColor = false;
+			   this->butExitAcceptReqPanel->Click += gcnew System::EventHandler(this, &Home::butExitAcceptReqPanel_Click);
+			   // 
+			   // butAcceptReqDoAdmin
+			   // 
+			   this->butAcceptReqDoAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->butAcceptReqDoAdmin->FlatAppearance->BorderSize = 0;
+			   this->butAcceptReqDoAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butAcceptReqDoAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butAcceptReqDoAdmin->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			   this->butAcceptReqDoAdmin->Location = System::Drawing::Point(108, 274);
+			   this->butAcceptReqDoAdmin->Name = L"butAcceptReqDoAdmin";
+			   this->butAcceptReqDoAdmin->Size = System::Drawing::Size(109, 34);
+			   this->butAcceptReqDoAdmin->TabIndex = 24;
+			   this->butAcceptReqDoAdmin->Text = L"Accept";
+			   this->butAcceptReqDoAdmin->UseVisualStyleBackColor = false;
+			   this->butAcceptReqDoAdmin->Click += gcnew System::EventHandler(this, &Home::butAcceptReqDoAdmin_Click);
+			   // 
+			   // panelDelAccoAdmin
+			   // 
+			   this->panelDelAccoAdmin->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(196)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(216)));
+			   this->panelDelAccoAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelDelAccoAdmin.BackgroundImage")));
+			   this->panelDelAccoAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->panelDelAccoAdmin->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			   this->panelDelAccoAdmin->Controls->Add(this->butNoDelAcoAdmin);
+			   this->panelDelAccoAdmin->Controls->Add(this->butYesDelAcoAdmin);
+			   this->panelDelAccoAdmin->Controls->Add(this->butExitDelAcoAdmin);
+			   this->panelDelAccoAdmin->Location = System::Drawing::Point(247, 197);
+			   this->panelDelAccoAdmin->Name = L"panelDelAccoAdmin";
+			   this->panelDelAccoAdmin->Size = System::Drawing::Size(456, 208);
+			   this->panelDelAccoAdmin->TabIndex = 26;
+			   // 
+			   // butNoDelAcoAdmin
+			   // 
+			   this->butNoDelAcoAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->butNoDelAcoAdmin->FlatAppearance->BorderSize = 0;
+			   this->butNoDelAcoAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butNoDelAcoAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butNoDelAcoAdmin->ForeColor = System::Drawing::Color::WhiteSmoke;
+			   this->butNoDelAcoAdmin->Location = System::Drawing::Point(40, 139);
+			   this->butNoDelAcoAdmin->Name = L"butNoDelAcoAdmin";
+			   this->butNoDelAcoAdmin->Size = System::Drawing::Size(130, 33);
+			   this->butNoDelAcoAdmin->TabIndex = 3;
+			   this->butNoDelAcoAdmin->Text = L"No";
+			   this->butNoDelAcoAdmin->UseVisualStyleBackColor = false;
+			   this->butNoDelAcoAdmin->Click += gcnew System::EventHandler(this, &Home::butNoDelAcoAdminDo_Click);
+			   // 
+			   // butYesDelAcoAdmin
+			   // 
+			   this->butYesDelAcoAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->butYesDelAcoAdmin->FlatAppearance->BorderSize = 0;
+			   this->butYesDelAcoAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butYesDelAcoAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->butYesDelAcoAdmin->ForeColor = System::Drawing::Color::WhiteSmoke;
+			   this->butYesDelAcoAdmin->Location = System::Drawing::Point(283, 137);
+			   this->butYesDelAcoAdmin->Name = L"butYesDelAcoAdmin";
+			   this->butYesDelAcoAdmin->Size = System::Drawing::Size(129, 33);
+			   this->butYesDelAcoAdmin->TabIndex = 2;
+			   this->butYesDelAcoAdmin->Text = L"Yes";
+			   this->butYesDelAcoAdmin->UseVisualStyleBackColor = false;
+			   this->butYesDelAcoAdmin->Click += gcnew System::EventHandler(this, &Home::butYesDelAcoAdminDo_Click);
+			   // 
+			   // butExitDelAcoAdmin
+			   // 
+			   this->butExitDelAcoAdmin->BackColor = System::Drawing::Color::Transparent;
+			   this->butExitDelAcoAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butExitDelAcoAdmin.BackgroundImage")));
+			   this->butExitDelAcoAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->butExitDelAcoAdmin->FlatAppearance->BorderSize = 0;
+			   this->butExitDelAcoAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->butExitDelAcoAdmin->Location = System::Drawing::Point(424, -2);
+			   this->butExitDelAcoAdmin->Name = L"butExitDelAcoAdmin";
+			   this->butExitDelAcoAdmin->Size = System::Drawing::Size(28, 34);
+			   this->butExitDelAcoAdmin->TabIndex = 0;
+			   this->butExitDelAcoAdmin->Text = L" ";
+			   this->butExitDelAcoAdmin->UseVisualStyleBackColor = false;
+			   this->butExitDelAcoAdmin->Click += gcnew System::EventHandler(this, &Home::butExitDelAcoAdminDo_Click);
+			   // 
+			   // panel3
+			   // 
+			   this->panel3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				   | System::Windows::Forms::AnchorStyles::Left)
+				   | System::Windows::Forms::AnchorStyles::Right));
+			   this->panel3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel3.BackgroundImage")));
+			   this->panel3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->panel3->Controls->Add(this->button4);
+			   this->panel3->Controls->Add(this->dataGridView6);
+			   this->panel3->Location = System::Drawing::Point(0, 4);
+			   this->panel3->Name = L"panel3";
+			   this->panel3->Size = System::Drawing::Size(955, 597);
+			   this->panel3->TabIndex = 27;
+			   // 
+			   // button4
+			   // 
+			   this->button4->BackColor = System::Drawing::Color::Transparent;
+			   this->button4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.BackgroundImage")));
+			   this->button4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			   this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->button4->ForeColor = System::Drawing::Color::Transparent;
+			   this->button4->Location = System::Drawing::Point(17, 24);
+			   this->button4->Name = L"button4";
+			   this->button4->Size = System::Drawing::Size(46, 49);
+			   this->button4->TabIndex = 4;
+			   this->button4->UseVisualStyleBackColor = false;
+			   this->button4->Click += gcnew System::EventHandler(this, &Home::button4_Click_1);
+			   // 
+			   // dataGridView6
+			   // 
+			   this->dataGridView6->AllowUserToOrderColumns = true;
+			   this->dataGridView6->BackgroundColor = System::Drawing::Color::WhiteSmoke;
+			   this->dataGridView6->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			   this->dataGridView6->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+				   this->dataGridViewTextBoxColumn13,
+					   this->dataGridViewTextBoxColumn14, this->dataGridViewTextBoxColumn15, this->dataGridViewTextBoxColumn16, this->dataGridViewTextBoxColumn17
+			   });
+			   this->dataGridView6->Location = System::Drawing::Point(111, 109);
+			   this->dataGridView6->Name = L"dataGridView6";
+			   this->dataGridView6->RowHeadersWidth = 51;
+			   this->dataGridView6->RowTemplate->Height = 24;
+			   this->dataGridView6->Size = System::Drawing::Size(718, 448);
+			   this->dataGridView6->TabIndex = 5;
+			   // 
+			   // dataGridViewTextBoxColumn13
+			   // 
+			   this->dataGridViewTextBoxColumn13->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::AllCells;
+			   this->dataGridViewTextBoxColumn13->Frozen = true;
+			   this->dataGridViewTextBoxColumn13->HeaderText = L"Index";
+			   this->dataGridViewTextBoxColumn13->MinimumWidth = 6;
+			   this->dataGridViewTextBoxColumn13->Name = L"dataGridViewTextBoxColumn13";
+			   this->dataGridViewTextBoxColumn13->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
+			   this->dataGridViewTextBoxColumn13->Width = 47;
+			   // 
+			   // dataGridViewTextBoxColumn14
+			   // 
+			   this->dataGridViewTextBoxColumn14->HeaderText = L"Id";
+			   this->dataGridViewTextBoxColumn14->MinimumWidth = 6;
+			   this->dataGridViewTextBoxColumn14->Name = L"dataGridViewTextBoxColumn14";
+			   this->dataGridViewTextBoxColumn14->Width = 40;
+			   // 
+			   // dataGridViewTextBoxColumn15
+			   // 
+			   this->dataGridViewTextBoxColumn15->HeaderText = L"Blood Type";
+			   this->dataGridViewTextBoxColumn15->MinimumWidth = 6;
+			   this->dataGridViewTextBoxColumn15->Name = L"dataGridViewTextBoxColumn15";
+			   this->dataGridViewTextBoxColumn15->Width = 125;
+			   // 
+			   // dataGridViewTextBoxColumn16
+			   // 
+			   this->dataGridViewTextBoxColumn16->HeaderText = L"Received Data";
+			   this->dataGridViewTextBoxColumn16->MinimumWidth = 6;
+			   this->dataGridViewTextBoxColumn16->Name = L"dataGridViewTextBoxColumn16";
+			   this->dataGridViewTextBoxColumn16->Width = 125;
+			   // 
+			   // dataGridViewTextBoxColumn17
+			   // 
+			   this->dataGridViewTextBoxColumn17->HeaderText = L" Expiry dates";
+			   this->dataGridViewTextBoxColumn17->MinimumWidth = 6;
+			   this->dataGridViewTextBoxColumn17->Name = L"dataGridViewTextBoxColumn17";
+			   this->dataGridViewTextBoxColumn17->Width = 125;
+			   // 
 			   // panelDisplayReDate
 			   // 
 			   this->panelDisplayReDate->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
@@ -4024,9 +5248,9 @@ namespace Project4 {
 			   this->panelDisplayReDate->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			   this->panelDisplayReDate->Controls->Add(this->butExitDisplayReDate);
 			   this->panelDisplayReDate->Controls->Add(this->dataGridView4);
-			   this->panelDisplayReDate->Location = System::Drawing::Point(0, -3);
+			   this->panelDisplayReDate->Location = System::Drawing::Point(0, 4);
 			   this->panelDisplayReDate->Name = L"panelDisplayReDate";
-			   this->panelDisplayReDate->Size = System::Drawing::Size(958, 612);
+			   this->panelDisplayReDate->Size = System::Drawing::Size(952, 597);
 			   this->panelDisplayReDate->TabIndex = 32;
 			   // 
 			   // butExitDisplayReDate
@@ -4130,989 +5354,22 @@ namespace Project4 {
 			   this->dataGridViewTextBoxColumn10->Name = L"dataGridViewTextBoxColumn10";
 			   this->dataGridViewTextBoxColumn10->Width = 125;
 			   // 
-			   // panelRequestAdmin
-			   // 
-			   this->panelRequestAdmin->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				   | System::Windows::Forms::AnchorStyles::Left)
-				   | System::Windows::Forms::AnchorStyles::Right));
-			   this->panelRequestAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelRequestAdmin.BackgroundImage")));
-			   this->panelRequestAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			   this->panelRequestAdmin->Controls->Add(this->butValidReqDoAdmin);
-			   this->panelRequestAdmin->Controls->Add(this->butBackReqAdmin);
-			   this->panelRequestAdmin->Controls->Add(this->butNextReqAdmin);
-			   this->panelRequestAdmin->Controls->Add(this->labelAgeDoReqAdmin);
-			   this->panelRequestAdmin->Controls->Add(this->labelEmailDoReqAdmin);
-			   this->panelRequestAdmin->Controls->Add(this->labelBHosDoReqAdmin);
-			   this->panelRequestAdmin->Controls->Add(this->labelBloodDoReqAdmin);
-			   this->panelRequestAdmin->Controls->Add(this->labelDateDoReqAdmin);
-			   this->panelRequestAdmin->Controls->Add(this->textBoxIdDoReqAdmin);
-			   this->panelRequestAdmin->Controls->Add(this->labelLnameDoReqAdmin);
-			   this->panelRequestAdmin->Controls->Add(this->labelFnameDoReqAdmin);
-			   this->panelRequestAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->panelRequestAdmin->Location = System::Drawing::Point(203, 1);
-			   this->panelRequestAdmin->Name = L"panelRequestAdmin";
-			   this->panelRequestAdmin->Size = System::Drawing::Size(747, 600);
-			   this->panelRequestAdmin->TabIndex = 29;
-			   // 
-			   // butValidReqDoAdmin
-			   // 
-			   this->butValidReqDoAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->butValidReqDoAdmin->FlatAppearance->BorderSize = 0;
-			   this->butValidReqDoAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butValidReqDoAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->butValidReqDoAdmin->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			   this->butValidReqDoAdmin->Location = System::Drawing::Point(129, 506);
-			   this->butValidReqDoAdmin->Name = L"butValidReqDoAdmin";
-			   this->butValidReqDoAdmin->Size = System::Drawing::Size(112, 37);
-			   this->butValidReqDoAdmin->TabIndex = 23;
-			   this->butValidReqDoAdmin->Text = L"Valid";
-			   this->butValidReqDoAdmin->UseVisualStyleBackColor = false;
-			   this->butValidReqDoAdmin->Click += gcnew System::EventHandler(this, &Home::butValidReqDoAdmin_Click);
-			   // 
-			   // butBackReqAdmin
-			   // 
-			   this->butBackReqAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->butBackReqAdmin->FlatAppearance->BorderSize = 0;
-			   this->butBackReqAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butBackReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->butBackReqAdmin->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			   this->butBackReqAdmin->Location = System::Drawing::Point(305, 505);
-			   this->butBackReqAdmin->Name = L"butBackReqAdmin";
-			   this->butBackReqAdmin->Size = System::Drawing::Size(112, 36);
-			   this->butBackReqAdmin->TabIndex = 22;
-			   this->butBackReqAdmin->Text = L"Back";
-			   this->butBackReqAdmin->UseVisualStyleBackColor = false;
-			   this->butBackReqAdmin->Click += gcnew System::EventHandler(this, &Home::butBackReqAdmin_Click);
-			   // 
-			   // butNextReqAdmin
-			   // 
-			   this->butNextReqAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->butNextReqAdmin->FlatAppearance->BorderColor = System::Drawing::Color::Aqua;
-			   this->butNextReqAdmin->FlatAppearance->BorderSize = 0;
-			   this->butNextReqAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butNextReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->butNextReqAdmin->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			   this->butNextReqAdmin->Location = System::Drawing::Point(488, 507);
-			   this->butNextReqAdmin->Name = L"butNextReqAdmin";
-			   this->butNextReqAdmin->Size = System::Drawing::Size(108, 36);
-			   this->butNextReqAdmin->TabIndex = 21;
-			   this->butNextReqAdmin->Text = L"Next";
-			   this->butNextReqAdmin->UseVisualStyleBackColor = false;
-			   this->butNextReqAdmin->Click += gcnew System::EventHandler(this, &Home::butNextReqAdmin_Click);
-			   // 
-			   // labelAgeDoReqAdmin
-			   // 
-			   this->labelAgeDoReqAdmin->AutoSize = true;
-			   this->labelAgeDoReqAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->labelAgeDoReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			   this->labelAgeDoReqAdmin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelAgeDoReqAdmin->Location = System::Drawing::Point(53, 335);
-			   this->labelAgeDoReqAdmin->Name = L"labelAgeDoReqAdmin";
-			   this->labelAgeDoReqAdmin->Size = System::Drawing::Size(0, 25);
-			   this->labelAgeDoReqAdmin->TabIndex = 17;
-			   // 
-			   // labelEmailDoReqAdmin
-			   // 
-			   this->labelEmailDoReqAdmin->AutoSize = true;
-			   this->labelEmailDoReqAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->labelEmailDoReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			   this->labelEmailDoReqAdmin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelEmailDoReqAdmin->Location = System::Drawing::Point(396, 183);
-			   this->labelEmailDoReqAdmin->Name = L"labelEmailDoReqAdmin";
-			   this->labelEmailDoReqAdmin->Size = System::Drawing::Size(0, 25);
-			   this->labelEmailDoReqAdmin->TabIndex = 17;
-			   // 
-			   // labelBHosDoReqAdmin
-			   // 
-			   this->labelBHosDoReqAdmin->AutoSize = true;
-			   this->labelBHosDoReqAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->labelBHosDoReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			   this->labelBHosDoReqAdmin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelBHosDoReqAdmin->Location = System::Drawing::Point(53, 409);
-			   this->labelBHosDoReqAdmin->Name = L"labelBHosDoReqAdmin";
-			   this->labelBHosDoReqAdmin->Size = System::Drawing::Size(0, 25);
-			   this->labelBHosDoReqAdmin->TabIndex = 17;
-			   // 
-			   // labelBloodDoReqAdmin
-			   // 
-			   this->labelBloodDoReqAdmin->AutoSize = true;
-			   this->labelBloodDoReqAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->labelBloodDoReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			   this->labelBloodDoReqAdmin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelBloodDoReqAdmin->Location = System::Drawing::Point(390, 338);
-			   this->labelBloodDoReqAdmin->Name = L"labelBloodDoReqAdmin";
-			   this->labelBloodDoReqAdmin->Size = System::Drawing::Size(0, 25);
-			   this->labelBloodDoReqAdmin->TabIndex = 17;
-			   // 
-			   // labelDateDoReqAdmin
-			   // 
-			   this->labelDateDoReqAdmin->AutoSize = true;
-			   this->labelDateDoReqAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->labelDateDoReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			   this->labelDateDoReqAdmin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelDateDoReqAdmin->Location = System::Drawing::Point(396, 411);
-			   this->labelDateDoReqAdmin->Name = L"labelDateDoReqAdmin";
-			   this->labelDateDoReqAdmin->Size = System::Drawing::Size(0, 25);
-			   this->labelDateDoReqAdmin->TabIndex = 14;
-			   // 
-			   // textBoxIdDoReqAdmin
-			   // 
-			   this->textBoxIdDoReqAdmin->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			   this->textBoxIdDoReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
-				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->textBoxIdDoReqAdmin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->textBoxIdDoReqAdmin->Location = System::Drawing::Point(59, 183);
-			   this->textBoxIdDoReqAdmin->Name = L"textBoxIdDoReqAdmin";
-			   this->textBoxIdDoReqAdmin->Size = System::Drawing::Size(72, 23);
-			   this->textBoxIdDoReqAdmin->TabIndex = 12;
-			   // 
-			   // labelLnameDoReqAdmin
-			   // 
-			   this->labelLnameDoReqAdmin->AutoSize = true;
-			   this->labelLnameDoReqAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->labelLnameDoReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			   this->labelLnameDoReqAdmin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelLnameDoReqAdmin->Location = System::Drawing::Point(396, 262);
-			   this->labelLnameDoReqAdmin->Name = L"labelLnameDoReqAdmin";
-			   this->labelLnameDoReqAdmin->Size = System::Drawing::Size(0, 25);
-			   this->labelLnameDoReqAdmin->TabIndex = 8;
-			   // 
-			   // labelFnameDoReqAdmin
-			   // 
-			   this->labelFnameDoReqAdmin->AutoSize = true;
-			   this->labelFnameDoReqAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->labelFnameDoReqAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			   this->labelFnameDoReqAdmin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelFnameDoReqAdmin->Location = System::Drawing::Point(49, 261);
-			   this->labelFnameDoReqAdmin->Name = L"labelFnameDoReqAdmin";
-			   this->labelFnameDoReqAdmin->Size = System::Drawing::Size(0, 25);
-			   this->labelFnameDoReqAdmin->TabIndex = 5;
-			   // 
-			   // panelReAdmin
-			   // 
-			   this->panelReAdmin->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				   | System::Windows::Forms::AnchorStyles::Left)
-				   | System::Windows::Forms::AnchorStyles::Right));
-			   this->panelReAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelReAdmin.BackgroundImage")));
-			   this->panelReAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			   this->panelReAdmin->Controls->Add(this->labelGenderAdminRe);
-			   this->panelReAdmin->Controls->Add(this->butGenderAdminRe);
-			   this->panelReAdmin->Controls->Add(this->butBackRcoReAdmin);
-			   this->panelReAdmin->Controls->Add(this->butNextRcoReAdmin);
-			   this->panelReAdmin->Controls->Add(this->butBloodeAdminRe);
-			   this->panelReAdmin->Controls->Add(this->butHosAdminRe);
-			   this->panelReAdmin->Controls->Add(this->butDocAdminRe);
-			   this->panelReAdmin->Controls->Add(this->labelBloodeAdminRe);
-			   this->panelReAdmin->Controls->Add(this->labelDocAdminRe);
-			   this->panelReAdmin->Controls->Add(this->labelHosAdminRe);
-			   this->panelReAdmin->Controls->Add(this->labelAgeAdminRe);
-			   this->panelReAdmin->Controls->Add(this->butAgeAdminRe);
-			   this->panelReAdmin->Controls->Add(this->textBoxIdAdminRe);
-			   this->panelReAdmin->Controls->Add(this->butLnameAdminRe);
-			   this->panelReAdmin->Controls->Add(this->butEmailAdminRe);
-			   this->panelReAdmin->Controls->Add(this->butBPasAdminRe);
-			   this->panelReAdmin->Controls->Add(this->labelLnameAdminRe);
-			   this->panelReAdmin->Controls->Add(this->labelPasAdminRe);
-			   this->panelReAdmin->Controls->Add(this->labelEmailAdminRe);
-			   this->panelReAdmin->Controls->Add(this->labelFnameAdminRe);
-			   this->panelReAdmin->Controls->Add(this->butFnameAdminRe);
-			   this->panelReAdmin->Controls->Add(this->butInsertRe);
-			   this->panelReAdmin->Controls->Add(this->butDelAcoAdminRe);
-			   this->panelReAdmin->Location = System::Drawing::Point(203, 1);
-			   this->panelReAdmin->Name = L"panelReAdmin";
-			   this->panelReAdmin->Size = System::Drawing::Size(747, 600);
-			   this->panelReAdmin->TabIndex = 23;
-			   // 
-			   // labelGenderAdminRe
-			   // 
-			   this->labelGenderAdminRe->AutoSize = true;
-			   this->labelGenderAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->labelGenderAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelGenderAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelGenderAdminRe->Location = System::Drawing::Point(388, 160);
-			   this->labelGenderAdminRe->Name = L"labelGenderAdminRe";
-			   this->labelGenderAdminRe->Size = System::Drawing::Size(0, 27);
-			   this->labelGenderAdminRe->TabIndex = 24;
-			   // 
-			   // butGenderAdminRe
-			   // 
-			   this->butGenderAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butGenderAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butGenderAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butGenderAdminRe.BackgroundImage")));
-			   this->butGenderAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butGenderAdminRe->FlatAppearance->BorderSize = 0;
-			   this->butGenderAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butGenderAdminRe->Location = System::Drawing::Point(441, 156);
-			   this->butGenderAdminRe->Name = L"butGenderAdminRe";
-			   this->butGenderAdminRe->Size = System::Drawing::Size(27, 31);
-			   this->butGenderAdminRe->TabIndex = 23;
-			   this->butGenderAdminRe->Text = L" ";
-			   this->butGenderAdminRe->UseVisualStyleBackColor = false;
-			   this->butGenderAdminRe->Click += gcnew System::EventHandler(this, &Home::butGenderAdminRe_Click);
-			   // 
-			   // butBackRcoReAdmin
-			   // 
-			   this->butBackRcoReAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->butBackRcoReAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butBackRcoReAdmin.BackgroundImage")));
-			   this->butBackRcoReAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			   this->butBackRcoReAdmin->FlatAppearance->BorderSize = 0;
-			   this->butBackRcoReAdmin->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
-			   this->butBackRcoReAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butBackRcoReAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->butBackRcoReAdmin->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			   this->butBackRcoReAdmin->Location = System::Drawing::Point(365, 549);
-			   this->butBackRcoReAdmin->Name = L"butBackRcoReAdmin";
-			   this->butBackRcoReAdmin->Size = System::Drawing::Size(75, 36);
-			   this->butBackRcoReAdmin->TabIndex = 22;
-			   this->butBackRcoReAdmin->Text = L"Back";
-			   this->butBackRcoReAdmin->UseVisualStyleBackColor = false;
-			   this->butBackRcoReAdmin->Click += gcnew System::EventHandler(this, &Home::butBackRcoReAdmin_Click);
-			   // 
-			   // butNextRcoReAdmin
-			   // 
-			   this->butNextRcoReAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->butNextRcoReAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butNextRcoReAdmin.BackgroundImage")));
-			   this->butNextRcoReAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			   this->butNextRcoReAdmin->FlatAppearance->BorderSize = 0;
-			   this->butNextRcoReAdmin->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
-			   this->butNextRcoReAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butNextRcoReAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->butNextRcoReAdmin->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			   this->butNextRcoReAdmin->Location = System::Drawing::Point(522, 549);
-			   this->butNextRcoReAdmin->Name = L"butNextRcoReAdmin";
-			   this->butNextRcoReAdmin->Size = System::Drawing::Size(75, 36);
-			   this->butNextRcoReAdmin->TabIndex = 21;
-			   this->butNextRcoReAdmin->Text = L"Next";
-			   this->butNextRcoReAdmin->UseVisualStyleBackColor = false;
-			   this->butNextRcoReAdmin->Click += gcnew System::EventHandler(this, &Home::butNextRcoReAdmin_Click);
-			   // 
-			   // butBloodeAdminRe
-			   // 
-			   this->butBloodeAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butBloodeAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butBloodeAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butBloodeAdminRe.BackgroundImage")));
-			   this->butBloodeAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butBloodeAdminRe->FlatAppearance->BorderSize = 0;
-			   this->butBloodeAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butBloodeAdminRe->Location = System::Drawing::Point(666, 314);
-			   this->butBloodeAdminRe->Name = L"butBloodeAdminRe";
-			   this->butBloodeAdminRe->Size = System::Drawing::Size(27, 29);
-			   this->butBloodeAdminRe->TabIndex = 20;
-			   this->butBloodeAdminRe->Text = L" ";
-			   this->butBloodeAdminRe->UseVisualStyleBackColor = false;
-			   this->butBloodeAdminRe->Click += gcnew System::EventHandler(this, &Home::butBloodeAdminRe_Click);
-			   // 
-			   // butHosAdminRe
-			   // 
-			   this->butHosAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butHosAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butHosAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butHosAdminRe.BackgroundImage")));
-			   this->butHosAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butHosAdminRe->FlatAppearance->BorderSize = 0;
-			   this->butHosAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butHosAdminRe->Location = System::Drawing::Point(666, 384);
-			   this->butHosAdminRe->Name = L"butHosAdminRe";
-			   this->butHosAdminRe->Size = System::Drawing::Size(27, 34);
-			   this->butHosAdminRe->TabIndex = 19;
-			   this->butHosAdminRe->Text = L" ";
-			   this->butHosAdminRe->UseVisualStyleBackColor = false;
-			   this->butHosAdminRe->Click += gcnew System::EventHandler(this, &Home::butHosAdminRe_Click);
-			   // 
-			   // butDocAdminRe
-			   // 
-			   this->butDocAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butDocAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butDocAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butDocAdminRe.BackgroundImage")));
-			   this->butDocAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butDocAdminRe->FlatAppearance->BorderSize = 0;
-			   this->butDocAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butDocAdminRe->Location = System::Drawing::Point(666, 462);
-			   this->butDocAdminRe->Name = L"butDocAdminRe";
-			   this->butDocAdminRe->Size = System::Drawing::Size(27, 38);
-			   this->butDocAdminRe->TabIndex = 18;
-			   this->butDocAdminRe->Text = L" ";
-			   this->butDocAdminRe->UseVisualStyleBackColor = false;
-			   this->butDocAdminRe->Click += gcnew System::EventHandler(this, &Home::butDocAdminRe_Click);
-			   // 
-			   // labelBloodeAdminRe
-			   // 
-			   this->labelBloodeAdminRe->AutoSize = true;
-			   this->labelBloodeAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->labelBloodeAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelBloodeAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelBloodeAdminRe->Location = System::Drawing::Point(393, 318);
-			   this->labelBloodeAdminRe->Name = L"labelBloodeAdminRe";
-			   this->labelBloodeAdminRe->Size = System::Drawing::Size(0, 27);
-			   this->labelBloodeAdminRe->TabIndex = 17;
-			   // 
-			   // labelDocAdminRe
-			   // 
-			   this->labelDocAdminRe->AutoSize = true;
-			   this->labelDocAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->labelDocAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelDocAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelDocAdminRe->Location = System::Drawing::Point(393, 471);
-			   this->labelDocAdminRe->Name = L"labelDocAdminRe";
-			   this->labelDocAdminRe->Size = System::Drawing::Size(0, 27);
-			   this->labelDocAdminRe->TabIndex = 16;
-			   // 
-			   // labelHosAdminRe
-			   // 
-			   this->labelHosAdminRe->AutoSize = true;
-			   this->labelHosAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->labelHosAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelHosAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelHosAdminRe->Location = System::Drawing::Point(391, 393);
-			   this->labelHosAdminRe->Name = L"labelHosAdminRe";
-			   this->labelHosAdminRe->Size = System::Drawing::Size(0, 27);
-			   this->labelHosAdminRe->TabIndex = 15;
-			   // 
-			   // labelAgeAdminRe
-			   // 
-			   this->labelAgeAdminRe->AutoSize = true;
-			   this->labelAgeAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->labelAgeAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelAgeAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelAgeAdminRe->Location = System::Drawing::Point(393, 240);
-			   this->labelAgeAdminRe->Name = L"labelAgeAdminRe";
-			   this->labelAgeAdminRe->Size = System::Drawing::Size(0, 27);
-			   this->labelAgeAdminRe->TabIndex = 14;
-			   // 
-			   // butAgeAdminRe
-			   // 
-			   this->butAgeAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butAgeAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butAgeAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butAgeAdminRe.BackgroundImage")));
-			   this->butAgeAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butAgeAdminRe->FlatAppearance->BorderSize = 0;
-			   this->butAgeAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butAgeAdminRe->Location = System::Drawing::Point(666, 238);
-			   this->butAgeAdminRe->Name = L"butAgeAdminRe";
-			   this->butAgeAdminRe->Size = System::Drawing::Size(27, 31);
-			   this->butAgeAdminRe->TabIndex = 13;
-			   this->butAgeAdminRe->Text = L" ";
-			   this->butAgeAdminRe->UseVisualStyleBackColor = false;
-			   this->butAgeAdminRe->Click += gcnew System::EventHandler(this, &Home::butAgeAdminRe_Click);
-			   // 
-			   // textBoxIdAdminRe
-			   // 
-			   this->textBoxIdAdminRe->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			   this->textBoxIdAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->textBoxIdAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->textBoxIdAdminRe->Location = System::Drawing::Point(57, 150);
-			   this->textBoxIdAdminRe->Name = L"textBoxIdAdminRe";
-			   this->textBoxIdAdminRe->Size = System::Drawing::Size(38, 26);
-			   this->textBoxIdAdminRe->TabIndex = 12;
-			   // 
-			   // butLnameAdminRe
-			   // 
-			   this->butLnameAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butLnameAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butLnameAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butLnameAdminRe.BackgroundImage")));
-			   this->butLnameAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butLnameAdminRe->FlatAppearance->BorderSize = 0;
-			   this->butLnameAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butLnameAdminRe->Location = System::Drawing::Point(322, 311);
-			   this->butLnameAdminRe->Name = L"butLnameAdminRe";
-			   this->butLnameAdminRe->Size = System::Drawing::Size(27, 29);
-			   this->butLnameAdminRe->TabIndex = 11;
-			   this->butLnameAdminRe->Text = L" ";
-			   this->butLnameAdminRe->UseVisualStyleBackColor = false;
-			   this->butLnameAdminRe->Click += gcnew System::EventHandler(this, &Home::butLnameAdminRe_Click);
-			   // 
-			   // butEmailAdminRe
-			   // 
-			   this->butEmailAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butEmailAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butEmailAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butEmailAdminRe.BackgroundImage")));
-			   this->butEmailAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butEmailAdminRe->FlatAppearance->BorderSize = 0;
-			   this->butEmailAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butEmailAdminRe->Location = System::Drawing::Point(322, 387);
-			   this->butEmailAdminRe->Name = L"butEmailAdminRe";
-			   this->butEmailAdminRe->Size = System::Drawing::Size(27, 34);
-			   this->butEmailAdminRe->TabIndex = 10;
-			   this->butEmailAdminRe->Text = L" ";
-			   this->butEmailAdminRe->UseVisualStyleBackColor = false;
-			   this->butEmailAdminRe->Click += gcnew System::EventHandler(this, &Home::butEmailAdminRe_Click);
-			   // 
-			   // butBPasAdminRe
-			   // 
-			   this->butBPasAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butBPasAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butBPasAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butBPasAdminRe.BackgroundImage")));
-			   this->butBPasAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butBPasAdminRe->FlatAppearance->BorderSize = 0;
-			   this->butBPasAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butBPasAdminRe->Location = System::Drawing::Point(322, 462);
-			   this->butBPasAdminRe->Name = L"butBPasAdminRe";
-			   this->butBPasAdminRe->Size = System::Drawing::Size(27, 38);
-			   this->butBPasAdminRe->TabIndex = 9;
-			   this->butBPasAdminRe->Text = L" ";
-			   this->butBPasAdminRe->UseVisualStyleBackColor = false;
-			   this->butBPasAdminRe->Click += gcnew System::EventHandler(this, &Home::butBPasAdminRe_Click);
-			   // 
-			   // labelLnameAdminRe
-			   // 
-			   this->labelLnameAdminRe->AutoSize = true;
-			   this->labelLnameAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->labelLnameAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelLnameAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelLnameAdminRe->Location = System::Drawing::Point(53, 314);
-			   this->labelLnameAdminRe->Name = L"labelLnameAdminRe";
-			   this->labelLnameAdminRe->Size = System::Drawing::Size(0, 27);
-			   this->labelLnameAdminRe->TabIndex = 8;
-			   // 
-			   // labelPasAdminRe
-			   // 
-			   this->labelPasAdminRe->AutoSize = true;
-			   this->labelPasAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->labelPasAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelPasAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelPasAdminRe->Location = System::Drawing::Point(54, 469);
-			   this->labelPasAdminRe->Name = L"labelPasAdminRe";
-			   this->labelPasAdminRe->Size = System::Drawing::Size(0, 27);
-			   this->labelPasAdminRe->TabIndex = 7;
-			   // 
-			   // labelEmailAdminRe
-			   // 
-			   this->labelEmailAdminRe->AutoSize = true;
-			   this->labelEmailAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->labelEmailAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelEmailAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelEmailAdminRe->Location = System::Drawing::Point(54, 394);
-			   this->labelEmailAdminRe->Name = L"labelEmailAdminRe";
-			   this->labelEmailAdminRe->Size = System::Drawing::Size(0, 27);
-			   this->labelEmailAdminRe->TabIndex = 6;
-			   // 
-			   // labelFnameAdminRe
-			   // 
-			   this->labelFnameAdminRe->AutoSize = true;
-			   this->labelFnameAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->labelFnameAdminRe->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelFnameAdminRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelFnameAdminRe->Location = System::Drawing::Point(54, 240);
-			   this->labelFnameAdminRe->Name = L"labelFnameAdminRe";
-			   this->labelFnameAdminRe->Size = System::Drawing::Size(0, 27);
-			   this->labelFnameAdminRe->TabIndex = 5;
-			   // 
-			   // butFnameAdminRe
-			   // 
-			   this->butFnameAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butFnameAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butFnameAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butFnameAdminRe.BackgroundImage")));
-			   this->butFnameAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butFnameAdminRe->FlatAppearance->BorderSize = 0;
-			   this->butFnameAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butFnameAdminRe->Location = System::Drawing::Point(322, 237);
-			   this->butFnameAdminRe->Name = L"butFnameAdminRe";
-			   this->butFnameAdminRe->Size = System::Drawing::Size(27, 31);
-			   this->butFnameAdminRe->TabIndex = 4;
-			   this->butFnameAdminRe->Text = L" ";
-			   this->butFnameAdminRe->UseVisualStyleBackColor = false;
-			   this->butFnameAdminRe->Click += gcnew System::EventHandler(this, &Home::butFnameAdminRe_Click);
-			   // 
-			   // butInsertRe
-			   // 
-			   this->butInsertRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butInsertRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butInsertRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butInsertRe.BackgroundImage")));
-			   this->butInsertRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butInsertRe->FlatAppearance->BorderSize = 0;
-			   this->butInsertRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butInsertRe->Location = System::Drawing::Point(91, 549);
-			   this->butInsertRe->Name = L"butInsertRe";
-			   this->butInsertRe->Size = System::Drawing::Size(40, 43);
-			   this->butInsertRe->TabIndex = 2;
-			   this->butInsertRe->UseVisualStyleBackColor = false;
-			   this->butInsertRe->Click += gcnew System::EventHandler(this, &Home::butInsertRe_Click);
-			   // 
-			   // butDelAcoAdminRe
-			   // 
-			   this->butDelAcoAdminRe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butDelAcoAdminRe->BackColor = System::Drawing::Color::Transparent;
-			   this->butDelAcoAdminRe->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butDelAcoAdminRe.BackgroundImage")));
-			   this->butDelAcoAdminRe->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butDelAcoAdminRe->FlatAppearance->BorderSize = 0;
-			   this->butDelAcoAdminRe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butDelAcoAdminRe->Location = System::Drawing::Point(27, 548);
-			   this->butDelAcoAdminRe->Name = L"butDelAcoAdminRe";
-			   this->butDelAcoAdminRe->Size = System::Drawing::Size(53, 44);
-			   this->butDelAcoAdminRe->TabIndex = 1;
-			   this->butDelAcoAdminRe->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			   this->butDelAcoAdminRe->UseVisualStyleBackColor = false;
-			   this->butDelAcoAdminRe->Click += gcnew System::EventHandler(this, &Home::butDelAcoAdminDo_Click);
-			   // 
-			   // panelDoAdmin
-			   // 
-			   this->panelDoAdmin->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				   | System::Windows::Forms::AnchorStyles::Left)
-				   | System::Windows::Forms::AnchorStyles::Right));
-			   this->panelDoAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelDoAdmin.BackgroundImage")));
-			   this->panelDoAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			   this->panelDoAdmin->Controls->Add(this->labelGenderAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->butGenderAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->butBackRcoDoAdmin);
-			   this->panelDoAdmin->Controls->Add(this->butNextRcoDoAdmin);
-			   this->panelDoAdmin->Controls->Add(this->butBloodeAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->butLastDonAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->butDisAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->labelBloodeAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->labelDisAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->labelLastDonAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->labelAgeAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->butAgeAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->textBoxIdAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->butLnameAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->butEmailnameAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->butPasAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->labelLnameAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->labelPasAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->labelEmailAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->labelFnameAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->butFnameAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->butInsertAdminDo);
-			   this->panelDoAdmin->Controls->Add(this->butDelAcoAdminDo);
-			   this->panelDoAdmin->Location = System::Drawing::Point(205, 0);
-			   this->panelDoAdmin->Name = L"panelDoAdmin";
-			   this->panelDoAdmin->Size = System::Drawing::Size(745, 601);
-			   this->panelDoAdmin->TabIndex = 1;
-			   // 
-			   // labelGenderAdminDo
-			   // 
-			   this->labelGenderAdminDo->AutoSize = true;
-			   this->labelGenderAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->labelGenderAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelGenderAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelGenderAdminDo->Location = System::Drawing::Point(382, 159);
-			   this->labelGenderAdminDo->Name = L"labelGenderAdminDo";
-			   this->labelGenderAdminDo->Size = System::Drawing::Size(0, 27);
-			   this->labelGenderAdminDo->TabIndex = 24;
-			   // 
-			   // butGenderAdminDo
-			   // 
-			   this->butGenderAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butGenderAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->butGenderAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butGenderAdminDo.BackgroundImage")));
-			   this->butGenderAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butGenderAdminDo->FlatAppearance->BorderSize = 0;
-			   this->butGenderAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butGenderAdminDo->Location = System::Drawing::Point(441, 157);
-			   this->butGenderAdminDo->Name = L"butGenderAdminDo";
-			   this->butGenderAdminDo->Size = System::Drawing::Size(27, 31);
-			   this->butGenderAdminDo->TabIndex = 23;
-			   this->butGenderAdminDo->Text = L" ";
-			   this->butGenderAdminDo->UseVisualStyleBackColor = false;
-			   this->butGenderAdminDo->Click += gcnew System::EventHandler(this, &Home::butGenderAdminDo_Click);
-			   // 
-			   // butBackRcoDoAdmin
-			   // 
-			   this->butBackRcoDoAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->butBackRcoDoAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butBackRcoDoAdmin.BackgroundImage")));
-			   this->butBackRcoDoAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			   this->butBackRcoDoAdmin->FlatAppearance->BorderSize = 0;
-			   this->butBackRcoDoAdmin->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
-			   this->butBackRcoDoAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butBackRcoDoAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->butBackRcoDoAdmin->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			   this->butBackRcoDoAdmin->Location = System::Drawing::Point(282, 541);
-			   this->butBackRcoDoAdmin->Name = L"butBackRcoDoAdmin";
-			   this->butBackRcoDoAdmin->Size = System::Drawing::Size(120, 38);
-			   this->butBackRcoDoAdmin->TabIndex = 22;
-			   this->butBackRcoDoAdmin->Text = L"Back";
-			   this->butBackRcoDoAdmin->UseVisualStyleBackColor = false;
-			   this->butBackRcoDoAdmin->Click += gcnew System::EventHandler(this, &Home::butBackRcoDoAdmin_Click);
-			   // 
-			   // butNextRcoDoAdmin
-			   // 
-			   this->butNextRcoDoAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->butNextRcoDoAdmin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butNextRcoDoAdmin.BackgroundImage")));
-			   this->butNextRcoDoAdmin->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			   this->butNextRcoDoAdmin->FlatAppearance->BorderSize = 0;
-			   this->butNextRcoDoAdmin->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Aqua;
-			   this->butNextRcoDoAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butNextRcoDoAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->butNextRcoDoAdmin->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			   this->butNextRcoDoAdmin->Location = System::Drawing::Point(468, 541);
-			   this->butNextRcoDoAdmin->Name = L"butNextRcoDoAdmin";
-			   this->butNextRcoDoAdmin->Size = System::Drawing::Size(126, 36);
-			   this->butNextRcoDoAdmin->TabIndex = 21;
-			   this->butNextRcoDoAdmin->Text = L"Next";
-			   this->butNextRcoDoAdmin->UseVisualStyleBackColor = false;
-			   this->butNextRcoDoAdmin->Click += gcnew System::EventHandler(this, &Home::butNextRcoDoAdmin_Click);
-			   // 
-			   // butBloodeAdminDo
-			   // 
-			   this->butBloodeAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butBloodeAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->butBloodeAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butBloodeAdminDo.BackgroundImage")));
-			   this->butBloodeAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butBloodeAdminDo->FlatAppearance->BorderSize = 0;
-			   this->butBloodeAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butBloodeAdminDo->Location = System::Drawing::Point(666, 315);
-			   this->butBloodeAdminDo->Name = L"butBloodeAdminDo";
-			   this->butBloodeAdminDo->Size = System::Drawing::Size(27, 29);
-			   this->butBloodeAdminDo->TabIndex = 20;
-			   this->butBloodeAdminDo->Text = L" ";
-			   this->butBloodeAdminDo->UseVisualStyleBackColor = false;
-			   this->butBloodeAdminDo->Click += gcnew System::EventHandler(this, &Home::butBloodeAdminDo_Click);
-			   // 
-			   // butLastDonAdminDo
-			   // 
-			   this->butLastDonAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butLastDonAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->butLastDonAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butLastDonAdminDo.BackgroundImage")));
-			   this->butLastDonAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butLastDonAdminDo->FlatAppearance->BorderSize = 0;
-			   this->butLastDonAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butLastDonAdminDo->Location = System::Drawing::Point(666, 385);
-			   this->butLastDonAdminDo->Name = L"butLastDonAdminDo";
-			   this->butLastDonAdminDo->Size = System::Drawing::Size(27, 34);
-			   this->butLastDonAdminDo->TabIndex = 19;
-			   this->butLastDonAdminDo->Text = L" ";
-			   this->butLastDonAdminDo->UseVisualStyleBackColor = false;
-			   this->butLastDonAdminDo->Click += gcnew System::EventHandler(this, &Home::butLastDonAdminDo_Click);
-			   // 
-			   // butDisAdminDo
-			   // 
-			   this->butDisAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butDisAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->butDisAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butDisAdminDo.BackgroundImage")));
-			   this->butDisAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butDisAdminDo->FlatAppearance->BorderSize = 0;
-			   this->butDisAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butDisAdminDo->Location = System::Drawing::Point(666, 463);
-			   this->butDisAdminDo->Name = L"butDisAdminDo";
-			   this->butDisAdminDo->Size = System::Drawing::Size(27, 38);
-			   this->butDisAdminDo->TabIndex = 18;
-			   this->butDisAdminDo->Text = L" ";
-			   this->butDisAdminDo->UseVisualStyleBackColor = false;
-			   this->butDisAdminDo->Click += gcnew System::EventHandler(this, &Home::butDisAdminDo_Click);
-			   // 
-			   // labelBloodeAdminDo
-			   // 
-			   this->labelBloodeAdminDo->AutoSize = true;
-			   this->labelBloodeAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->labelBloodeAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelBloodeAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelBloodeAdminDo->Location = System::Drawing::Point(391, 317);
-			   this->labelBloodeAdminDo->Name = L"labelBloodeAdminDo";
-			   this->labelBloodeAdminDo->Size = System::Drawing::Size(0, 27);
-			   this->labelBloodeAdminDo->TabIndex = 17;
-			   // 
-			   // labelDisAdminDo
-			   // 
-			   this->labelDisAdminDo->AutoSize = true;
-			   this->labelDisAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->labelDisAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelDisAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelDisAdminDo->Location = System::Drawing::Point(391, 470);
-			   this->labelDisAdminDo->Name = L"labelDisAdminDo";
-			   this->labelDisAdminDo->Size = System::Drawing::Size(0, 27);
-			   this->labelDisAdminDo->TabIndex = 16;
-			   // 
-			   // labelLastDonAdminDo
-			   // 
-			   this->labelLastDonAdminDo->AutoSize = true;
-			   this->labelLastDonAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->labelLastDonAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelLastDonAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelLastDonAdminDo->Location = System::Drawing::Point(385, 392);
-			   this->labelLastDonAdminDo->Name = L"labelLastDonAdminDo";
-			   this->labelLastDonAdminDo->Size = System::Drawing::Size(0, 27);
-			   this->labelLastDonAdminDo->TabIndex = 15;
-			   // 
-			   // labelAgeAdminDo
-			   // 
-			   this->labelAgeAdminDo->AutoSize = true;
-			   this->labelAgeAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->labelAgeAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelAgeAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelAgeAdminDo->Location = System::Drawing::Point(391, 239);
-			   this->labelAgeAdminDo->Name = L"labelAgeAdminDo";
-			   this->labelAgeAdminDo->Size = System::Drawing::Size(0, 27);
-			   this->labelAgeAdminDo->TabIndex = 14;
-			   // 
-			   // butAgeAdminDo
-			   // 
-			   this->butAgeAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butAgeAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->butAgeAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butAgeAdminDo.BackgroundImage")));
-			   this->butAgeAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butAgeAdminDo->FlatAppearance->BorderSize = 0;
-			   this->butAgeAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butAgeAdminDo->Location = System::Drawing::Point(666, 239);
-			   this->butAgeAdminDo->Name = L"butAgeAdminDo";
-			   this->butAgeAdminDo->Size = System::Drawing::Size(27, 31);
-			   this->butAgeAdminDo->TabIndex = 13;
-			   this->butAgeAdminDo->Text = L" ";
-			   this->butAgeAdminDo->UseVisualStyleBackColor = false;
-			   this->butAgeAdminDo->Click += gcnew System::EventHandler(this, &Home::butAgeAdminDo_Click);
-			   // 
-			   // textBoxIdAdminDo
-			   // 
-			   this->textBoxIdAdminDo->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			   this->textBoxIdAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->textBoxIdAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->textBoxIdAdminDo->Location = System::Drawing::Point(57, 150);
-			   this->textBoxIdAdminDo->Name = L"textBoxIdAdminDo";
-			   this->textBoxIdAdminDo->Size = System::Drawing::Size(38, 26);
-			   this->textBoxIdAdminDo->TabIndex = 12;
-			   this->textBoxIdAdminDo->TextChanged += gcnew System::EventHandler(this, &Home::textBoxIdAdminDo_TextChanged);
-			   // 
-			   // butLnameAdminDo
-			   // 
-			   this->butLnameAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butLnameAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->butLnameAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butLnameAdminDo.BackgroundImage")));
-			   this->butLnameAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butLnameAdminDo->FlatAppearance->BorderSize = 0;
-			   this->butLnameAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butLnameAdminDo->Location = System::Drawing::Point(322, 312);
-			   this->butLnameAdminDo->Name = L"butLnameAdminDo";
-			   this->butLnameAdminDo->Size = System::Drawing::Size(27, 29);
-			   this->butLnameAdminDo->TabIndex = 11;
-			   this->butLnameAdminDo->Text = L" ";
-			   this->butLnameAdminDo->UseVisualStyleBackColor = false;
-			   this->butLnameAdminDo->Click += gcnew System::EventHandler(this, &Home::butLnameAdminDo_Click);
-			   // 
-			   // butEmailnameAdminDo
-			   // 
-			   this->butEmailnameAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butEmailnameAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->butEmailnameAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butEmailnameAdminDo.BackgroundImage")));
-			   this->butEmailnameAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butEmailnameAdminDo->FlatAppearance->BorderSize = 0;
-			   this->butEmailnameAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butEmailnameAdminDo->Location = System::Drawing::Point(322, 388);
-			   this->butEmailnameAdminDo->Name = L"butEmailnameAdminDo";
-			   this->butEmailnameAdminDo->Size = System::Drawing::Size(27, 34);
-			   this->butEmailnameAdminDo->TabIndex = 10;
-			   this->butEmailnameAdminDo->Text = L" ";
-			   this->butEmailnameAdminDo->UseVisualStyleBackColor = false;
-			   this->butEmailnameAdminDo->Click += gcnew System::EventHandler(this, &Home::butEmailnameAdminDo_Click);
-			   // 
-			   // butPasAdminDo
-			   // 
-			   this->butPasAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butPasAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->butPasAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butPasAdminDo.BackgroundImage")));
-			   this->butPasAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butPasAdminDo->FlatAppearance->BorderSize = 0;
-			   this->butPasAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butPasAdminDo->Location = System::Drawing::Point(322, 463);
-			   this->butPasAdminDo->Name = L"butPasAdminDo";
-			   this->butPasAdminDo->Size = System::Drawing::Size(27, 38);
-			   this->butPasAdminDo->TabIndex = 9;
-			   this->butPasAdminDo->Text = L" ";
-			   this->butPasAdminDo->UseVisualStyleBackColor = false;
-			   this->butPasAdminDo->Click += gcnew System::EventHandler(this, &Home::butPasAdminDo_Click);
-			   // 
-			   // labelLnameAdminDo
-			   // 
-			   this->labelLnameAdminDo->AutoSize = true;
-			   this->labelLnameAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->labelLnameAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelLnameAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelLnameAdminDo->Location = System::Drawing::Point(51, 313);
-			   this->labelLnameAdminDo->Name = L"labelLnameAdminDo";
-			   this->labelLnameAdminDo->Size = System::Drawing::Size(0, 27);
-			   this->labelLnameAdminDo->TabIndex = 8;
-			   // 
-			   // labelPasAdminDo
-			   // 
-			   this->labelPasAdminDo->AutoSize = true;
-			   this->labelPasAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->labelPasAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelPasAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelPasAdminDo->Location = System::Drawing::Point(52, 468);
-			   this->labelPasAdminDo->Name = L"labelPasAdminDo";
-			   this->labelPasAdminDo->Size = System::Drawing::Size(0, 27);
-			   this->labelPasAdminDo->TabIndex = 7;
-			   // 
-			   // labelEmailAdminDo
-			   // 
-			   this->labelEmailAdminDo->AutoSize = true;
-			   this->labelEmailAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->labelEmailAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelEmailAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelEmailAdminDo->Location = System::Drawing::Point(52, 393);
-			   this->labelEmailAdminDo->Name = L"labelEmailAdminDo";
-			   this->labelEmailAdminDo->Size = System::Drawing::Size(0, 27);
-			   this->labelEmailAdminDo->TabIndex = 6;
-			   // 
-			   // labelFnameAdminDo
-			   // 
-			   this->labelFnameAdminDo->AutoSize = true;
-			   this->labelFnameAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->labelFnameAdminDo->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->labelFnameAdminDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			   this->labelFnameAdminDo->Location = System::Drawing::Point(52, 239);
-			   this->labelFnameAdminDo->Name = L"labelFnameAdminDo";
-			   this->labelFnameAdminDo->Size = System::Drawing::Size(0, 27);
-			   this->labelFnameAdminDo->TabIndex = 5;
-			   // 
-			   // butFnameAdminDo
-			   // 
-			   this->butFnameAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butFnameAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->butFnameAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butFnameAdminDo.BackgroundImage")));
-			   this->butFnameAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butFnameAdminDo->FlatAppearance->BorderSize = 0;
-			   this->butFnameAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butFnameAdminDo->Location = System::Drawing::Point(322, 238);
-			   this->butFnameAdminDo->Name = L"butFnameAdminDo";
-			   this->butFnameAdminDo->Size = System::Drawing::Size(27, 31);
-			   this->butFnameAdminDo->TabIndex = 4;
-			   this->butFnameAdminDo->Text = L" ";
-			   this->butFnameAdminDo->UseVisualStyleBackColor = false;
-			   this->butFnameAdminDo->Click += gcnew System::EventHandler(this, &Home::butFnameAdminDo_Click);
-			   // 
-			   // butInsertAdminDo
-			   // 
-			   this->butInsertAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butInsertAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->butInsertAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butInsertAdminDo.BackgroundImage")));
-			   this->butInsertAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butInsertAdminDo->FlatAppearance->BorderSize = 0;
-			   this->butInsertAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butInsertAdminDo->Location = System::Drawing::Point(101, 542);
-			   this->butInsertAdminDo->Name = L"butInsertAdminDo";
-			   this->butInsertAdminDo->Size = System::Drawing::Size(50, 51);
-			   this->butInsertAdminDo->TabIndex = 2;
-			   this->butInsertAdminDo->UseVisualStyleBackColor = false;
-			   this->butInsertAdminDo->Click += gcnew System::EventHandler(this, &Home::butInsertAdminDo_Click);
-			   // 
-			   // butDelAcoAdminDo
-			   // 
-			   this->butDelAcoAdminDo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			   this->butDelAcoAdminDo->BackColor = System::Drawing::Color::Transparent;
-			   this->butDelAcoAdminDo->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butDelAcoAdminDo.BackgroundImage")));
-			   this->butDelAcoAdminDo->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butDelAcoAdminDo->FlatAppearance->BorderSize = 0;
-			   this->butDelAcoAdminDo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butDelAcoAdminDo->Location = System::Drawing::Point(27, 540);
-			   this->butDelAcoAdminDo->Name = L"butDelAcoAdminDo";
-			   this->butDelAcoAdminDo->Size = System::Drawing::Size(51, 53);
-			   this->butDelAcoAdminDo->TabIndex = 1;
-			   this->butDelAcoAdminDo->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			   this->butDelAcoAdminDo->UseVisualStyleBackColor = false;
-			   this->butDelAcoAdminDo->Click += gcnew System::EventHandler(this, &Home::butDelAcoAdminDo_Click_1);
-			   // 
-			   // panelAcceptReq
-			   // 
-			   this->panelAcceptReq->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelAcceptReq.BackgroundImage")));
-			   this->panelAcceptReq->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			   this->panelAcceptReq->Controls->Add(this->butExitAcceptReqPanel);
-			   this->panelAcceptReq->Controls->Add(this->butAcceptReqDoAdmin);
-			   this->panelAcceptReq->Location = System::Drawing::Point(379, 140);
-			   this->panelAcceptReq->Name = L"panelAcceptReq";
-			   this->panelAcceptReq->Size = System::Drawing::Size(324, 321);
-			   this->panelAcceptReq->TabIndex = 25;
-			   // 
-			   // butExitAcceptReqPanel
-			   // 
-			   this->butExitAcceptReqPanel->BackColor = System::Drawing::Color::Transparent;
-			   this->butExitAcceptReqPanel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"butExitAcceptReqPanel.BackgroundImage")));
-			   this->butExitAcceptReqPanel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			   this->butExitAcceptReqPanel->FlatAppearance->BorderSize = 0;
-			   this->butExitAcceptReqPanel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butExitAcceptReqPanel->Location = System::Drawing::Point(294, 0);
-			   this->butExitAcceptReqPanel->Name = L"butExitAcceptReqPanel";
-			   this->butExitAcceptReqPanel->Size = System::Drawing::Size(27, 30);
-			   this->butExitAcceptReqPanel->TabIndex = 25;
-			   this->butExitAcceptReqPanel->Text = L" ";
-			   this->butExitAcceptReqPanel->UseVisualStyleBackColor = false;
-			   this->butExitAcceptReqPanel->Click += gcnew System::EventHandler(this, &Home::butExitAcceptReqPanel_Click);
-			   // 
-			   // butAcceptReqDoAdmin
-			   // 
-			   this->butAcceptReqDoAdmin->BackColor = System::Drawing::Color::Transparent;
-			   this->butAcceptReqDoAdmin->FlatAppearance->BorderSize = 0;
-			   this->butAcceptReqDoAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->butAcceptReqDoAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->butAcceptReqDoAdmin->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			   this->butAcceptReqDoAdmin->Location = System::Drawing::Point(108, 274);
-			   this->butAcceptReqDoAdmin->Name = L"butAcceptReqDoAdmin";
-			   this->butAcceptReqDoAdmin->Size = System::Drawing::Size(109, 34);
-			   this->butAcceptReqDoAdmin->TabIndex = 24;
-			   this->butAcceptReqDoAdmin->Text = L"Accept";
-			   this->butAcceptReqDoAdmin->UseVisualStyleBackColor = false;
-			   this->butAcceptReqDoAdmin->Click += gcnew System::EventHandler(this, &Home::butAcceptReqDoAdmin_Click);
-			   // 
 			   // Home
 			   // 
 			   this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			   this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			   this->BackColor = System::Drawing::SystemColors::ActiveBorder;
 			   this->ClientSize = System::Drawing::Size(950, 650);
-			   this->Controls->Add(this->main);
 			   this->Controls->Add(this->titelbar);
-			   this->Controls->Add(this->panelSinguRe);
-			   this->Controls->Add(this->DonorSingup);
-			   this->Controls->Add(this->panelLoginAdmin);
-			   this->Controls->Add(this->panelDonorRoom);
-			   this->Controls->Add(this->panelRoomRe);
+			   this->Controls->Add(this->main);
 			   this->Controls->Add(this->panelRoomAdmin);
+			   this->Controls->Add(this->panelRoomRe);
+			   this->Controls->Add(this->panelDonorRoom);
+			   this->Controls->Add(this->panelSinguRe);
 			   this->Controls->Add(this->panelDonorLogin);
 			   this->Controls->Add(this->panelLoginRe);
+			   this->Controls->Add(this->panelLoginAdmin);
+			   this->Controls->Add(this->DonorSingup);
 			   this->Controls->Add(this->panelMassegSingup);
 			   this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			   this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
@@ -5131,9 +5388,9 @@ namespace Project4 {
 			   this->panelRequestDo->ResumeLayout(false);
 			   this->panelRequestDo->PerformLayout();
 			   this->panelNavbarDo->ResumeLayout(false);
-			   this->panelDelAccoDo->ResumeLayout(false);
 			   this->panelUpdateFname->ResumeLayout(false);
 			   this->panelUpdateFname->PerformLayout();
+			   this->panelDelAccoDo->ResumeLayout(false);
 			   this->DonorSingup->ResumeLayout(false);
 			   this->DonorSingup->PerformLayout();
 			   this->main->ResumeLayout(false);
@@ -5148,24 +5405,29 @@ namespace Project4 {
 			   this->panelRoomRe->ResumeLayout(false);
 			   this->panelHomeRe->ResumeLayout(false);
 			   this->panelHomeRe->PerformLayout();
-			   this->panelSettingRe->ResumeLayout(false);
-			   this->panelSettingRe->PerformLayout();
-			   this->panelMenuBarRe->ResumeLayout(false);
 			   this->panelDisplayBlood->ResumeLayout(false);
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
-			   this->panelSerchRe->ResumeLayout(false);
-			   this->panelSerchRe->PerformLayout();
 			   this->panelRequestRe->ResumeLayout(false);
 			   this->panelRequestRe->PerformLayout();
+			   this->panelSerchRe->ResumeLayout(false);
+			   this->panelSerchRe->PerformLayout();
+			   this->panelSettingRe->ResumeLayout(false);
+			   this->panelSettingRe->PerformLayout();
+			   this->panelMenuBarRe->ResumeLayout(false);
 			   this->panelDelAcconetRe->ResumeLayout(false);
 			   this->panelUpdateDateRe->ResumeLayout(false);
 			   this->panelUpdateDateRe->PerformLayout();
 			   this->panelRoomAdmin->ResumeLayout(false);
 			   this->panelHomeAdmin->ResumeLayout(false);
 			   this->panelHomeAdmin->PerformLayout();
+			   this->panelRequestAdmin->ResumeLayout(false);
+			   this->panelRequestAdmin->PerformLayout();
+			   this->panel2->ResumeLayout(false);
+			   this->panel2->PerformLayout();
+			   this->panelDoAdmin->ResumeLayout(false);
+			   this->panelDoAdmin->PerformLayout();
 			   this->panelMenuAdmin->ResumeLayout(false);
-			   this->panelDelAccoAdmin->ResumeLayout(false);
 			   this->panelRejectReq->ResumeLayout(false);
 			   this->panelDisplayDoDate->ResumeLayout(false);
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
@@ -5177,15 +5439,14 @@ namespace Project4 {
 			   this->panelInsertRe->PerformLayout();
 			   this->panelInserDo->ResumeLayout(false);
 			   this->panelInserDo->PerformLayout();
-			   this->panelDisplayReDate->ResumeLayout(false);
-			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView4))->EndInit();
-			   this->panelRequestAdmin->ResumeLayout(false);
-			   this->panelRequestAdmin->PerformLayout();
 			   this->panelReAdmin->ResumeLayout(false);
 			   this->panelReAdmin->PerformLayout();
-			   this->panelDoAdmin->ResumeLayout(false);
-			   this->panelDoAdmin->PerformLayout();
 			   this->panelAcceptReq->ResumeLayout(false);
+			   this->panelDelAccoAdmin->ResumeLayout(false);
+			   this->panel3->ResumeLayout(false);
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView6))->EndInit();
+			   this->panelDisplayReDate->ResumeLayout(false);
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView4))->EndInit();
 			   this->ResumeLayout(false);
 
 		   }
@@ -5240,11 +5501,15 @@ namespace Project4 {
 	private: System::Void backbtn_Click_1(System::Object^ sender, System::EventArgs^ e)
 	{
 		main->BringToFront();
+		textBoxEmailLoginDo->Clear();
+		textBoxPasLOginDO->Clear();
 	}
 
 	private: System::Void butBackfromRe_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		main->BringToFront();
+		textBoxEmailLoginRe->Clear();
+		textBoxPasLoginRe->Clear();
 	}
 		   //back
 	private: System::Void butBackfromSingupDo_Click(System::Object^ sender, System::EventArgs^ e)
@@ -5259,17 +5524,24 @@ namespace Project4 {
 	private: System::Void butSingupFormLoginRe_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		panelSinguRe->BringToFront();
+		DoSingup = false;
+		ReSingnup = true;
 	}
 		   //back
+
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		main->BringToFront();
+		textBoxHosReqDo->Clear();
+		panelHomeDO->BringToFront();
 	}
 
 		   //button singup Donor from login donor
 	private: System::Void button2_Click_1(System::Object^ sender, System::EventArgs^ e)
 	{
 		DonorSingup->BringToFront();
+		 DoSingup = true;
+		 ReSingnup = false;
 	}
 
 
@@ -5357,9 +5629,9 @@ namespace Project4 {
 		   //button login masseg  befor singup
 	private: System::Void butLogMasseg_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		if (DoSingup)
+		if (DoSingup && ReSingnup==false)
 			panelDonorLogin->BringToFront();
-		else
+		if(DoSingup==false && ReSingnup )
 			panelLoginRe->BringToFront();
 	}
 		   //end Singup donor
@@ -5474,9 +5746,9 @@ namespace Project4 {
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		String^ Id;
-		/*Id = labelIdSetDo->Text;
-		std::string SCurentUserIndex = msclr::interop::marshal_as<std::string>(Id);*/
-		//CurentUserIndex = stoi(SCurentUserIndex);
+		Id = labelIdSetDo->Text;
+		std::string SCurentUserIndex = msclr::interop::marshal_as<std::string>(Id);
+		CurentUserIndex = stoi(SCurentUserIndex);
 		std::string fiile = "data.csv";
 		filecsv f;
 		String^ email = gcnew String(f.Readunitfromfile(CurentUserIndex, 4, fiile).c_str());
@@ -5512,6 +5784,12 @@ namespace Project4 {
 
 	private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		bool FnameUpdateDo = false;
+		bool LnameUpdateDo = false;
+		bool EmailUpdateDO = false;
+		bool PassUpdateDo = false;
+		bool MidUpdateDO = false;
+		bool DisUpdateDo = false;
 		panelUpdateFname->SendToBack();
 		textBoxUpdateFname->Clear();
 	}
@@ -5535,42 +5813,42 @@ namespace Project4 {
 		if (varDate != "") {
 			if (FnameUpdateDo == true && v.Check_String(date))
 			{
-				d.UpdateAccount(1, CurentUserIndex + 1, date);
+				d.UpdateAccount(1, CurentUserIndex , date);
 				FnameUpdateDo = false;
 				panelUpdateFname->SendToBack();
 				textBoxUpdateFname->Clear();
 			}
 			else if (LnameUpdateDo == true && v.Check_String(date))
 			{
-				d.UpdateAccount(2, CurentUserIndex + 1, date);
+				d.UpdateAccount(2, CurentUserIndex , date);
 				LnameUpdateDo = false;
 				panelUpdateFname->SendToBack();
 				textBoxUpdateFname->Clear();
 			}
 			else if (EmailUpdateDO == true && v.Check_Email(date))
 			{
-				d.UpdateAccount(4, CurentUserIndex + 1, date);
+				d.UpdateAccount(4, CurentUserIndex , date);
 				EmailUpdateDO = false;
 				panelUpdateFname->SendToBack();
 				textBoxUpdateFname->Clear();
 			}
 			else if (PassUpdateDo == true && v.Check_Password(date))
 			{
-				d.UpdateAccount(5, CurentUserIndex + 1, date);
+				d.UpdateAccount(5, CurentUserIndex , date);
 				PassUpdateDo = false;
 				panelUpdateFname->SendToBack();
 				textBoxUpdateFname->Clear();
 			}
 			else if (DisUpdateDo == true)
 			{
-				d.UpdateAccount(8, CurentUserIndex + 1, date);
+				d.UpdateAccount(8, CurentUserIndex , date);
 				DisUpdateDo = false;
 				panelUpdateFname->SendToBack();
 				textBoxUpdateFname->Clear();
 			}
 			else if (MidUpdateDO == true)
 			{
-				d.UpdateAccount(9, CurentUserIndex + 1, date);
+				d.UpdateAccount(9, CurentUserIndex , date);
 				MidUpdateDO = false;
 				panelUpdateFname->SendToBack();
 				textBoxUpdateFname->Clear();
@@ -5606,6 +5884,7 @@ namespace Project4 {
 	}
 		   ////////////////////////////////////////
 		   //login Re
+		  
 	private: System::Void butLoginRe_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		Recipient R;
@@ -5628,14 +5907,12 @@ namespace Project4 {
 			String^ Hos = gcnew String(f.Readunitfromfile(CurentUserIndex, 8, fiile).c_str());
 			String^ booldType = gcnew String(f.Readunitfromfile(CurentUserIndex, 7, fiile).c_str());
 
-
-
 			//data for home Re
 			labelUsernameHomRe->Text = Fname + " " + Lname;
 			labelHosnameHomRe->Text = Hos;
 			labelBloodeHomRe->Text = booldType;
 			labelDocnameHomRe->Text = Doc;
-			//data for set Re
+	     	//	data for setting Re
 			labelIdSetRe->Text = id;
 			labelLnameSetRe->Text = Lname;
 			labelFnameSetRe->Text = Fname;
@@ -5659,9 +5936,13 @@ namespace Project4 {
 		   //Send Request Do 
 	private: System::Void butSendReqDo_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		filecsv f;
 		Donor d;
 		d.readData();
 		d.setCurrentUser(CurentUserIndex);
+		
+		String^ Email = gcnew String(f.Readunitfromfile(CurentUserIndex, 4, "data.csv").c_str());
+		std::string email = msclr::interop::marshal_as<std::string>(Email);
 		String^ varHos, ^ varDateY, ^ varDateD, ^ varDateM;
 		varHos = textBoxHosReqDo->Text;
 		varDateY = dateTimePickerYReqDo->Text;
@@ -5673,7 +5954,7 @@ namespace Project4 {
 		std::string DateM = msclr::interop::marshal_as<std::string>(varDateM);
 		std::string DateD = msclr::interop::marshal_as<std::string>(varDateD);
 		std::string Date = DateD + "-" + DateM + "-" + DateY;
-		d.DonationRequest(Hos, Date, CurentUserIndex + 1);
+		d.DonationRequest(Hos, Date, CurentUserIndex,email);
 
 		MessageBox::Show("Your Request is Send :)", "Accept", MessageBoxButtons::OK, MessageBoxIcon::None);
 
@@ -5914,53 +6195,54 @@ namespace Project4 {
 		Validation v;
 		String^ varDate;
 		varDate = textBoxUpdateDateRe->Text;
+
+		String^ id;
+		id = labelIdSetRe->Text;
+		int i = int::Parse(id); // string to int
 		std::string Date = msclr::interop::marshal_as<std::string>(varDate);
 		if (varDate != "") {
 			if (FnameUpdateRe == true && v.Check_String(Date))
 			{
-				R.UpdateAccount(1, CurentUserIndex + 1, Date);
+				R.UpdateAccount(1, i, Date);
 				FnameUpdateRe = false;
 				panelUpdateDateRe->SendToBack();
 				textBoxUpdateDateRe->Clear();
 			}
 			else if (LnameUpdateRe == true && v.Check_String(Date))
 			{
-				R.UpdateAccount(2, CurentUserIndex + 1, Date);
+				R.UpdateAccount(2, i, Date);
 				LnameUpdateRe = false;
 				panelUpdateDateRe->SendToBack();
 				textBoxUpdateDateRe->Clear();
 			}
 			else if (EmailUpdateRe == true && v.Check_Email(Date))
 			{
-				R.UpdateAccount(5, CurentUserIndex + 1, Date);
+				R.UpdateAccount(5, i, Date);
 				EmailUpdateRe = false;
 				panelUpdateDateRe->SendToBack();
 				textBoxUpdateDateRe->Clear();
 			}
 			else if (PassUpdateRe == true && v.Check_Password(Date))
 			{
-				R.UpdateAccount(6, CurentUserIndex + 1, Date);
+				R.UpdateAccount(6, i, Date);
 				PassUpdateRe = false;
 				panelUpdateDateRe->SendToBack();
 				textBoxUpdateDateRe->Clear();
 			}
 			else if (HosUpdateRe == true && v.Check_String(Date))
 			{
-				R.UpdateAccount(8, CurentUserIndex + 1, Date);
+				R.UpdateAccount(8, i, Date);
 				HosUpdateRe = false;
 				panelUpdateDateRe->SendToBack();
 				textBoxUpdateDateRe->Clear();
 			}
 			else if (DocUpdateRe == true && v.Check_String(Date))
 			{
-				R.UpdateAccount(9, CurentUserIndex + 1, Date);
+				R.UpdateAccount(9, i, Date);
 				DocUpdateRe = false;
 				panelUpdateDateRe->SendToBack();
 				textBoxUpdateDateRe->Clear();
 			}
-
-
-
 		}
 	}
 
@@ -6009,7 +6291,10 @@ namespace Project4 {
 		   //log out Re
 	private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e)
 	{
+		textBoxEmailLoginRe->Clear();
+		textBoxPasLoginRe->Clear();
 		main->BringToFront();
+		panelHomeRe->BringToFront();
 	}
 
 
@@ -6057,16 +6342,16 @@ namespace Project4 {
 		d.readData();
 		if (indexDoAdmin < std::stoi(d.gettotalNumberOfDonorss()) - 1) {
 			indexDoAdmin++;
-			String^ id = gcnew String(f.Readunitfromfile(indexDoAdmin, 0, fiile).c_str());
-			String^ Fname = gcnew String(f.Readunitfromfile(indexDoAdmin, 1, fiile).c_str());
-			String^ Lname = gcnew String(f.Readunitfromfile(indexDoAdmin, 2, fiile).c_str());
-			String^ Age = gcnew String(f.Readunitfromfile(indexDoAdmin, 3, fiile).c_str());
-			String^ email = gcnew String(f.Readunitfromfile(indexDoAdmin, 4, fiile).c_str());
-			String^ pass = gcnew String(f.Readunitfromfile(indexDoAdmin, 5, fiile).c_str());
-			String^ gender = gcnew String(f.Readunitfromfile(indexDoAdmin, 6, fiile).c_str());
-			String^ booldType = gcnew String(f.Readunitfromfile(indexDoAdmin, 7, fiile).c_str());
-			String^ LastDon = gcnew String(f.Readunitfromfile(indexDoAdmin, 10, fiile).c_str());
-			String^ Dis = gcnew String(f.Readunitfromfile(indexDoAdmin, 9, fiile).c_str());
+			String^ id = gcnew String(f.Readunitfromfile2(indexDoAdmin, 0, fiile).c_str());
+			String^ Fname = gcnew String(f.Readunitfromfile2(indexDoAdmin, 1, fiile).c_str());
+			String^ Lname = gcnew String(f.Readunitfromfile2(indexDoAdmin, 2, fiile).c_str());
+			String^ Age = gcnew String(f.Readunitfromfile2(indexDoAdmin, 3, fiile).c_str());
+			String^ email = gcnew String(f.Readunitfromfile2(indexDoAdmin, 4, fiile).c_str());
+			String^ pass = gcnew String(f.Readunitfromfile2(indexDoAdmin, 5, fiile).c_str());
+			String^ gender = gcnew String(f.Readunitfromfile2(indexDoAdmin, 6, fiile).c_str());
+			String^ booldType = gcnew String(f.Readunitfromfile2(indexDoAdmin, 7, fiile).c_str());
+			String^ LastDon = gcnew String(f.Readunitfromfile2(indexDoAdmin, 10, fiile).c_str());
+			String^ Dis = gcnew String(f.Readunitfromfile2(indexDoAdmin, 9, fiile).c_str());
 			//data display
 			textBoxIdAdminDo->Text = id;
 			labelFnameAdminDo->Text = Fname;
@@ -6091,17 +6376,17 @@ namespace Project4 {
 		if (indexDoAdmin > 0)
 		{
 			indexDoAdmin--;
-			String^ id = gcnew String(f.Readunitfromfile(indexDoAdmin, 0, fiile).c_str());
-			String^ Fname = gcnew String(f.Readunitfromfile(indexDoAdmin, 1, fiile).c_str());
-			String^ Lname = gcnew String(f.Readunitfromfile(indexDoAdmin, 2, fiile).c_str());
-			String^ Age = gcnew String(f.Readunitfromfile(indexDoAdmin, 3, fiile).c_str());
-			String^ email = gcnew String(f.Readunitfromfile(indexDoAdmin, 4, fiile).c_str());
-			String^ pass = gcnew String(f.Readunitfromfile(indexDoAdmin, 5, fiile).c_str());
-			String^ gender = gcnew String(f.Readunitfromfile(indexDoAdmin, 6, fiile).c_str());
-			String^ booldType = gcnew String(f.Readunitfromfile(indexDoAdmin, 7, fiile).c_str());
+			String^ id = gcnew String(f.Readunitfromfile2(indexDoAdmin, 0, fiile).c_str());
+			String^ Fname = gcnew String(f.Readunitfromfile2(indexDoAdmin, 1, fiile).c_str());
+			String^ Lname = gcnew String(f.Readunitfromfile2(indexDoAdmin, 2, fiile).c_str());
+			String^ Age = gcnew String(f.Readunitfromfile2(indexDoAdmin, 3, fiile).c_str());
+			String^ email = gcnew String(f.Readunitfromfile2(indexDoAdmin, 4, fiile).c_str());
+			String^ pass = gcnew String(f.Readunitfromfile2(indexDoAdmin, 5, fiile).c_str());
+			String^ gender = gcnew String(f.Readunitfromfile2(indexDoAdmin, 6, fiile).c_str());
+			String^ booldType = gcnew String(f.Readunitfromfile2(indexDoAdmin, 7, fiile).c_str());
 
-			String^ LastDon = gcnew String(f.Readunitfromfile(indexDoAdmin, 10, fiile).c_str());
-			String^ Dis = gcnew String(f.Readunitfromfile(indexDoAdmin, 9, fiile).c_str());
+			String^ LastDon = gcnew String(f.Readunitfromfile2(indexDoAdmin, 10, fiile).c_str());
+			String^ Dis = gcnew String(f.Readunitfromfile2(indexDoAdmin, 9, fiile).c_str());
 
 
 			//data  
@@ -6122,16 +6407,13 @@ namespace Project4 {
 
 
 	}
-	private: System::Void textBoxIdAdminDo_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		/*if (e-> == (int)Keys::Enter)
-		{
-
-		}*/
-	}
 		   //serch blood
 	private: System::Void butSerRe_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ Exdate, ^ date = dateTimePickerSerRe->Text;
-		std::string ExDate, Date = msclr::interop::marshal_as<std::string>(date);
+		String^ Exdate, ^ date ,^Count;
+
+	 	date= dateTimePickerSerRe->Text;
+		std::string ExDate,
+	    Date = msclr::interop::marshal_as<std::string>(date);
 		try {
 			Request Req;
 			std::string day = Date.substr(0, 2);
@@ -6141,25 +6423,28 @@ namespace Project4 {
 			Exdate = gcnew String(ExDate.c_str());
 			labelExDataBlood->Text = Exdate;
 			Recipient R;
-			R.Display_Blood(Date);
 			std::vector<std::pair<std::string, int>> v;
 			v = R.Display_Blood(Date);
-			String^ Hos = gcnew String(std::to_string(v[0].second).c_str());
-			labelA->Text = Hos;
-			Hos = gcnew String(std::to_string(v[1].second).c_str());
-			labelAa->Text = Hos;
-			Hos = gcnew String(std::to_string(v[2].second).c_str());
-			labelB->Text = Hos;
-			Hos = gcnew String(std::to_string(v[3].second).c_str());
-			labelBb->Text = Hos;
-			Hos = gcnew String(std::to_string(v[4].second).c_str());
-			labelO->Text = Hos;
-			Hos = gcnew String(std::to_string(v[5].second).c_str());
-			labelOo->Text = Hos;
-			Hos = gcnew String(std::to_string(v[6].second).c_str());
-			labelAB->Text = Hos;
-			Hos = gcnew String(std::to_string(v[7].second).c_str());
-			labelABab->Text = Hos;
+
+			 Count = gcnew String(std::to_string(v[0].second).c_str());
+			labelA->Text = Count;
+			Count = gcnew String(std::to_string(v[1].second).c_str());
+			labelAa->Text = Count;
+
+			Count = gcnew String(std::to_string(v[2].second).c_str());
+			labelB->Text = Count;
+			Count = gcnew String(std::to_string(v[3].second).c_str());
+			labelBb->Text = Count;
+
+			Count = gcnew String(std::to_string(v[4].second).c_str());
+			labelO->Text = Count;
+			Count = gcnew String(std::to_string(v[5].second).c_str());
+			labelOo->Text = Count;
+
+			Count = gcnew String(std::to_string(v[6].second).c_str());
+			labelAB->Text = Count;
+			Count = gcnew String(std::to_string(v[7].second).c_str());
+			labelABab->Text = Count;
 		}
 		catch (std::exception& e)
 		{
@@ -6303,17 +6588,17 @@ namespace Project4 {
 
 			filecsv f;
 
-			String^ id = gcnew String(f.Readunitfromfile(indexDoAdmin, 0, fiile).c_str());
-			String^ Fname = gcnew String(f.Readunitfromfile(indexDoAdmin, 1, fiile).c_str());
-			String^ Lname = gcnew String(f.Readunitfromfile(indexDoAdmin, 2, fiile).c_str());
-			String^ Age = gcnew String(f.Readunitfromfile(indexDoAdmin, 3, fiile).c_str());
-			String^ email = gcnew String(f.Readunitfromfile(indexDoAdmin, 4, fiile).c_str());
-			String^ pass = gcnew String(f.Readunitfromfile(indexDoAdmin, 5, fiile).c_str());
-			String^ gender = gcnew String(f.Readunitfromfile(indexDoAdmin, 6, fiile).c_str());
-			String^ booldType = gcnew String(f.Readunitfromfile(indexDoAdmin, 7, fiile).c_str());
+			String^ id = gcnew String(f.Readunitfromfile2(indexDoAdmin, 0, fiile).c_str());
+			String^ Fname = gcnew String(f.Readunitfromfile2(indexDoAdmin, 1, fiile).c_str());
+			String^ Lname = gcnew String(f.Readunitfromfile2(indexDoAdmin, 2, fiile).c_str());
+			String^ Age = gcnew String(f.Readunitfromfile2(indexDoAdmin, 3, fiile).c_str());
+			String^ email = gcnew String(f.Readunitfromfile2(indexDoAdmin, 4, fiile).c_str());
+			String^ pass = gcnew String(f.Readunitfromfile2(indexDoAdmin, 5, fiile).c_str());
+			String^ gender = gcnew String(f.Readunitfromfile2(indexDoAdmin, 6, fiile).c_str());
+			String^ booldType = gcnew String(f.Readunitfromfile2(indexDoAdmin, 7, fiile).c_str());
 
-			String^ LastDon = gcnew String(f.Readunitfromfile(indexDoAdmin, 10, fiile).c_str());
-			String^ Dis = gcnew String(f.Readunitfromfile(indexDoAdmin, 9, fiile).c_str());
+			String^ LastDon = gcnew String(f.Readunitfromfile2(indexDoAdmin, 10, fiile).c_str());
+			String^ Dis = gcnew String(f.Readunitfromfile2(indexDoAdmin, 9, fiile).c_str());
 
 
 			//data for home Re
@@ -6405,16 +6690,16 @@ namespace Project4 {
 			indexReAdmin++;
 			filecsv f;
 
-			String^ id = gcnew String(f.Readunitfromfile(indexReAdmin, 0, fiile).c_str());
-			String^ Fname = gcnew String(f.Readunitfromfile(indexReAdmin, 1, fiile).c_str());
-			String^ Lname = gcnew String(f.Readunitfromfile(indexReAdmin, 2, fiile).c_str());
-			String^ Age = gcnew String(f.Readunitfromfile(indexReAdmin, 4, fiile).c_str());
-			String^ email = gcnew String(f.Readunitfromfile(indexReAdmin, 5, fiile).c_str());
-			String^ pass = gcnew String(f.Readunitfromfile(indexReAdmin, 6, fiile).c_str());
-			String^ gender = gcnew String(f.Readunitfromfile(indexReAdmin, 3, fiile).c_str());
-			String^ booldType = gcnew String(f.Readunitfromfile(indexReAdmin, 7, fiile).c_str());
-			String^ Hos = gcnew String(f.Readunitfromfile(indexReAdmin, 8, fiile).c_str());
-			String^ Doc = gcnew String(f.Readunitfromfile(indexReAdmin, 9, fiile).c_str());
+			String^ id = gcnew String(f.Readunitfromfile2(indexReAdmin, 0, fiile).c_str());
+			String^ Fname = gcnew String(f.Readunitfromfile2(indexReAdmin, 1, fiile).c_str());
+			String^ Lname = gcnew String(f.Readunitfromfile2(indexReAdmin, 2, fiile).c_str());
+			String^ Age = gcnew String(f.Readunitfromfile2(indexReAdmin, 4, fiile).c_str());
+			String^ email = gcnew String(f.Readunitfromfile2(indexReAdmin, 5, fiile).c_str());
+			String^ pass = gcnew String(f.Readunitfromfile2(indexReAdmin, 6, fiile).c_str());
+			String^ gender = gcnew String(f.Readunitfromfile2(indexReAdmin, 3, fiile).c_str());
+			String^ booldType = gcnew String(f.Readunitfromfile2(indexReAdmin, 7, fiile).c_str());
+			String^ Hos = gcnew String(f.Readunitfromfile2(indexReAdmin, 8, fiile).c_str());
+			String^ Doc = gcnew String(f.Readunitfromfile2(indexReAdmin, 9, fiile).c_str());
 
 
 			//data for home Re
@@ -6443,17 +6728,17 @@ namespace Project4 {
 			indexReAdmin--;
 			filecsv f;
 
-			String^ id = gcnew String(f.Readunitfromfile(indexReAdmin, 0, fiile).c_str());
-			String^ Fname = gcnew String(f.Readunitfromfile(indexReAdmin, 1, fiile).c_str());
-			String^ Lname = gcnew String(f.Readunitfromfile(indexReAdmin, 2, fiile).c_str());
-			String^ Age = gcnew String(f.Readunitfromfile(indexReAdmin, 4, fiile).c_str());
-			String^ email = gcnew String(f.Readunitfromfile(indexReAdmin, 5, fiile).c_str());
-			String^ pass = gcnew String(f.Readunitfromfile(indexReAdmin, 6, fiile).c_str());
-			String^ gender = gcnew String(f.Readunitfromfile(indexReAdmin, 3, fiile).c_str());
-			String^ booldType = gcnew String(f.Readunitfromfile(indexReAdmin, 7, fiile).c_str());
+			String^ id = gcnew String(f.Readunitfromfile2(indexReAdmin, 0, fiile).c_str());
+			String^ Fname = gcnew String(f.Readunitfromfile2(indexReAdmin, 1, fiile).c_str());
+			String^ Lname = gcnew String(f.Readunitfromfile2(indexReAdmin, 2, fiile).c_str());
+			String^ Age = gcnew String(f.Readunitfromfile2(indexReAdmin, 4, fiile).c_str());
+			String^ email = gcnew String(f.Readunitfromfile2(indexReAdmin, 5, fiile).c_str());
+			String^ pass = gcnew String(f.Readunitfromfile2(indexReAdmin, 6, fiile).c_str());
+			String^ gender = gcnew String(f.Readunitfromfile2(indexReAdmin, 3, fiile).c_str());
+			String^ booldType = gcnew String(f.Readunitfromfile2(indexReAdmin, 7, fiile).c_str());
 
-			String^ Hos = gcnew String(f.Readunitfromfile(indexReAdmin, 8, fiile).c_str());
-			String^ Doc = gcnew String(f.Readunitfromfile(indexReAdmin, 9, fiile).c_str());
+			String^ Hos = gcnew String(f.Readunitfromfile2(indexReAdmin, 8, fiile).c_str());
+			String^ Doc = gcnew String(f.Readunitfromfile2(indexReAdmin, 9, fiile).c_str());
 
 
 			//data for home Re
@@ -6554,17 +6839,17 @@ namespace Project4 {
 			std::string fiile = "Recipient.csv";
 			filecsv f;
 
-			String^ id = gcnew String(f.Readunitfromfile(indexReAdmin, 0, fiile).c_str());
-			String^ Fname = gcnew String(f.Readunitfromfile(indexReAdmin, 1, fiile).c_str());
-			String^ Lname = gcnew String(f.Readunitfromfile(indexReAdmin, 2, fiile).c_str());
-			String^ Age = gcnew String(f.Readunitfromfile(indexReAdmin, 4, fiile).c_str());
-			String^ email = gcnew String(f.Readunitfromfile(indexReAdmin, 5, fiile).c_str());
-			String^ pass = gcnew String(f.Readunitfromfile(indexReAdmin, 6, fiile).c_str());
-			String^ gender = gcnew String(f.Readunitfromfile(indexReAdmin, 3, fiile).c_str());
-			String^ booldType = gcnew String(f.Readunitfromfile(indexReAdmin, 7, fiile).c_str());
+			String^ id = gcnew String(f.Readunitfromfile2(indexReAdmin, 0, fiile).c_str());
+			String^ Fname = gcnew String(f.Readunitfromfile2(indexReAdmin, 1, fiile).c_str());
+			String^ Lname = gcnew String(f.Readunitfromfile2(indexReAdmin, 2, fiile).c_str());
+			String^ Age = gcnew String(f.Readunitfromfile2(indexReAdmin, 4, fiile).c_str());
+			String^ email = gcnew String(f.Readunitfromfile2(indexReAdmin, 5, fiile).c_str());
+			String^ pass = gcnew String(f.Readunitfromfile2(indexReAdmin, 6, fiile).c_str());
+			String^ gender = gcnew String(f.Readunitfromfile2(indexReAdmin, 3, fiile).c_str());
+			String^ booldType = gcnew String(f.Readunitfromfile2(indexReAdmin, 7, fiile).c_str());
 
-			String^ Hos = gcnew String(f.Readunitfromfile(indexReAdmin, 8, fiile).c_str());
-			String^ Doc = gcnew String(f.Readunitfromfile(indexReAdmin, 9, fiile).c_str());
+			String^ Hos = gcnew String(f.Readunitfromfile2(indexReAdmin, 8, fiile).c_str());
+			String^ Doc = gcnew String(f.Readunitfromfile2(indexReAdmin, 9, fiile).c_str());
 
 
 			//data for home Re
@@ -6626,6 +6911,7 @@ namespace Project4 {
 		std::string email = msclr::interop::marshal_as<std::string>(mail);
 		d.DeleteAccount(email);
 		main->BringToFront();
+		panelHomeDO->BringToFront();
 
 	}
 	private: System::Void butNoDelAccoDo_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -6659,7 +6945,9 @@ namespace Project4 {
 			Donor d;
 			filecsv f;
 			std::string fiile = "data.csv";
-			String^ mail = gcnew String(f.Readunitfromfile(indexDoAdmin, 4, fiile).c_str());
+			String^TempId = textBoxIdAdminDo->Text;
+			int TindexDoAdmin = int::Parse(TempId); // string to int
+			String^ mail = gcnew String(f.Readunitfromfile(TindexDoAdmin, 4, fiile).c_str());
 			std::string email = msclr::interop::marshal_as<std::string>(mail);
 			d.DeleteAccount(email);
 			panelDelAccoAdmin->SendToBack();
@@ -6670,7 +6958,9 @@ namespace Project4 {
 			Recipient R;
 			filecsv f;
 			std::string fiile = "Recipient.csv";
-			String^ mail = gcnew String(f.Readunitfromfile(indexReAdmin, 5, fiile).c_str());
+			String^ TempId = textBoxIdAdminRe->Text;
+			int TindexReAdmin = int::Parse(TempId); // string to int
+			String^ mail = gcnew String(f.Readunitfromfile(TindexReAdmin, 5, fiile).c_str());
 			std::string email = msclr::interop::marshal_as<std::string>(mail);
 			R.DeleteAccount(email);
 			panelDelAccoAdmin->SendToBack();
@@ -6744,7 +7034,7 @@ namespace Project4 {
 		Recipient R;
 		R.Read_Data();
 		String^ varFname, ^ varLname, ^ varPassword, ^ varEmail, ^ varAge,
-			^ varBooldType, ^ varGender, ^ varHos, ^ varDoc;
+			^varBooldType, ^ varGender, ^ varHos, ^ varDoc;
 		varFname = textBoxFnameInAdminRe->Text;
 		varLname = textBoxLnameInAdminRe->Text;
 		varEmail = textBoxEmailInAdminRe->Text;
@@ -6793,6 +7083,7 @@ namespace Project4 {
 		this->butAdminPageDo->BackColor = System::Drawing::Color::Transparent;
 		this->butAdminPageRe->BackColor = System::Drawing::Color::Transparent;
 		this->butAdminPageReq->BackColor = System::Drawing::Color::Transparent;
+		this->butAdminPageInsert->BackColor = System::Drawing::Color::Transparent;
 		///////////////font
 		this->butAdminPageDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
 			static_cast<System::Int32>(static_cast<System::Byte>(85)));
@@ -6800,6 +7091,9 @@ namespace Project4 {
 			static_cast<System::Int32>(static_cast<System::Byte>(85)));
 		this->butAdminPageReq->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
 			static_cast<System::Int32>(static_cast<System::Byte>(85)));
+		this->butAdminPageInsert->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
+			static_cast<System::Int32>(static_cast<System::Byte>(85)));
+
 		this->butAdminPageHo->ForeColor = System::Drawing::Color::White;
 		panelHomeAdmin->BringToFront();
 	}
@@ -6809,6 +7103,8 @@ namespace Project4 {
 		this->butAdminPageDo->BackColor = System::Drawing::Color::Transparent;
 		this->butAdminPageRe->BackColor = System::Drawing::Color::Transparent;
 		this->butAdminPageHo->BackColor = System::Drawing::Color::Transparent;
+		this->butAdminPageInsert->BackColor = System::Drawing::Color::Transparent;
+
 		///////////////font
 		this->butAdminPageDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
 			static_cast<System::Int32>(static_cast<System::Byte>(85)));
@@ -6817,6 +7113,9 @@ namespace Project4 {
 		this->butAdminPageRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
 			static_cast<System::Int32>(static_cast<System::Byte>(85)));
 		this->butAdminPageReq->ForeColor = System::Drawing::Color::White;
+		this->butAdminPageInsert->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
+			static_cast<System::Int32>(static_cast<System::Byte>(85)));
+
 		panelRequestAdmin->BringToFront();
 	}
 	private: System::Void butAdminPageDo_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -6825,6 +7124,8 @@ namespace Project4 {
 		this->butAdminPageHo->BackColor = System::Drawing::Color::Transparent;
 		this->butAdminPageRe->BackColor = System::Drawing::Color::Transparent;
 		this->butAdminPageReq->BackColor = System::Drawing::Color::Transparent;
+		this->butAdminPageInsert->BackColor = System::Drawing::Color::Transparent;
+
 		///////////////font
 		this->butAdminPageHo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
 			static_cast<System::Int32>(static_cast<System::Byte>(85)));
@@ -6833,6 +7134,9 @@ namespace Project4 {
 		this->butAdminPageReq->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
 			static_cast<System::Int32>(static_cast<System::Byte>(85)));
 		this->butAdminPageDo->ForeColor = System::Drawing::Color::White;
+		this->butAdminPageInsert->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
+			static_cast<System::Int32>(static_cast<System::Byte>(85)));
+
 		panelDoAdmin->BringToFront();
 	}
 	private: System::Void butAdminPageRe_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -6841,6 +7145,8 @@ namespace Project4 {
 		this->butAdminPageDo->BackColor = System::Drawing::Color::Transparent;
 		this->butAdminPageHo->BackColor = System::Drawing::Color::Transparent;
 		this->butAdminPageReq->BackColor = System::Drawing::Color::Transparent;
+		this->butAdminPageInsert->BackColor = System::Drawing::Color::Transparent;
+
 		///////////////font
 		this->butAdminPageDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
 			static_cast<System::Int32>(static_cast<System::Byte>(85)));
@@ -6848,45 +7154,83 @@ namespace Project4 {
 			static_cast<System::Int32>(static_cast<System::Byte>(85)));
 		this->butAdminPageHo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
 			static_cast<System::Int32>(static_cast<System::Byte>(85)));
+		this->butAdminPageInsert->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
+			static_cast<System::Int32>(static_cast<System::Byte>(85)));
+
 		this->butAdminPageRe->ForeColor = System::Drawing::Color::White;
 		panelReAdmin->BringToFront();
 	}
+	private: System::Void butAdminPageInsert_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->butAdminPageInsert->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
+			static_cast<System::Int32>(static_cast<System::Byte>(85)));
+		this->butAdminPageDo->BackColor = System::Drawing::Color::Transparent;
+		this->butAdminPageHo->BackColor = System::Drawing::Color::Transparent;
+		this->butAdminPageReq->BackColor = System::Drawing::Color::Transparent;
+		this->butAdminPageRe->BackColor = System::Drawing::Color::Transparent;
+
+		///////////////font
+		this->butAdminPageDo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
+			static_cast<System::Int32>(static_cast<System::Byte>(85)));
+		this->butAdminPageReq->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
+			static_cast<System::Int32>(static_cast<System::Byte>(85)));
+		this->butAdminPageHo->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
+			static_cast<System::Int32>(static_cast<System::Byte>(85)));
+		this->butAdminPageRe->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(49)),
+			static_cast<System::Int32>(static_cast<System::Byte>(85)));
+
+		this->butAdminPageInsert->ForeColor = System::Drawing::Color::White;
+		panel2->BringToFront();
+
+	}
+
+
 	private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		main->BringToFront();
+		panelHomeAdmin->BringToFront();
+		textBoxUsernameAdmin->Clear();
+		textBoxPassAdmin->Clear();
 	}
+		   //Request Admin
 	private: System::Void butNextReqAdmin_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-
+		
 		Request R;
 		R.Read_Data();
 		String^ id, ^ Fname, ^ Lname, ^ Blood, ^ Date, ^ Age, ^ Email, ^ Dis;
 		std::string fiileReq = "DonationRequestData.csv", fiileDo = "data.csv";
 		filecsv f;
-		String^ StatuL = gcnew String(f.Readunitfromfile(R.totalNumberOfRequests, 3, fiileReq).c_str());
-
+		String^ StatuL = gcnew String(f.Readunitfromfile2(R.totalNumberOfRequests, 3, fiileReq).c_str());
+	 
 		if (indexReqDoAdmin < stoi(R.totalNumberOfRequestss) - 1 && (indexReqDoAdmin != stoi(R.totalNumberOfRequestss) || StatuL == "2"))
+		{
 			indexReqDoAdmin++;
+		 
+			
+		}
 		else {
 			MessageBox::Show("There is no other data", "No data", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 
-		String^ Statu = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 3, fiileReq).c_str());
-		while (Statu != "2" && indexReqDoAdmin != stoi(R.totalNumberOfRequestss))
+		String^ Statu = gcnew String(f.Readunitfromfile2(indexReqDoAdmin, 3, fiileReq).c_str());
+		while (Statu != "2" && indexReqDoAdmin != stoi(R.totalNumberOfRequestss) - 1)
 		{
 			indexReqDoAdmin++;
-			Statu = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 3, fiileReq).c_str());
+			Statu = gcnew String(f.Readunitfromfile2(indexReqDoAdmin, 3, fiileReq).c_str());
 
 		}
-		id = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 0, fiileReq).c_str());
-		Fname = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 1, fiileDo).c_str());
-		Lname = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 2, fiileDo).c_str());
-		Email = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 4, fiileDo).c_str());
-		Age = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 3, fiileDo).c_str());
-		Blood = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 1, fiileReq).c_str());
-		Dis = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 8, fiileDo).c_str());
-		Date = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 2, fiileReq).c_str());
+	 
+
+	 	id = gcnew String(f.Readunitfromfile2(indexReqDoAdmin, 0, fiileReq).c_str());
+		int i = int::Parse(id); // string to int
+		Fname = gcnew String(f.Readunitfromfile(i, 1, fiileDo).c_str());
+		Lname = gcnew String(f.Readunitfromfile(i, 2, fiileDo).c_str());
+		Email = gcnew String(f.Readunitfromfile(i, 4, fiileDo).c_str());
+		Age = gcnew String(f.Readunitfromfile(i, 3, fiileDo).c_str());
+		Blood = gcnew String(f.Readunitfromfile2(indexReqDoAdmin, 1, fiileReq).c_str());
+		Dis = gcnew String(f.Readunitfromfile(i, 8, fiileDo).c_str());
+		Date = gcnew String(f.Readunitfromfile2(indexReqDoAdmin, 2, fiileReq).c_str());
 
 		//data for home Re
 		if (Statu == "2") {
@@ -6905,7 +7249,7 @@ namespace Project4 {
 		R.Read_Data();
 		std::string fiileReq = "DonationRequestData.csv", fiileDo = "data.csv";
 		filecsv f;
-		String^ Statu1 = gcnew String(f.Readunitfromfile(1, 3, fiileReq).c_str());
+		String^ Statu1 = gcnew String(f.Readunitfromfile2(1, 3, fiileReq).c_str());
 
 		if (indexReqDoAdmin > 0 && (indexReqDoAdmin != 1 || Statu1 == "2"))
 			indexReqDoAdmin--;
@@ -6914,21 +7258,22 @@ namespace Project4 {
 		}
 
 
-		String^ Statu = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 3, fiileReq).c_str());
+		String^ Statu = gcnew String(f.Readunitfromfile2(indexReqDoAdmin, 3, fiileReq).c_str());
 
 		while (Statu != "2" && indexReqDoAdmin != 0)
 		{
 			indexReqDoAdmin--;
-			Statu = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 3, fiileReq).c_str());
+			Statu = gcnew String(f.Readunitfromfile2(indexReqDoAdmin, 3, fiileReq).c_str());
 		}
-		String^ id = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 0, fiileReq).c_str());
-		String^ Fname = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 1, fiileDo).c_str());
-		String^ Lname = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 2, fiileDo).c_str());
-		String^ Email = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 4, fiileDo).c_str());
-		String^ Age = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 3, fiileDo).c_str());
-		String^ Blood = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 1, fiileReq).c_str());
-		String^ Dis = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 8, fiileDo).c_str());
-		String^ Date = gcnew String(f.Readunitfromfile(indexReqDoAdmin, 2, fiileReq).c_str());
+		String^ id = gcnew String(f.Readunitfromfile2(indexReqDoAdmin, 0, fiileReq).c_str());
+		int i = int::Parse(id); // string to int
+		String^ Fname = gcnew String(f.Readunitfromfile(i, 1, fiileDo).c_str());
+		String^ Lname = gcnew String(f.Readunitfromfile(i, 2, fiileDo).c_str());
+		String^ Email = gcnew String(f.Readunitfromfile(i, 4, fiileDo).c_str());
+		String^ Age = gcnew String(f.Readunitfromfile(i, 3, fiileDo).c_str());
+		String^ Blood = gcnew String(f.Readunitfromfile(i, 1, fiileReq).c_str());
+		String^ Dis = gcnew String(f.Readunitfromfile(i, 8, fiileDo).c_str());
+		String^ Date = gcnew String(f.Readunitfromfile2(indexReqDoAdmin, 2, fiileReq).c_str());
 
 		//data for home Re
 		if (Statu == "2") {
@@ -6949,22 +7294,17 @@ namespace Project4 {
 		String^ varId = textBoxIdDoReqAdmin->Text;
 		std::string id = msclr::interop::marshal_as<std::string>(varId);
 		int idInt = stoi(id);
-		String^ Age = gcnew String(f.Readunitfromfile(idInt - 1, 3, fileDo).c_str());
-		String^ Dis = gcnew String(f.Readunitfromfile(idInt - 1, 8, fileDo).c_str());
-		String^ LastDo = gcnew String(f.Readunitfromfile(idInt - 1, 10, fileDo).c_str());
+		String^ Age = gcnew String(f.Readunitfromfile(idInt , 3, fileDo).c_str());
+		String^ Dis = gcnew String(f.Readunitfromfile(idInt , 8, fileDo).c_str());
+		String^ LastDo = gcnew String(f.Readunitfromfile(idInt , 10, fileDo).c_str());
 		String^ varDate = labelDateDoReqAdmin->Text;
-
 		std::string age = msclr::interop::marshal_as<std::string>(Age);
 		std::string dis = msclr::interop::marshal_as<std::string>(Dis);
-
-
 		std::string date = msclr::interop::marshal_as<std::string>(varDate);
 		std::string lastdo = msclr::interop::marshal_as<std::string>(LastDo);
-
 		int day = stoi(date.substr(0, 2));
 		int month = stoi(date.substr(3, 2));
 		int year = stoi(date.substr(6, 4));
-
 		int dayL = stoi(lastdo.substr(0, 2));
 		int monthL = stoi(lastdo.substr(3, 2));
 		int yearL = stoi(lastdo.substr(6, 4));
@@ -7161,7 +7501,6 @@ namespace Project4 {
 		Donor d;
 		String^ Fname, ^ Lname, ^ Age, ^ Email, ^ Pasword, ^ Blood, ^ Gender, ^ Dis, ^ Mid, ^ LastDon;
 		std::string  fname, lname, email, pasword, gender, dis, mid, lastdon, blood;
-
 		int id, age;
 		d.readData();
 
@@ -7276,8 +7615,112 @@ namespace Project4 {
 		toolTip1->Show("Display All Recipients Data ", butDisplayReDate);
 
 	}
-private: System::Void butDisplayDoDate_MouseHover(System::Object^ sender, System::EventArgs^ e) {
-	toolTip1->Show("Display All Donors Data ", butDisplayDoDate);
-}
-};//end
+	private: System::Void butDisplayDoDate_MouseHover(System::Object^ sender, System::EventArgs^ e) {
+		toolTip1->Show("Display All Donors Data ", butDisplayDoDate);
+	}
+	private: System::Void textBoxLastDataRegDo_MouseHover(System::Object^ sender, System::EventArgs^ e) {
+		toolTip1->Show("If you haven't donated before, leave the date as it is :) ", textBoxLastDataRegDo);
+
+	}
+	private: System::Void butInsertBloodAdmin_Click(System::Object^ sender, System::EventArgs^ e) {
+		Request Req;
+		Validation v;
+		String^ Date, ^ Num, ^ Blood, ^ varId;
+		Date = dateTimePickerRecBloodAdmin->Text;
+		Num = textBoxQuBlodAdmin->Text;
+		Blood = comboBoxBloodInsertAdmin->Text;
+		varId = textBoxIdBlodAdmin->Text;
+		std::string id = msclr::interop::marshal_as<std::string>(varId);
+		std::string date = msclr::interop::marshal_as<std::string>(Date);
+		std::string num = msclr::interop::marshal_as<std::string>(Num);
+		std::string  blood = msclr::interop::marshal_as<std::string>(Blood);
+		if(id=="")
+		  id = "0";
+		if (v.Check_Digit(num)) {
+			Req.InsertBloodAdmin(id, stoi(num), date, blood);
+			MessageBox::Show(Num + " bags of blood were Inserted  type: " + Blood, "Accept", MessageBoxButtons::OK, MessageBoxIcon::None);
+		}
+		else
+
+			MessageBox::Show(Num + " is not Number" , "Reject", MessageBoxButtons::OK, MessageBoxIcon::Error);
+
+	}
+	private: System::Void button4_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		panel3->Hide();
+	}
+	private: System::Void butDIsplayBloodAdmin_Click(System::Object^ sender, System::EventArgs^ e) {
+		panel3->Show();
+		panel3->BringToFront();
+		Request Req; String^ I0D; std::string i0d, Exdate;
+		String^ Blood; std::string blood;
+		String^ Date; std::string date;
+		String^ Stat, ^ ExDate; std::string stat;
+		Req.Read_Data();
+		int c = 0;
+		int id;
+		dataGridView6->Rows->Clear();
+		for (int i = 0; i < Req.request.size(); i++) {
+			i0d = Req.request[i].Donor_ID;
+			blood = Req.request[i].Blood;
+			date = Req.request[i].Date;
+			stat = Req.request[i].state;
+			id = Req.request[i].Donor_ID;
+			I0D = gcnew String(i0d.c_str());
+			Blood = gcnew String(blood.c_str());
+			Date = gcnew String(date.c_str());
+
+			std::string day = date.substr(0, 2);
+			std::string month = date.substr(3, 2);
+			std::string year = date.substr(6, 4);
+			Exdate = Req.addDays(stoi(day), stoi(month), stoi(year), 90);
+			ExDate = gcnew String(Exdate.c_str());
+
+			if (stat == "1") {
+
+				dataGridView6->Rows->Add();
+				this->dataGridView6->Rows[c]->Cells[0]->Value = c;
+				this->dataGridView6->Rows[c]->Cells[1]->Value = id;
+				this->dataGridView6->Rows[c]->Cells[2]->Value = Blood;
+				this->dataGridView6->Rows[c]->Cells[3]->Value = Date;
+				this->dataGridView6->Rows[c]->Cells[4]->Value = ExDate;
+				c++;
+
+			}
+		}
+
+	}
+	private: System::Void button3_Click_2(System::Object^ sender, System::EventArgs^ e) {
+
+		Recipient R;
+		String^ varNum, ^ varBlood, ^ varId, ^ varDate;
+		varId = textBoxIdBlodAdmin->Text;
+		varDate = dateTimePickerRecBloodAdmin->Text;
+		varNum = textBoxQuBlodAdmin->Text;
+		varBlood = comboBoxBloodInsertAdmin->Text;
+
+
+		std::string num = msclr::interop::marshal_as<std::string>(varNum);
+		std::string blood = msclr::interop::marshal_as<std::string>(varBlood);
+		if (varId == "")
+			varId = "0";
+		std::string id = msclr::interop::marshal_as<std::string>(varId);
+		std::string date = msclr::interop::marshal_as<std::string>(varDate);
+
+		int IntNum = stoi(num);
+		if (R.Count_BloodTypes(blood, IntNum))
+		{
+			MessageBox::Show(varNum + " bags of blood were deleted from type: " + varBlood, "delete", MessageBoxButtons::OK, MessageBoxIcon::Asterisk);
+			Request Req;
+			Req.UpdateBloodReq(IntNum, blood, stoi(id), date);
+
+
+		}
+		else
+		{
+			MessageBox::Show("There are currently no " + varNum + " bags of blood type: " + varBlood, "Reject", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+
+		}
+	}
+
+	};//end
 }

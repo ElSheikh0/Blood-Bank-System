@@ -5,15 +5,18 @@
 #include <regex>
 #include <algorithm>
 #include <unordered_map>
+#include "User.h"
+
 
 
 
  
 
-class Recipient {
+class Recipient :public User {
 private:
-    int Age = 0, R_ID, totalNumberOfRecipient = 0, lastDonorID = 0, currentUserIndex;
-    std::string First_Name, Last_Name, R_Mail, R_Password, R_Blood_Type, Hospital, Doctor, R_Gender, line, unit;
+    std::unordered_map<std::string, Recipient> data;
+    int /*Age = 0, R_ID,*/ totalNumberOfRecipient = 0, lastDonorID = 0, currentUserIndex;
+    std::string /*First_Name, Last_Name, R_Mail, R_Password, R_Blood_Type,*/ Hospital, Doctor, /*R_Gender,*/ line, unit;
     std::string totalNumberOfRecipients;
     std::vector<Recipient> recipients;
     std::vector<std::string> Recipient_Data;
@@ -35,14 +38,14 @@ public:
     std::vector<Recipient> getrecipients();
     int getCurrentUser();
     int getTotalNum();
-    int getId();
+   /* int getId();
     int getAge();
     std::string getFirstname();
     std::string getLastName();
     std::string getE_mail();
     std::string getPassword();
     std::string getGender();
-    std::string getBloodType();
+    std::string getBloodType();*/
     std::string getHos();
     std::string getDoc();
     std::string gettotalNumberOfRecipientsS();

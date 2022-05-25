@@ -23,6 +23,7 @@ Class Project4.Home: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Int32 indexReAdmin : Public
     Int32 indexReqDoAdmin : Public
     Boolean DoSingup : Public
+    Boolean ReSingnup : Public
     Boolean femaleRegDo : Public
     Boolean maleRegDo : Public
     Boolean femaleRegRe : Public

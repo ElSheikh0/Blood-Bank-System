@@ -11,16 +11,10 @@ Donor::Donor() {
 
 }
 
-Donor::Donor(int id, string fName, string lName, int age, string email, string password, string gender, string bloodType, string diseases, string medicine, string date) {
+Donor::Donor(int id, string fName, string lName, int age, string email, string password, string gender, string bloodType, string diseases, string medicine, string date) 
+	:User(id, fName, lName, email, password, age, gender, bloodType)
+{
  
-	this->ID=id;
-	this->firstName = fName;
-	this->lastName = lName;
-	this->age = age;
-	this->mail = email;
-	this->password = password;
-	this->gender = gender;
-	this->bloodType = bloodType;
 	this->listOfDiseases = diseases;
 	this->medication = medicine;
 	this->latestDonationDate = date;
@@ -43,6 +37,9 @@ void Donor::readData()
 			Donor temp(stoi(row[0]), row[1], row[2], stoi(row[3]), row[4], row[5], row[6], row[7], row[8], row[9], row[10]);
 			totalNumberOfDonors++;
 			allDonors.push_back(temp);
+
+			data.insert(make_pair(row[4],temp));
+
 			lastDonorID = stoi(row[0]);
 		}
 	}
@@ -58,9 +55,9 @@ void Donor::Register(string fName, string lName, int age, string email, string p
 	fstream donor;
 	donor.open("data.csv", ios::out | ios::app);
 	lastDonorID++;
-	ID = lastDonorID;
+	setId( lastDonorID);
 	
-	currentUserIndex = ID;
+	currentUserIndex = getId();
 
 	if (diseases == "")
 		diseases = "NULL";
@@ -68,47 +65,35 @@ void Donor::Register(string fName, string lName, int age, string email, string p
 		medicine = "NULL";
 	 
 	//Donor(ID, fName, lName, age, email, password, gender, bloodType, diseases, medicine, date);
-	donor << ID << "," << fName << "," << lName
+	donor << getId()<< "," << fName << "," << lName
 		<< "," << age << "," << email << "," << password
 		<< "," << gender << "," << bloodType << "," << diseases
 		<< "," << medicine << "," << date << "\n";
 	donor.close();
 }
 
-bool Donor::Login(string email,string password) {
+bool Donor::Login(string e_mail,string password) {
 	readData();
 	 
-	bool found = false;
+	bool login = false;
 	 
-	for (int i = 0; i < allDonors.size(); ++i) {
-		if (email == allDonors[i].mail) {
-			//found = true;
-			if (password == allDonors[i].password) {
-
-				found = true; 
-				currentUserIndex = i;
-			//	cout << "current user index" << currentUserIndex << '\n';
-				break;
-			}
-			else {
-				//cout << "Incorrect password.\n";
-				break;
-			}
-		}
+	readData();
+	string p = data[e_mail].getPassword();
+	if (p == password && password != "") {
+		login = true;
+		currentUserIndex = data[e_mail].getId() ;
 	}
-	if (found)
-		return true;
 	else {
-		//cout << "Incorrect email, if you don't already have an account please sign up first.\n";
-		return false;
+		login = false;
 	}
+	return login;
 }
 
-void Donor::DonationRequest(std::string hos, std::string Time ,int ID) {
+void Donor::DonationRequest(std::string hos, std::string Time ,int ID,std::string email) {
 	fstream DR;
 	DR.open("DonationRequestData.csv", ios::app);
 	
-	DR << ID  << ","<<allDonors[currentUserIndex].bloodType<< "," <<Time << "," <<"2" << endl;
+	DR << ID  << ","<< data[email].getBloodType() << "," <<Time << "," <<"2" << endl;
 	DR.close();
 }
 
@@ -126,7 +111,8 @@ void Donor::DeleteAccount(string email)
 		getline(fin, line);
 		stringstream s(line);
 
-		while (getline(s, word, ',')) {
+		while (getline(s, word, ',')) 
+		{
 			row.push_back(word);
 		}
 
@@ -239,46 +225,46 @@ int Donor::getTotalNum()
 {
 	return totalNumberOfDonors;
 }
-
-int Donor::getId()
-{
-	return ID;
-}
-
-int Donor::getAge()
-{
-	return age;
-}
-
-std::string Donor::getFirstname()
-{
-	return std::string(firstName);
-}
-
-std::string Donor::getLastName()
-{
-	return std::string(lastName);
-}
-
-std::string Donor::getE_mail()
-{
-	return std::string(mail);
-}
-
-std::string Donor::getPassword()
-{
-	return std::string(password);
-}
-
-std::string Donor::getGender()
-{
-	return std::string(gender);
-}
-
-std::string Donor::getBloodType()
-{
-	return std::string(bloodType);
-}
+//
+//int Donor::getId()
+//{
+//	return ID;
+//}
+//
+//int Donor::getAge()
+//{
+//	return age;
+//}
+//
+//std::string Donor::getFirstname()
+//{
+//	return std::string(firstName);
+//}
+//
+//std::string Donor::getLastName()
+//{
+//	return std::string(lastName);
+//}
+//
+//std::string Donor::getE_mail()
+//{
+//	return std::string(mail);
+//}
+//
+//std::string Donor::getPassword()
+//{
+//	return std::string(password);
+//}
+//
+//std::string Donor::getGender()
+//{
+//	return std::string(gender);
+//}
+//
+//std::string Donor::getBloodType()
+//{
+//	return std::string(bloodType);
+//}
 
 std::string Donor::getDis()
 {

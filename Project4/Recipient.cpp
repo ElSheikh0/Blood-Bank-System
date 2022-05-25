@@ -5,18 +5,10 @@ using namespace std;
 
 Recipient::Recipient() {}
 Recipient::Recipient(int R_ID, std::string First_Name, std::string Last_Name, std::string R_Gender, int age, std::string R_Mail, std::string R_Password, std::string R_Blood_Type, string Hospital, string Doctor)
+    :User(R_ID, First_Name, Last_Name, R_Mail, R_Password, age, R_Gender, R_Blood_Type)
 {
-
-    this->R_ID = R_ID;
-    this->First_Name = First_Name;
-    this->Last_Name = Last_Name;
-    this->Age = age;
-    this->R_Mail = R_Mail;
-    this->R_Password = R_Password;
-    this->R_Gender = R_Gender;
-    this->R_Blood_Type = R_Blood_Type;
-    this->Hospital = Hospital;
-    this->Doctor = Doctor;
+        this->Hospital = Hospital;
+        this->Doctor = Doctor;
 }
 
 void Recipient::Read_Data()
@@ -37,6 +29,7 @@ void Recipient::Read_Data()
             Recipient recipient(stoi(Recipient_Data[0]), Recipient_Data[1], Recipient_Data[2], Recipient_Data[3], stoi(Recipient_Data[4]), Recipient_Data[5], Recipient_Data[6], Recipient_Data[7], Recipient_Data[8], Recipient_Data[9]);
             totalNumberOfRecipient++;
             recipients.push_back(recipient);
+            data.insert(make_pair(Recipient_Data[5], recipient));
            lastDonorID = stoi(Recipient_Data[0]);
         }
     }
@@ -53,32 +46,29 @@ void Recipient::Register(std::string First_Name, std::string Last_Name , std::st
     fstream Recipient;
     Recipient.open("Recipient.csv", ios::out | ios::app);
     lastDonorID++;
-    R_ID = lastDonorID;
-    currentUserIndex = R_ID; 
+    setId( lastDonorID);
+    currentUserIndex = getId(); 
     if (Hospital == "")
         Hospital = "NULL";
     if (Doctor == "")
         Doctor = "NULL";
-    Recipient << R_ID << "," << First_Name << "," << Last_Name << "," << R_Gender << "," << age << "," << R_Mail << "," << R_Password << "," << R_Blood_Type << "," << Hospital << "," << Doctor << endl;
+    Recipient << getId()<< "," << First_Name << "," << Last_Name << "," << R_Gender << "," << age << "," << R_Mail << "," << R_Password << "," << R_Blood_Type << "," << Hospital << "," << Doctor << endl;
     Recipient.close();
 }
 
 bool Recipient::Login(std::string e_mail, std::string password)
 {
     Read_Data();
-    for (int i = 0; i < recipients.size(); i++) {
-        if (e_mail == recipients[i].R_Mail && password == recipients[i].R_Password)
-        {
-           
-            login = true;
-            currentUserIndex = i;
-            break;
-        }
-        else {
-            login = false;
-        }
+    string p = data[e_mail].getPassword();
+    if (p == password && password != "") {
+        login = true;
+        currentUserIndex = data[e_mail].getId();
+    }
+    else {
+        login = false;
     }
     return login;
+
 }
 
 void Recipient::DeleteAccount(std::string e_mail)
@@ -115,6 +105,16 @@ void Recipient::DeleteAccount(std::string e_mail)
     file_2.close();
     remove("Recipient.csv");
     rename("temp_file.csv", "Recipient.csv");
+   /* Read_Data();
+    fstream file_2;
+    file_2.open("temp_file.csv", ios::out | ios::app);
+    data.erase(e_mail);
+    for (auto x : data) {
+        file_2 << x.second.R_ID << "," << x.second.First_Name << "," << x.second.Last_Name << "," << x.second.R_Gender << "," << x.second.Age << "," << x.second.R_Mail << "," << x.second.R_Password << "," << x.second.R_Blood_Type << "," << x.second.Hospital << "," << x.second.Doctor << "\n";
+    }
+    file_2.close();
+    remove("Recipient.csv");
+    rename("temp_file.csv", "Recipient.csv");*/
 }
 
 void Recipient::UpdateAccount(int index,int currentUserIndex, std::string updated) {
@@ -165,7 +165,8 @@ vector<pair<string, int>> Recipient::Display_Blood(string date) {
     vector<string> Recipient_Data_blood;
 
     Data.open("DonationRequestData.csv");
-    while (Data.good()) {
+    while (Data.good()) 
+    {
         Recipient_Data_blood.clear();
         getline(Data, line);
         stringstream s(line);
@@ -174,7 +175,8 @@ vector<pair<string, int>> Recipient::Display_Blood(string date) {
         }
         if (Recipient_Data_blood.size() != 0) {
         
-            if (Recipient_Data_blood[2] == date && Recipient_Data_blood[3] == "1") {
+            if (Recipient_Data_blood[2] == date && Recipient_Data_blood[3] == "1") 
+            {
                 blood_types.push_back(Recipient_Data_blood[1]);
             }
         }
@@ -281,47 +283,47 @@ int Recipient::getTotalNum()
 {
     return totalNumberOfRecipient;
 }
-
-int Recipient::getId()
-{
-    return R_ID;
-}
-
-int Recipient::getAge()
-{
-    return Age;
-}
-
-std::string Recipient::getFirstname()
-{
-    return std::string(First_Name);
-}
-
-std::string Recipient::getLastName()
-{
-    return std::string(Last_Name);
-}
-
-std::string Recipient::getE_mail()
-{
-    return std::string(R_Mail);
-}
-
-std::string Recipient::getPassword()
-{
-    return std::string(R_Password);
-}
-
-std::string Recipient::getGender()
-{
-    return std::string(R_Gender);
-}
-
-std::string Recipient::getBloodType()
-{
-    return std::string(R_Blood_Type);
-}
-
+//
+//int Recipient::getId()
+//{
+//    return R_ID;
+//}
+//
+//int Recipient::getAge()
+//{
+//    return Age;
+//}
+//
+//std::string Recipient::getFirstname()
+//{
+//    return std::string(First_Name);
+//}
+//
+//std::string Recipient::getLastName()
+//{
+//    return std::string(Last_Name);
+//}
+//
+//std::string Recipient::getE_mail()
+//{
+//    return std::string(R_Mail);
+//}
+//
+//std::string Recipient::getPassword()
+//{
+//    return std::string(R_Password);
+//}
+//
+//std::string Recipient::getGender()
+//{
+//    return std::string(R_Gender);
+//}
+//
+//std::string Recipient::getBloodType()
+//{
+//    return std::string(R_Blood_Type);
+//}
+//
 std::string Recipient::getHos()
 {
     return std::string(Hospital);
@@ -331,14 +333,14 @@ std::string Recipient::getDoc()
 {
     return std::string(Doctor);
 }
-
- 
-
+//
+// 
+//
 std::string Recipient::gettotalNumberOfRecipientsS()
 {
     return std::string(totalNumberOfRecipients);
 }
-
+//
 void Recipient::setCurrentUser(int index)
 {
     currentUserIndex = index;

@@ -5,29 +5,36 @@ Admin::Admin()
     
 }
 
-bool Admin::LoginAdmin(std::string un, std::string pw)
+bool Admin::LoginAdmin(std::string U_sername, std::string P_assword)
 {
-    vector<string> adminUsername;
-    vector<string> adminPassword;
-    char const* usn;
-    char const* psd;
-
-    
-    ifstream fs("Admin.txt", ios::in);
-    while (!fs.eof())
+    ifstream f;
+    f.open("Admin.csv");
+    string line, unit;
+    vector<string> row;
+    while (f.good()) 
     {
-        fs >> username >> password;
-        adminUsername.push_back(username);
-        adminPassword.push_back(password);
-        usn = un.c_str();
-        psd = pw.c_str();
-        if (strcmp(usn, this->username.c_str()) == 0 && strcmp(psd, this->password.c_str()) == 0)
-            return true;
-        else
-            return false;
-
+        row.clear();
+        getline(f, line);
+        stringstream s(line);
+        while (getline(s, unit, ','))
+        {
+            row.push_back(unit);
+        }
+        if (!row.empty()) {
+           
+            dataAdmin.insert(make_pair(row[0], row[1]));   
+        }
+    } 
+    f.close();
+    bool login = false;
+    string p = dataAdmin[U_sername];
+    if (p == P_assword && P_assword != "") {
+        login = true;
     }
-    fs.close();
+    else {
+        login = false;
+    }
+    return login;
 }
 
 Admin::~Admin()
@@ -458,4 +465,68 @@ std::string Request::addDays(int d1, int m1, int y1, int x)
 
     string date = to_string(d2) + "-" + to_string(m2) + "-" + to_string(y2);
     return date;
+}
+
+void Request::InsertBloodAdmin(std::string id,int Num, std::string Time, std::string Blood )
+{
+
+    fstream DR;
+    DR.open("DonationRequestData.csv", ios::app);
+    for (int i; i < Num; i++)
+    {
+        DR << id<< "," << Blood << "," << Time << "," << "1" << endl;
+
+    }
+    DR.close();
+
+
+}
+void Request::UpdateBloodReq(int cnt, std::string blood,int id,std::string date )
+{
+    fstream file_1, file_2;
+    file_1.open("DonationRequestData.csv", ios::in | ios::app);
+    file_2.open("temp_file.csv", ios::out | ios::app);
+    std::vector<std::string> Blood_data;
+    while (file_1.good())
+    {
+        Blood_data.clear();
+        getline(file_1, line);
+        stringstream s_line(line);
+        while (getline(s_line, unit, ','))
+        {
+            Blood_data.push_back(unit);
+        }
+        if (Blood_data.size() != 0)
+        {
+
+            if (Blood_data[1] == blood && cnt != 0 && Blood_data[3] == "1" && stoi(Blood_data[0])==id && Blood_data[2]==date)
+            {
+                Blood_data[3] = "0";
+                for (int i = 0; i < 4; ++i)
+                {
+                    file_2 << Blood_data[i] << ",";
+                }
+                file_2 << endl;
+                cnt--;
+            }
+            else
+            {
+
+                for (int i = 0; i < 4; ++i)
+                {
+                    file_2 << Blood_data[i] << ",";
+                }
+                file_2 << endl;
+            }
+
+
+        }
+
+
+    }
+    file_1.close();
+    file_2.close();
+    remove("DonationRequestData.csv");
+    rename("temp_file.csv", "DonationRequestData.csv");
+
 }
