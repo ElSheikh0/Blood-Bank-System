@@ -17,7 +17,8 @@ The admin can :
 -	Insert/Delete/Update/Display data of recipients 
 
 ---
--We used:
+We used:
+
 -Language:
 •	C++
 -	Concepts:
