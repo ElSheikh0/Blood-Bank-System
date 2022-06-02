@@ -20,16 +20,16 @@ The admin can :
 We used:
 
 -Language:
--C++
+C++
 -	Concepts:
--	Object oriented programming
--	Data structures
--	File handling
--	Graphical User Interface:
--	win forms ( CLR ) 
+--	Object oriented programming
+--	Data structures
+--	File handling
+ -- Graphical User Interface:
+--	win forms ( CLR ) 
 
 ---
--Extra Features :
+Extra Features :
 -	High level Input validation
 -	Strong Password validation 
 -	Auto request validation
