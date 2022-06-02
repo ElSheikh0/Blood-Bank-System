@@ -1,7 +1,6 @@
 # Blood-Bank-System
----
 
-# Blood_Bank_System Remake 
+
 A system for helping patients especially at emergent cases. Blood donation has a great
 importance in helping to save other people’s lives. 
 ## The system consists of 3 main sections.
@@ -18,7 +17,7 @@ The admin can :
 -	Insert/Delete/Update/Display data of recipients 
 
 ---
-We used:
+-We used:
 -Language:
 •	C++
 -	Concepts:
@@ -29,7 +28,7 @@ We used:
 •	win forms ( CLR ) 
 
 ---
-	Extra Features :
+-Extra Features :
 -	High level Input validation
 -	Strong Password validation 
 -	Auto request validation
