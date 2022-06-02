@@ -20,13 +20,13 @@ The admin can :
 We used:
 
 -Language:
-•	C++
+-C++
 -	Concepts:
-•	Object oriented programming
-•	Data structures
-•	File handling
+-	Object oriented programming
+-	Data structures
+-	File handling
 -	Graphical User Interface:
-•	win forms ( CLR ) 
+-	win forms ( CLR ) 
 
 ---
 -Extra Features :
